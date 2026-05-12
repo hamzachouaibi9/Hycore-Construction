@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { MapPin, Send, Clock } from "lucide-react";
-// Social icons use inline SVG (lucide-react doesn't include brand icons)
 import QuoteBar from "@/components/sections/QuoteBar";
 import Accordion from "@/components/ui/Accordion";
-import { HoverGlowButton } from "@/components/ui/hover-glow-button";
+import { Reveal } from "@/components/ui/Reveal";
+import ContactPageForm from "@/components/ui/ContactPageForm";
 import { getFAQs } from "@/lib/payload";
 
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Hycore Construction. We&apos;re here to help you bring your next construction project to life.",
+    "Get in touch with Hycore Construction. We're here to help you bring your next construction project to life.",
 };
 
 export default async function ContactPage() {
@@ -24,12 +24,12 @@ export default async function ContactPage() {
 
   return (
     <>
-      {/* ── Get In Touch ── */}
-      <section className="bg-brand-black py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      {/* ── Get In Touch — 90vh ── */}
+      <section className="bg-brand-black min-h-[90dvh] flex items-center py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Form */}
-            <div>
+            <Reveal>
               <h1 className="font-display text-4xl md:text-5xl font-black text-brand-white tracking-tight mb-3">
                 GET IN TOUCH
               </h1>
@@ -37,68 +37,11 @@ export default async function ContactPage() {
                 Lorem ipsum is simply dummy text of the printing and typesetting industry.
               </p>
 
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-medium text-white/50 mb-2">Full Name</label>
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-white/50 mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      className="w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-medium text-white/50 mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-medium text-white/50 mb-2">Subject</label>
-                    <input
-                      type="text"
-                      placeholder="Subject"
-                      className="w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs font-medium text-white/50 mb-2">Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Write your message here..."
-                    className="w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200 resize-none"
-                  />
-                </div>
-                <div className="flex items-center justify-between flex-wrap gap-4 pt-2">
-                  <HoverGlowButton
-                    type="submit"
-                    className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  >
-                    SUBMIT NOW
-                  </HoverGlowButton>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" className="w-4 h-4 accent-primary" />
-                    <span className="text-xs text-white/40">I agree to the terms and conditions.</span>
-                  </label>
-                </div>
-              </form>
-            </div>
+              <ContactPageForm />
+            </Reveal>
 
             {/* Image */}
-            <div className="relative aspect-[4/3] rounded overflow-hidden">
+            <Reveal delay={0.15} className="relative aspect-[4/3] rounded overflow-hidden">
               <Image
                 src="https://picsum.photos/700/500?random=90"
                 alt="Construction team reviewing plans"
@@ -106,54 +49,79 @@ export default async function ContactPage() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── Info Cards ── */}
+      {/* ── Info Cards — white bg, blue border, hover blue ── */}
       <section className="bg-brand-white py-14 md:py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Address */}
-            <div className="bg-primary p-8">
+            <Reveal
+              delay={0}
+              className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
+            >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-white/80 uppercase">Address</span>
-                <div className="w-8 h-8 border border-white/30 rounded flex items-center justify-center">
-                  <MapPin size={14} className="text-white" />
+                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                  Address
+                </span>
+                <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
+                  <MapPin size={14} className="text-primary group-hover:text-white transition-[color] duration-300" />
                 </div>
               </div>
-              <p className="text-base font-bold text-white leading-snug">
+              <p className="text-base font-bold text-brand-black group-hover:text-white leading-snug transition-[color] duration-300">
                 410 Sandtown, California<br />94001, USA
               </p>
-            </div>
+            </Reveal>
 
             {/* Reach Us */}
-            <div className="bg-brand-white p-8">
+            <Reveal
+              delay={0.1}
+              className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
+            >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">Reach Us</span>
-                <div className="w-8 h-8 border border-gray-200 rounded flex items-center justify-center">
-                  <Send size={14} className="text-gray-400" />
+                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                  Reach Us
+                </span>
+                <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
+                  <Send size={14} className="text-primary group-hover:text-white transition-[color] duration-300" />
                 </div>
               </div>
-              <p className="text-sm font-medium text-brand-black mb-1">info@hycoreconstruction.com</p>
-              <p className="text-sm text-gray-500">(555) 555-5555</p>
-            </div>
+              <p className="text-sm font-medium text-brand-black group-hover:text-white mb-1 transition-[color] duration-300">
+                info@hycoreconstruction.com
+              </p>
+              <p className="text-sm text-gray-500 group-hover:text-white/75 transition-[color] duration-300">
+                (555) 555-5555
+              </p>
+            </Reveal>
 
             {/* Hours */}
-            <div className="bg-brand-white p-8 border-l border-gray-100">
+            <Reveal
+              delay={0.2}
+              className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
+            >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">Address</span>
-                <div className="w-8 h-8 border border-gray-200 rounded flex items-center justify-center">
-                  <Clock size={14} className="text-gray-400" />
+                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                  Hours
+                </span>
+                <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
+                  <Clock size={14} className="text-primary group-hover:text-white transition-[color] duration-300" />
                 </div>
               </div>
               <div className="space-y-1.5">
-                <p className="text-xs font-medium text-brand-black">WEEK DAYS : 11:00–8:00pm</p>
-                <p className="text-xs font-medium text-brand-black">SATURDAY : 11:00–4:00pm</p>
-                <p className="text-xs font-medium text-brand-black">SUNDAY : 11:00–2:00pm</p>
+                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                  WEEK DAYS : 11:00–8:00pm
+                </p>
+                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                  SATURDAY : 11:00–4:00pm
+                </p>
+                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                  SUNDAY : 11:00–2:00pm
+                </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -161,16 +129,20 @@ export default async function ContactPage() {
       {/* ── FAQ ── */}
       <section id="faq" className="bg-brand-white py-20 md:py-28 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
-          <h2 className="font-display text-3xl md:text-4xl font-black text-brand-black tracking-tight text-center mb-14">
-            FREQUENTLY ASKED
-            <br />
-            QUESTIONS
-          </h2>
-          {faqItems.length > 0 ? (
-            <Accordion items={faqItems} numbered />
-          ) : (
-            <p className="text-center text-gray-400 text-sm">No FAQs available.</p>
-          )}
+          <Reveal>
+            <h2 className="font-display text-3xl md:text-4xl font-black text-brand-black tracking-tight text-center mb-14">
+              FREQUENTLY ASKED
+              <br />
+              QUESTIONS
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            {faqItems.length > 0 ? (
+              <Accordion items={faqItems} numbered />
+            ) : (
+              <p className="text-center text-gray-400 text-sm">No FAQs available.</p>
+            )}
+          </Reveal>
         </div>
       </section>
 

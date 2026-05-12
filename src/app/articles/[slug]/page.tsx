@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import QuoteBar from "@/components/sections/QuoteBar";
 import ContactForm from "@/components/ui/ContactForm";
 import ArticleCard from "@/components/ui/ArticleCard";
@@ -9,6 +10,41 @@ import { notFound } from "next/navigation";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+function readingTime(content: string): number {
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+function parseContent(raw: string): string {
+  const lines = raw.trim().split("\n");
+  const out: string[] = [];
+  let inList = false;
+
+  const inline = (text: string) =>
+    text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+
+  for (const line of lines) {
+    if (line.startsWith("## ")) {
+      if (inList) { out.push("</ul>"); inList = false; }
+      out.push(`<h2 class="article-h2">${inline(line.slice(3))}</h2>`);
+    } else if (line.startsWith("### ")) {
+      if (inList) { out.push("</ul>"); inList = false; }
+      out.push(`<h3 class="article-h3">${inline(line.slice(4))}</h3>`);
+    } else if (line.startsWith("- ")) {
+      if (!inList) { out.push('<ul class="article-ul">'); inList = true; }
+      out.push(`<li>${inline(line.slice(2))}</li>`);
+    } else if (line.trim() === "") {
+      if (inList) { out.push("</ul>"); inList = false; }
+    } else {
+      if (inList) { out.push("</ul>"); inList = false; }
+      out.push(`<p class="article-p">${inline(line)}</p>`);
+    }
+  }
+
+  if (inList) out.push("</ul>");
+  return out.join("");
 }
 
 export async function generateStaticParams() {
@@ -43,6 +79,7 @@ export default async function ArticleDetailPage({ params }: Props) {
   if (!article) notFound();
 
   const otherArticles = allArticles.filter((a) => a.slug !== slug).slice(0, 4);
+  const mins = readingTime(article.content);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -51,25 +88,63 @@ export default async function ArticleDetailPage({ params }: Props) {
     description: article.excerpt,
     image: article.heroImage,
     datePublished: article.publishedDate,
-    author: {
-      "@type": "Person",
-      name: article.author.name,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Hycore Construction",
-    },
+    author: { "@type": "Person", name: article.author.name },
+    publisher: { "@type": "Organization", name: "Hycore Construction" },
   };
 
   return (
     <>
+      <style>{`
+        .article-h2 {
+          font-family: var(--font-outfit, system-ui, sans-serif);
+          font-size: 0.9rem;
+          font-weight: 900;
+          color: #0b0b0b;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          margin-top: 2.5rem;
+          margin-bottom: 1rem;
+          line-height: 1.4;
+        }
+        .article-h3 {
+          font-family: var(--font-outfit, system-ui, sans-serif);
+          font-size: 1rem;
+          font-weight: 700;
+          color: #0b0b0b;
+          margin-top: 2rem;
+          margin-bottom: 0.75rem;
+          line-height: 1.4;
+        }
+        .article-p {
+          font-size: 0.875rem;
+          line-height: 1.85;
+          color: #4b5563;
+          margin-bottom: 1.1rem;
+        }
+        .article-ul {
+          margin: 1rem 0;
+          padding-left: 1.25rem;
+          list-style: disc;
+        }
+        .article-ul li {
+          font-size: 0.875rem;
+          line-height: 1.75;
+          color: #4b5563;
+          margin-bottom: 0.4rem;
+        }
+        .article-p strong, .article-ul strong {
+          color: #0b0b0b;
+          font-weight: 600;
+        }
+      `}</style>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[50dvh] flex items-end bg-brand-black overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-brand-black overflow-hidden">
         <Image
           src={article.heroImage}
           alt={article.title}
@@ -78,50 +153,60 @@ export default async function ArticleDetailPage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-brand-black/30 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pb-12 w-full">
-          <p className="text-xs text-white/50 mb-3">Published {article.publishedDate}</p>
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-white tracking-tight max-w-3xl leading-tight">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-transparent to-brand-black/50" />
+
+        <div className="relative z-10 text-center px-6 md:px-8 max-w-3xl mx-auto">
+          <h1 className="font-display text-3xl md:text-5xl font-black text-white leading-tight mb-4">
             {article.title}
           </h1>
+          <p className="text-sm text-white/50">Published {article.publishedDate}</p>
         </div>
       </section>
 
       {/* ── Article body ── */}
-      <section className="bg-brand-white py-16 md:py-24">
+      <section className="bg-brand-white py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+          {/* Back link */}
+          <Link
+            href="/articles"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-brand-black transition-colors duration-200 mb-10 focus-visible:outline-none"
+          >
+            <ArrowLeft size={13} />
+            Back to Articles
+          </Link>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-14">
+
             {/* Author sidebar */}
             <div className="md:col-span-1">
               <Image
                 src={article.author.image}
                 alt={article.author.name}
-                width={56}
-                height={56}
-                className="rounded-full object-cover mb-3"
+                width={64}
+                height={64}
+                className="object-cover mb-3"
               />
-              <p className="text-sm font-bold text-brand-black">{article.author.name}</p>
-              <p className="text-xs text-gray-500 mt-1">{article.author.role}</p>
+              <p className="text-sm font-bold text-brand-black leading-snug">
+                {article.author.name}
+              </p>
+              <p className="text-xs text-gray-400 mt-1 leading-snug">
+                {article.author.role}
+              </p>
+              <p className="text-xs text-gray-300 mt-3">{mins} min read</p>
             </div>
 
             {/* Content */}
-            <article className="md:col-span-3 prose prose-sm max-w-none">
+            <article className="md:col-span-3">
               <div
-                className="text-sm leading-[1.8] text-gray-600 [&_h2]:font-display [&_h2]:text-lg [&_h2]:font-black [&_h2]:text-brand-black [&_h2]:tracking-tight [&_h2]:mt-10 [&_h2]:mb-4 [&_p]:mb-5"
-                dangerouslySetInnerHTML={{
-                  __html: article.content
-                    .replace(/\n## /g, '<h2>')
-                    .replace(/\n/g, '</p><p>')
-                    .replace(/<h2>/g, '</p><h2>')
-                    .replace(/## /g, '<h2>')
-                }}
+                dangerouslySetInnerHTML={{ __html: parseContent(article.content) }}
               />
 
-              {/* In-article image */}
-              <div className="relative aspect-video mt-10 rounded overflow-hidden">
+              {/* Inline image */}
+              <div className="relative aspect-video mt-10 overflow-hidden">
                 <Image
-                  src="https://picsum.photos/900/500?random=92"
-                  alt="Article illustration"
+                  src={article.heroImage}
+                  alt={`${article.title} — illustration`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 75vw"
@@ -162,12 +247,12 @@ export default async function ArticleDetailPage({ params }: Props) {
               />
             </div>
             <div className="p-10 md:p-14">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-white tracking-tight mb-2">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight mb-2">
                 Let&apos;s Work Together.
               </h2>
               <p className="text-sm text-white/50 mb-8">
-                We&apos;re here to help you bring your construction project to life! Whether you
-                have questions, want to discuss your ideas.
+                We&apos;re here to help you bring your construction project to life. Whether you
+                have questions or want to discuss your ideas, reach out.
               </p>
               <ContactForm />
             </div>

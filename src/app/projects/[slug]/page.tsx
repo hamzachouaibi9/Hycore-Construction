@@ -41,7 +41,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative h-[55dvh] bg-brand-black overflow-hidden">
+      <section className="relative h-screen bg-brand-black overflow-hidden">
         <Image
           src={project.heroImage}
           alt={project.title}
@@ -50,25 +50,22 @@ export default async function ProjectDetailPage({ params }: Props) {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 to-transparent" />
-      </section>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/75 via-brand-black/20 to-transparent" />
 
-      {/* ── Meta ── */}
-      <section className="bg-brand-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+        <div className="absolute bottom-0 left-0 right-0 px-8 md:px-16 pb-14 md:pb-20">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-brand-black transition-[color] duration-200 mb-5 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/70 hover:text-white transition-[color] duration-200 mb-8 focus-visible:outline-none"
           >
             <ArrowLeft size={14} />
             Return to Projects
           </Link>
-          <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
+          <div className="flex items-center gap-4 text-xs text-white/60 mb-3">
             <span>{project.deadline}</span>
             <span>|</span>
             <span>{project.category}</span>
           </div>
-          <h1 className="font-display text-3xl md:text-5xl font-black text-brand-black tracking-tight">
+          <h1 className="font-display text-5xl md:text-8xl font-black text-white tracking-tight leading-none">
             {project.title.toUpperCase()}
           </h1>
         </div>

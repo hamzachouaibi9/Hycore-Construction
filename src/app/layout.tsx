@@ -3,6 +3,7 @@ import { Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -76,9 +77,11 @@ export default function RootLayout({
       className={`${outfit.variable} ${dmSans.variable} h-full`}
     >
       <body className="min-h-[100dvh] flex flex-col bg-brand-white antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SmoothScrollProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

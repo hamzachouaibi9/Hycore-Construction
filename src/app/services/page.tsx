@@ -6,6 +6,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import QuoteBar from "@/components/sections/QuoteBar";
 import ArticleCard from "@/components/ui/ArticleCard";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
+import { Reveal } from "@/components/ui/Reveal";
 import { getServices, getArticles } from "@/lib/payload";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default async function ServicesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative min-h-[60dvh] flex items-center bg-brand-black overflow-hidden">
+      <section className="relative min-h-[85dvh] flex items-end bg-brand-black overflow-hidden">
         <Image
           src="/heroimage.jpg"
           alt="Construction site"
@@ -39,31 +40,45 @@ export default async function ServicesPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-black/80 to-brand-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-20">
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-black text-brand-white tracking-tight leading-tight">
-            BUILDING COMMUNITIES,
-            <br />
-            ONE PROJECT AT A TIME
-          </h1>
-          <p className="mt-5 text-sm leading-[1.8] text-white/50 max-w-xl">
-            Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-            nullam parturient viverra id.
-          </p>
-          <HoverGlowButton
-            href="/contact"
-            className="mt-8 inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
-            LET&apos;S BUILD
-          </HoverGlowButton>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-black/95 via-brand-black/70 to-brand-black/20" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-8 pt-28 pb-20 md:pb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+            <div>
+              <Reveal onLoad delay={0.1}>
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-brand-white tracking-tight leading-[1.0]">
+                  BUILDING
+                  <br />
+                  COMMUNITIES,
+                  <br />
+                  ONE PROJECT
+                  <br />
+                  AT A TIME
+                </h1>
+              </Reveal>
+              <Reveal onLoad delay={0.25}>
+                <p className="mt-6 text-sm leading-[1.8] text-white/50 max-w-lg">
+                  Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
+                  nullam parturient viverra id.
+                </p>
+              </Reveal>
+              <Reveal onLoad delay={0.4}>
+                <HoverGlowButton
+                  href="/contact"
+                  className="mt-8 inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                >
+                  LET&apos;S BUILD
+                </HoverGlowButton>
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Empowering Industries ── */}
+      {/* ── Empowering Industries — Comprehensive Solutions ── */}
       <section className="bg-brand-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start mb-12">
-            <div className="md:col-span-2">
+            <Reveal className="md:col-span-2">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight leading-tight mb-5">
                 EMPOWERING INDUSTRIES
                 <br />
@@ -75,8 +90,8 @@ export default async function ServicesPage() {
                 Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
                 nullam parturient viverra id.
               </p>
-            </div>
-            <div className="hidden md:block relative aspect-video rounded overflow-hidden">
+            </Reveal>
+            <Reveal delay={0.15} className="hidden md:block relative aspect-video rounded overflow-hidden">
               <Image
                 src="https://picsum.photos/600/400?random=5"
                 alt="Construction interior"
@@ -84,27 +99,31 @@ export default async function ServicesPage() {
                 className="object-cover"
                 sizes="33vw"
               />
-            </div>
+            </Reveal>
           </div>
 
-          {/* 3×2 service grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-gray-100 border border-gray-100 rounded overflow-hidden">
+          {/* 3×2 service grid — thin blue border, hover turns blue */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {services.map((service, i) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="group bg-brand-white p-8 flex flex-col gap-3 hover:bg-gray-50 transition-[background-color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
-              >
-                <div className="w-9 h-9 border border-gray-200 rounded flex items-center justify-center text-gray-500 group-hover:border-primary/40 group-hover:text-primary transition-[border-color,color] duration-200">
-                  {serviceIcons[i % serviceIcons.length]}
-                </div>
-                <h3 className="font-display text-xs font-bold text-brand-black tracking-wide">
-                  {service.title}
-                </h3>
-                <p className="text-xs leading-[1.8] text-gray-500 line-clamp-4">
-                  {service.description}
-                </p>
-              </Link>
+              <Reveal key={service.id} delay={i * 0.07} className="h-full">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group block p-8 flex flex-col gap-3 border border-primary/20 rounded-xl hover:border-primary hover:bg-primary hover:scale-[1.02] transition-[background-color,border-color,transform,box-shadow] duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-full"
+                >
+                  <div className="w-9 h-9 border border-gray-200 rounded flex items-center justify-center text-gray-500 group-hover:border-white/30 group-hover:text-white transition-[border-color,color] duration-300 ease-out">
+                    {serviceIcons[i % serviceIcons.length]}
+                  </div>
+                  <h3 className="font-display text-xs font-bold text-brand-black tracking-wide group-hover:text-white transition-[color] duration-300 ease-out">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs leading-[1.8] text-gray-500 line-clamp-4 group-hover:text-white/80 transition-[color] duration-300 ease-out">
+                    {service.description}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-primary mt-auto group-hover:text-white transition-[color] duration-300 ease-out">
+                    Learn More <ArrowRight size={12} />
+                  </div>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -113,44 +132,36 @@ export default async function ServicesPage() {
       {/* ── Innovative Solutions ── */}
       <section className="bg-brand-black py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-black text-brand-white tracking-tight text-center mb-14">
-            Innovative Solutions Tailored
-            <br />
-            To Your Project&apos;s Needs
-          </h2>
+          <Reveal>
+            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-black text-brand-white tracking-tight text-center mb-14">
+              Innovative Solutions Tailored
+              <br />
+              To Your Project&apos;s Needs
+            </h2>
+          </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-            {services.slice(0, 4).map((service, i) => {
-              const highlighted = i === 1;
-              return (
+            {services.slice(0, 4).map((service, i) => (
+              <Reveal key={service.id} delay={i * 0.1} className="h-full">
                 <Link
-                  key={service.id}
                   href={`/services/${service.slug}`}
-                  className={`group block rounded p-7 border transition-[border-color,background-color,box-shadow] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                    highlighted
-                      ? "bg-primary border-primary shadow-primary"
-                      : "bg-white/5 border-white/10 hover:border-primary/40 hover:bg-white/8"
-                  }`}
+                  className="group block rounded-xl p-7 border border-white/10 bg-white/5 hover:border-primary/60 hover:bg-primary transition-[border-color,background-color,box-shadow,transform] duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary h-full"
                 >
-                  <div
-                    className={`w-10 h-10 border rounded flex items-center justify-center mb-6 ${
-                      highlighted ? "border-white/40 text-white" : "border-white/20 text-white/50 group-hover:border-primary/40 group-hover:text-primary"
-                    }`}
-                  >
+                  <div className="w-10 h-10 border border-white/20 rounded flex items-center justify-center mb-6 text-white/50 group-hover:border-white/40 group-hover:text-white transition-[border-color,color] duration-300 ease-out">
                     {serviceIcons[i % serviceIcons.length]}
                   </div>
-                  <h3 className={`font-display text-sm font-bold mb-2 ${highlighted ? "text-white" : "text-brand-white"}`}>
+                  <h3 className="font-display text-sm font-bold mb-2 text-brand-white group-hover:text-white transition-[color] duration-300 ease-out">
                     {service.title}
                   </h3>
-                  <p className={`text-xs leading-[1.8] mb-6 ${highlighted ? "text-white/80" : "text-white/40"}`}>
+                  <p className="text-xs leading-[1.8] mb-6 text-white/40 group-hover:text-white/80 transition-[color] duration-300 ease-out">
                     We Ensure Efficient Planning and execution for every project
                   </p>
-                  <div className={`flex items-center gap-1.5 text-xs font-bold ${highlighted ? "text-white" : "text-white/50 group-hover:text-primary"}`}>
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-white/50 group-hover:text-white transition-[color] duration-300 ease-out">
                     Explore More
                     <ArrowRight size={12} />
                   </div>
                 </Link>
-              );
-            })}
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -161,14 +172,18 @@ export default async function ServicesPage() {
       {recentArticles.length > 0 && (
         <section className="bg-brand-white py-20 md:py-28">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight text-center mb-14">
-              STRENGTH AND STYLE IN
-              <br />
-              EVERY PROJECT
-            </h2>
+            <Reveal>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight text-center mb-14">
+                STRENGTH AND STYLE IN
+                <br />
+                EVERY PROJECT
+              </h2>
+            </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {recentArticles.map((article) => (
-                <ArticleCard key={article.id} article={article} />
+              {recentArticles.map((article, i) => (
+                <Reveal key={article.id} delay={i * 0.1}>
+                  <ArticleCard article={article} />
+                </Reveal>
               ))}
             </div>
           </div>

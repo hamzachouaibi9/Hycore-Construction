@@ -1,4 +1,4 @@
-import type { Service, Project, Article, FAQ, SiteSettings } from "./types";
+import type { Service, SubService, Project, Article, FAQ, SiteSettings } from "./types";
 import {
   mockServices,
   mockProjects,
@@ -41,6 +41,28 @@ export async function getServiceBySlug(slug: string): Promise<Service | null> {
     return json.docs?.[0] ?? null;
   } catch {
     return mockServices.find((s) => s.slug === slug) ?? null;
+  }
+}
+
+export async function getSubServiceBySlug(
+  categorySlug: string,
+  subSlug: string
+): Promise<SubService | null> {
+  if (!PAYLOAD_URL) {
+    const category = mockServices.find((s) => s.slug === categorySlug);
+    return category?.subServices?.find((s) => s.slug === subSlug) ?? null;
+  }
+  try {
+    const res = await fetch(
+      `${PAYLOAD_URL}/api/sub-services?where[slug][equals]=${subSlug}&where[category.slug][equals]=${categorySlug}&limit=1`,
+      { next: { revalidate: 3600 } }
+    );
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.docs?.[0] ?? null;
+  } catch {
+    const category = mockServices.find((s) => s.slug === categorySlug);
+    return category?.subServices?.find((s) => s.slug === subSlug) ?? null;
   }
 }
 

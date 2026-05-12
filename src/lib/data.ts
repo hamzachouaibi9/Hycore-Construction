@@ -1,4 +1,4 @@
-import type { Service, Project, Article, Author, FAQ, SiteSettings } from "./types";
+import type { Service, SubService, Project, Article, Author, FAQ, SiteSettings } from "./types";
 
 export const mockAuthor: Author = {
   id: "1",
@@ -7,216 +7,509 @@ export const mockAuthor: Author = {
   role: "Senior Construction Specialist",
 };
 
-export const mockServices: Service[] = [
+const baseIncluded = [
   {
-    id: "1",
+    title: "Initial Consultation & Assessment",
+    description:
+      "We begin with a thorough consultation to understand your goals, timeline, and budget, laying the groundwork for a successful project.",
+  },
+  {
+    title: "Design & Planning",
+    description:
+      "Our team develops detailed plans tailored to your specific requirements, ensuring every aspect is accounted for before work begins.",
+  },
+  {
+    title: "Material Selection & Procurement",
+    description:
+      "We source high-quality materials that balance durability, aesthetics, and cost-effectiveness for your project.",
+  },
+  {
+    title: "Skilled Construction & Execution",
+    description:
+      "Our experienced crews execute every phase of the project with precision, adhering to the highest industry standards.",
+  },
+  {
+    title: "Quality Control & Inspection",
+    description:
+      "Rigorous quality checks at every milestone ensure the work meets and exceeds your expectations and local code requirements.",
+  },
+  {
+    title: "Final Walkthrough & Handover",
+    description:
+      "We conduct a comprehensive final walkthrough with you, addressing any punch-list items before delivering your completed space.",
+  },
+];
+
+// ─── Sub-services ────────────────────────────────────────────────────────────
+
+const personalizedDesignSubs: SubService[] = [
+  {
+    id: "pd-1",
+    slug: "custom-home-design-build",
+    title: "Custom Home Design & Build",
+    description:
+      "A seamless design-build experience where our architects and construction teams collaborate from day one to bring your vision to life with uncompromising quality.",
+    heroImage: "https://picsum.photos/1400/700?random=100",
+    categorySlug: "personalized-design",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "pd-2",
+    slug: "residential-construction-services",
+    title: "Residential Construction Services",
+    description:
+      "Comprehensive construction services for residential projects of all scales, managed by experienced professionals who prioritize quality, safety, and client satisfaction.",
+    heroImage: "https://picsum.photos/1400/700?random=101",
+    categorySlug: "personalized-design",
+    whatIsIncluded: baseIncluded,
+  },
+];
+
+const newConstructionSubs: SubService[] = [
+  {
+    id: "nc-1",
+    slug: "new-home-construction",
+    title: "New Home Construction",
+    description:
+      "Build your dream home from the ground up with a team that manages every detail — from permits and site preparation through final finishing touches.",
+    heroImage: "https://picsum.photos/1400/700?random=102",
+    categorySlug: "new-construction",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "nc-2",
+    slug: "ground-up-home-construction",
+    title: "Ground-Up Home Construction",
+    description:
+      "Starting with raw land, we handle site clearing, grading, foundation work, and full vertical construction to deliver a finished home that exceeds your expectations.",
+    heroImage: "https://picsum.photos/1400/700?random=103",
+    categorySlug: "new-construction",
+    whatIsIncluded: baseIncluded,
+  },
+];
+
+const renovationSubs: SubService[] = [
+  {
+    id: "hr-1",
+    slug: "home-remodeling",
+    title: "Home Remodeling",
+    description:
+      "Transform your existing home with comprehensive remodeling services that modernize spaces, improve functionality, and increase property value.",
+    heroImage: "https://picsum.photos/1400/700?random=104",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-2",
+    slug: "custom-home-remodeling",
+    title: "Custom Home Remodeling",
+    description:
+      "Bespoke remodeling solutions crafted around your lifestyle, preferences, and long-term vision — no two projects are ever the same.",
+    heroImage: "https://picsum.photos/1400/700?random=105",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-3",
+    slug: "whole-home-renovations",
+    title: "Whole-Home Renovations",
+    description:
+      "A complete top-to-bottom renovation that reimagines every room in your home — coordinated by a single team for a seamless, stress-free experience.",
+    heroImage: "https://picsum.photos/1400/700?random=106",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-4",
     slug: "kitchen-remodeling",
     title: "Kitchen Remodeling",
     description:
-      "We transform kitchens into functional, beautiful spaces that enhance the heart of your home through expert craftsmanship.",
-    icon: "kitchen",
-    heroImage: "https://picsum.photos/1400/700?random=10",
+      "We transform kitchens into functional, beautiful spaces that enhance the heart of your home through expert craftsmanship and thoughtful design.",
+    heroImage: "https://picsum.photos/1400/700?random=107",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-5",
+    slug: "bathroom-remodeling",
+    title: "Bathroom Remodeling",
+    description:
+      "Elevate your daily routine with a beautifully remodeled bathroom — from spa-like master baths to efficient guest bath updates.",
+    heroImage: "https://picsum.photos/1400/700?random=108",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-6",
+    slug: "interior-remodeling",
+    title: "Interior Remodeling",
+    description:
+      "Breathe new life into your home's interior with targeted remodeling that improves flow, comfort, and aesthetic appeal throughout.",
+    heroImage: "https://picsum.photos/1400/700?random=109",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-7",
+    slug: "bedroom-remodeling",
+    title: "Bedroom Remodeling",
+    description:
+      "Create a personal sanctuary with a bedroom remodel tailored to your style — from master suite expansions to cozy guest room upgrades.",
+    heroImage: "https://picsum.photos/1400/700?random=110",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-8",
+    slug: "exterior-home-remodeling",
+    title: "Exterior Home Remodeling",
+    description:
+      "Boost curb appeal and protect your investment with exterior remodeling services that refresh siding, rooflines, windows, and more.",
+    heroImage: "https://picsum.photos/1400/700?random=111",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-9",
+    slug: "lanai-design-construction",
+    title: "Lanai Design & Construction",
+    description:
+      "Extend your living space outdoors with a custom-designed lanai that blends seamlessly with your home's architecture and Florida's natural beauty.",
+    heroImage: "https://picsum.photos/1400/700?random=112",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-10",
+    slug: "living-room-remodeling",
+    title: "Living Room Remodeling",
+    description:
+      "Reimagine your living room as the ultimate gathering space — open-concept conversions, fireplace additions, built-ins, and premium finishes.",
+    heroImage: "https://picsum.photos/1400/700?random=113",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-11",
+    slug: "luxury-home-remodeling",
+    title: "Luxury Home Remodeling",
+    description:
+      "Elevate your home to a new level of refinement with luxury remodeling that incorporates the finest materials, finishes, and craftsmanship available.",
+    heroImage: "https://picsum.photos/1400/700?random=114",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-12",
+    slug: "structural-remodeling",
+    title: "Structural Remodeling",
+    description:
+      "Safely modify the structural bones of your home — from load-bearing wall removal and beam installation to floor plan transformations.",
+    heroImage: "https://picsum.photos/1400/700?random=115",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-13",
+    slug: "attic-conversions",
+    title: "Attic Conversions",
+    description:
+      "Convert unused attic space into a functional bedroom, home office, or bonus room — maximizing your home's square footage without expanding its footprint.",
+    heroImage: "https://picsum.photos/1400/700?random=116",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-14",
+    slug: "aging-in-place-remodeling",
+    title: "Aging in Place Remodeling",
+    description:
+      "Make your home safe, accessible, and comfortable for every stage of life with thoughtful modifications designed to support independent living.",
+    heroImage: "https://picsum.photos/1400/700?random=117",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "hr-15",
+    slug: "garage-conversions",
+    title: "Garage Conversions",
+    description:
+      "Transform your underutilized garage into a livable space — guest suite, home gym, studio, or ADU — fully permitted and professionally finished.",
+    heroImage: "https://picsum.photos/1400/700?random=118",
+    categorySlug: "home-renovation-remodeling",
+    whatIsIncluded: baseIncluded,
+  },
+];
+
+const homeAdditionsSubs: SubService[] = [
+  {
+    id: "ha-1",
+    slug: "room-additions",
+    title: "Room Additions",
+    description:
+      "Expand your living space with a professionally designed and built room addition that integrates seamlessly with your home's existing structure and style.",
+    heroImage: "https://picsum.photos/1400/700?random=119",
+    categorySlug: "home-additions",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "ha-2",
+    slug: "remodel-additions-renovations",
+    title: "Remodel Additions & Renovations",
+    description:
+      "Combine the best of both worlds — add new square footage while simultaneously renovating existing spaces for a cohesive, updated home.",
+    heroImage: "https://picsum.photos/1400/700?random=120",
+    categorySlug: "home-additions",
+    whatIsIncluded: baseIncluded,
+  },
+  {
+    id: "ha-3",
+    slug: "second-story-additions",
+    title: "Second-Story Additions",
+    description:
+      "Double your home's footprint by building up — a second-story addition is one of the most impactful ways to add space without sacrificing your yard.",
+    heroImage: "https://picsum.photos/1400/700?random=121",
+    categorySlug: "home-additions",
+    whatIsIncluded: baseIncluded,
+  },
+];
+
+// ─── Services ─────────────────────────────────────────────────────────────────
+
+export const mockServices: Service[] = [
+  {
+    id: "1",
+    slug: "personalized-design",
+    title: "Personalized Design & Construction Process",
+    description:
+      "A tailored design-to-build experience that places your vision at the center of every decision — delivered by architects and builders working as one unified team.",
+    icon: "drafting",
+    heroImage: "https://picsum.photos/1400/700?random=70",
     featured: true,
     whatIsIncluded: [
+      {
+        title: "Vision & Discovery Session",
+        description:
+          "A deep-dive consultation to capture your lifestyle needs, aesthetic preferences, and project goals before any design begins.",
+      },
       {
         title: "Concept Development",
         description:
-          "We begin with an in-depth understanding of your vision, needs, and site context to create design concepts that are both innovative and functional.",
+          "Our designers develop initial concepts that interpret your vision through floor plans, elevations, and 3D visualizations.",
       },
       {
-        title: "Site Analysis & Planning",
+        title: "Design Refinement",
         description:
-          "A successful project starts with thorough research. We assess environmental factors, zoning laws, and spatial constraints to create a design that integrates seamlessly.",
+          "We iterate collaboratively until every detail — from spatial flow to material palettes — meets your approval.",
       },
       {
-        title: "Space Planning & Layout",
+        title: "Construction Documentation",
         description:
-          "Every space should serve a purpose. We carefully plan layouts that enhance comfort, movement, and functionality.",
+          "Comprehensive technical drawings and specifications that communicate the design to our construction teams with precision.",
       },
       {
-        title: "3D Visualization & Renderings",
+        title: "Build Phase Management",
         description:
-          "Seeing is believing. Our high-quality 3D renderings and virtual walkthroughs allow you to visualize the final design before construction begins.",
-      },
-      {
-        title: "Material Selection & Sustainability Integration",
-        description:
-          "Choosing the right materials is crucial for durability, aesthetics, and environmental responsibility.",
-      },
-      {
-        title: "Technical Drawings & Documentation",
-        description:
-          "Detailed architectural drawings serve as the foundation for successful execution.",
-      },
-      {
-        title: "Regulatory Approvals & Compliance",
-        description:
-          "Navigating local building codes and obtaining permits can be complex. Our team handles regulatory approvals.",
-      },
-      {
-        title: "Collaboration with Engineers & Specialists",
-        description:
-          "We work closely with structural, mechanical, and electrical engineers to ensure every aspect of the design is seamlessly integrated.",
+          "Our construction team executes the approved design with continuous oversight to ensure fidelity to every design decision.",
       },
     ],
+    subServices: personalizedDesignSubs,
   },
   {
     id: "2",
-    slug: "residential-construction",
-    title: "Residential Construction",
+    slug: "new-construction",
+    title: "New Construction",
     description:
-      "From foundation to finish, we build homes that stand the test of time with meticulous attention to detail.",
+      "From raw land to a finished home, our new construction services encompass every phase of the build process with experienced teams, transparent communication, and exacting quality standards.",
     icon: "home",
-    heroImage: "https://picsum.photos/1400/700?random=11",
+    heroImage: "https://picsum.photos/1400/700?random=71",
     featured: true,
     whatIsIncluded: [
       {
-        title: "Custom Home Design",
+        title: "Site Evaluation & Preparation",
         description:
-          "We create bespoke residential designs tailored to your lifestyle and aesthetic preferences.",
+          "Thorough site analysis, clearing, grading, and utility coordination to establish a solid foundation for your build.",
       },
       {
-        title: "Foundation & Structural Work",
+        title: "Foundation & Structural Systems",
         description:
-          "Our structural teams ensure every home is built on a solid, code-compliant foundation.",
+          "Engineered foundations and structural framing systems built to code and designed to last generations.",
+      },
+      {
+        title: "MEP Rough-In",
+        description:
+          "Mechanical, electrical, and plumbing systems installed by licensed tradespeople in strict compliance with building codes.",
+      },
+      {
+        title: "Insulation & Weatherproofing",
+        description:
+          "High-performance insulation and weatherproofing systems that ensure energy efficiency and long-term comfort.",
       },
       {
         title: "Interior & Exterior Finishing",
         description:
-          "Premium finishes inside and out that reflect your unique personality and stand the test of time.",
-      },
-      {
-        title: "Project Management",
-        description:
-          "End-to-end coordination of all trades, timelines, and budgets to deliver your home on time and within scope.",
+          "Premium finishes applied with care — from drywall and flooring to roofing and siding — delivering a polished final product.",
       },
     ],
+    subServices: newConstructionSubs,
   },
   {
     id: "3",
-    slug: "home-construction",
-    title: "Home Construction",
+    slug: "home-renovation-remodeling",
+    title: "Home Renovation & Remodeling",
     description:
-      "Complete custom home builds from architectural planning through final walkthrough with experienced teams.",
-    icon: "building",
-    heroImage: "https://picsum.photos/1400/700?random=12",
+      "Whether you're refreshing a single room or transforming your entire home, our renovation experts deliver results that are beautiful, functional, and built to last.",
+    icon: "hammer",
+    heroImage: "https://picsum.photos/1400/700?random=72",
+    featured: true,
+    whatIsIncluded: [
+      {
+        title: "Existing Conditions Assessment",
+        description:
+          "A thorough evaluation of your current space to identify structural conditions, code compliance issues, and opportunities for improvement.",
+      },
+      {
+        title: "Scope & Budget Development",
+        description:
+          "Clear project scoping with detailed cost estimates that align your renovation goals with your investment.",
+      },
+      {
+        title: "Design & Material Selection",
+        description:
+          "Curated design guidance and material selection support to achieve a cohesive aesthetic throughout your renovation.",
+      },
+      {
+        title: "Demolition & Structural Modifications",
+        description:
+          "Safe, controlled demolition and structural work performed by experienced crews with minimal disruption to your daily life.",
+      },
+      {
+        title: "Trade Coordination",
+        description:
+          "Seamless scheduling and coordination of all subcontractors — plumbing, electrical, HVAC, tile, carpentry — for an efficient build.",
+      },
+    ],
+    subServices: renovationSubs,
+  },
+  {
+    id: "4",
+    slug: "home-additions",
+    title: "Home Additions",
+    description:
+      "Expand your home's footprint without losing what you love about it. Our addition specialists integrate new space seamlessly with your existing structure, style, and systems.",
+    icon: "expand",
+    heroImage: "https://picsum.photos/1400/700?random=73",
     featured: false,
     whatIsIncluded: [
       {
-        title: "Architectural Design",
+        title: "Feasibility & Design Consultation",
         description:
-          "Collaborative design process that brings your dream home to life through thoughtful planning.",
+          "We assess your property's potential, zoning constraints, and structural capacity before developing an addition design that makes sense.",
       },
       {
         title: "Permit Acquisition",
         description:
-          "We handle all local permitting and regulatory requirements so you don't have to.",
+          "Our team handles all permitting and regulatory submissions to ensure your addition is fully legal and code-compliant.",
       },
       {
-        title: "Construction Execution",
+        title: "Foundation & Structural Extension",
         description:
-          "Expert execution by our in-house teams and trusted subcontractors.",
+          "Expert extension of your existing foundation and structural systems to safely support the new addition.",
       },
       {
-        title: "Quality Assurance",
+        title: "Systems Integration",
         description:
-          "Rigorous quality checks at every stage of construction.",
+          "Seamless tie-in of the addition's HVAC, plumbing, and electrical systems with your existing home infrastructure.",
+      },
+      {
+        title: "Interior & Exterior Matching",
+        description:
+          "Careful matching of finishes, rooflines, siding, and interior materials so the addition looks like it was always part of the original design.",
       },
     ],
-  },
-  {
-    id: "4",
-    slug: "remodeling",
-    title: "Remodeling",
-    description:
-      "Breathing new life into existing structures through thoughtful renovation and careful execution.",
-    icon: "hammer",
-    heroImage: "https://picsum.photos/1400/700?random=13",
-    featured: false,
-    whatIsIncluded: [
-      {
-        title: "Assessment & Planning",
-        description:
-          "Comprehensive evaluation of your existing space to identify opportunities for improvement.",
-      },
-      {
-        title: "Structural Modifications",
-        description:
-          "Safe removal or modification of walls, floors, and structural elements.",
-      },
-      {
-        title: "Finishing & Restoration",
-        description:
-          "Premium finishes that breathe new life into your space.",
-      },
-      {
-        title: "Code Compliance",
-        description:
-          "All renovations meet or exceed current building codes and safety standards.",
-      },
-    ],
+    subServices: homeAdditionsSubs,
   },
   {
     id: "5",
-    slug: "steel-structure-erection",
-    title: "Steel Structure Erection",
+    slug: "storm-damage-repair",
+    title: "Storm Damage Repair",
     description:
-      "Industrial-grade steel frameworks and structures built to precise specifications for commercial projects.",
-    icon: "grid",
-    heroImage: "https://picsum.photos/1400/700?random=14",
+      "Rapid, expert response to storm, wind, and water damage — restoring your home's safety, integrity, and appearance with professional precision.",
+    icon: "shield",
+    heroImage: "https://picsum.photos/1400/700?random=74",
     featured: false,
     whatIsIncluded: [
       {
-        title: "Structural Engineering",
+        title: "Emergency Damage Assessment",
         description:
-          "Detailed structural analysis and engineering for safe, code-compliant steel construction.",
+          "A thorough evaluation of storm damage to document all affected areas and prioritize emergency stabilization measures.",
       },
       {
-        title: "Fabrication Coordination",
+        title: "Insurance Coordination",
         description:
-          "Close coordination with fabricators to ensure precision components.",
+          "We work directly with your insurance provider to document damage, support your claim, and ensure fair coverage for all repairs.",
       },
       {
-        title: "Erection & Assembly",
+        title: "Emergency Weatherproofing",
         description:
-          "Skilled crews safely erect steel frameworks to exact specifications.",
+          "Immediate tarping, boarding, and temporary repairs to protect your property from further damage while permanent repairs are planned.",
       },
       {
-        title: "Welding & Connection",
+        title: "Structural Repair & Restoration",
         description:
-          "Certified welders ensure all connections meet structural integrity requirements.",
+          "Professional repair of all structural damage — roofing, framing, windows, siding, and foundation — to pre-storm condition or better.",
+      },
+      {
+        title: "Interior Remediation",
+        description:
+          "Complete remediation of water intrusion damage including drywall, insulation, flooring, and mold prevention treatment.",
+      },
+      {
+        title: "Final Inspection & Certification",
+        description:
+          "A comprehensive post-repair inspection to certify that all work meets code and your property is fully restored.",
       },
     ],
   },
   {
     id: "6",
-    slug: "project-management",
-    title: "Project Management",
+    slug: "grading-excavation",
+    title: "Grading & Excavation",
     description:
-      "End-to-end project oversight ensuring every phase is delivered on time, on budget, and to spec.",
-    icon: "clipboard",
-    heroImage: "https://picsum.photos/1400/700?random=15",
+      "Professional land grading and excavation services that prepare your site for construction, improve drainage, and establish the solid foundation every project depends on.",
+    icon: "terrain",
+    heroImage: "https://picsum.photos/1400/700?random=75",
     featured: false,
     whatIsIncluded: [
       {
-        title: "Scope Definition",
+        title: "Site Survey & Analysis",
         description:
-          "Clear project scope, milestones, and deliverables established upfront.",
+          "Detailed topographic surveys and soil analysis to inform an accurate grading and excavation plan for your site.",
       },
       {
-        title: "Budget Management",
+        title: "Land Clearing",
         description:
-          "Tight control over project finances with transparent reporting.",
+          "Efficient removal of vegetation, debris, and obstacles to prepare the site for grading and construction activities.",
       },
       {
-        title: "Schedule Coordination",
+        title: "Cut & Fill Grading",
         description:
-          "Master scheduling with all trades and stakeholders aligned.",
+          "Precision earthwork to achieve the desired site elevations, slopes, and drainage patterns specified in your site plan.",
       },
       {
-        title: "Risk Mitigation",
+        title: "Foundation Excavation",
         description:
-          "Proactive identification and management of project risks.",
+          "Accurate excavation to the depths and dimensions required for footings, basements, and utility trenches.",
+      },
+      {
+        title: "Drainage & Erosion Control",
+        description:
+          "Installation of drainage systems, retention features, and erosion control measures to protect the site and surrounding properties.",
+      },
+      {
+        title: "Compaction & Site Certification",
+        description:
+          "Engineered compaction of all filled areas with compaction testing and certification to ensure structural readiness.",
       },
     ],
   },

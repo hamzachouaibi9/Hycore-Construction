@@ -15,7 +15,8 @@ interface AccordionProps {
 }
 
 export default function Accordion({ items, numbered = false }: AccordionProps) {
-  const [openId, setOpenId] = useState<string | null>(items[0]?.id ?? null);
+  // All questions start closed
+  const [openId, setOpenId] = useState<string | null>(null);
 
   return (
     <div className="divide-y divide-gray-200">
@@ -42,22 +43,37 @@ export default function Accordion({ items, numbered = false }: AccordionProps) {
                   {numbered ? item.question.toUpperCase() : item.question}
                 </span>
               </div>
-              <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                {isOpen ? (
-                  <Minus size={16} className="text-primary" />
-                ) : (
+
+              {/* Smooth plus ↔ minus crossfade with rotation */}
+              <div className="relative flex-shrink-0 w-6 h-6">
+                <span
+                  className={`absolute inset-0 flex items-center justify-center transition-[opacity,transform] duration-300 ${
+                    isOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
+                  }`}
+                >
                   <Plus size={16} className="text-gray-400" />
-                )}
+                </span>
+                <span
+                  className={`absolute inset-0 flex items-center justify-center transition-[opacity,transform] duration-300 ${
+                    isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
+                  }`}
+                >
+                  <Minus size={16} className="text-primary" />
+                </span>
               </div>
             </button>
+
+            {/* Smooth height animation via grid-rows trick */}
             <div
-              className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
-                isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              className={`grid transition-[grid-template-rows] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
-              <p className="pb-5 text-sm leading-[1.8] text-gray-500">
-                {item.answer}
-              </p>
+              <div className="overflow-hidden">
+                <p className="pb-5 pt-1 text-sm leading-[1.8] text-gray-500">
+                  {item.answer}
+                </p>
+              </div>
             </div>
           </div>
         );

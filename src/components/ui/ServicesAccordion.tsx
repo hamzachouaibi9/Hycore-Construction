@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, Grid2x2, Hammer, Home, ClipboardList, ChefHat, Building } from "lucide-react";
 import Link from "next/link";
 import type { Service } from "@/lib/types";
@@ -38,30 +39,54 @@ export default function ServicesAccordion({ services }: ServicesAccordionProps) 
               <span className="flex-1 text-sm font-semibold text-brand-black">
                 {service.title}
               </span>
-              <ArrowDown
-                size={16}
-                className={`flex-shrink-0 text-gray-400 transition-[transform] duration-200 ${
-                  isOpen ? "rotate-180" : ""
-                }`}
-              />
+              {/* Spring-animated rotating arrow */}
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                className="flex-shrink-0 text-gray-400"
+              >
+                <ArrowDown size={16} />
+              </motion.div>
             </button>
-            <div
-              className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
-                isOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="pb-5 pl-14">
-                <p className="text-sm leading-[1.8] text-gray-500 mb-3">
-                  {service.description}
-                </p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="text-xs font-bold text-primary hover:text-primary-dark transition-[color] duration-200 focus-visible:outline-none"
+
+            {/* Animated content panel */}
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ overflow: "hidden" }}
                 >
-                  Learn More →
-                </Link>
-              </div>
-            </div>
+                  <div className="pb-5 pl-14">
+                    <motion.p
+                      initial={{ y: 12, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 8, opacity: 0 }}
+                      transition={{ duration: 0.3, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+                      className="text-sm leading-[1.8] text-gray-500 mb-3"
+                    >
+                      {service.description}
+                    </motion.p>
+                    <motion.div
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 8, opacity: 0 }}
+                      transition={{ duration: 0.3, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="text-xs font-bold text-primary hover:text-primary-dark transition-[color] duration-200 focus-visible:outline-none"
+                      >
+                        Learn More →
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         );
       })}

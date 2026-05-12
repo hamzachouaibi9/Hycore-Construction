@@ -1,3 +1,13 @@
+export interface SubService {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  heroImage: string;
+  categorySlug: string;
+  whatIsIncluded: { title: string; description: string }[];
+}
+
 export interface Service {
   id: string;
   slug: string;
@@ -7,6 +17,7 @@ export interface Service {
   heroImage: string;
   whatIsIncluded: { title: string; description: string }[];
   featured: boolean;
+  subServices?: SubService[];
 }
 
 export interface Project {

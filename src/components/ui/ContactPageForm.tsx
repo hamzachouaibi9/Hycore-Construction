@@ -6,19 +6,20 @@ import emailjs from "@emailjs/browser";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 
 const INPUT =
-  "w-full border border-gray-200 rounded px-3.5 py-3 text-sm text-brand-black placeholder:text-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-[box-shadow] duration-200";
+  "w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200";
 
-const LABEL = "block text-xs font-medium text-gray-300 mb-1.5";
+const LABEL = "block text-xs font-medium text-white/50 mb-2";
 
-export default function ContactForm() {
+export default function ContactPageForm() {
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
     website: "", // honeypot — must stay empty
   });
+  const [agreed, setAgreed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -38,6 +39,11 @@ export default function ContactForm() {
     // Honeypot — silently drop bot submissions
     if (form.website) return;
 
+    if (!agreed) {
+      setError("Please agree to the terms and conditions.");
+      return;
+    }
+
     if (!recaptchaToken) {
       setError("Please complete the reCAPTCHA verification.");
       return;
@@ -47,18 +53,19 @@ export default function ContactForm() {
     try {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_CONTACT_TEMPLATE_ID!,
         {
-          first_name: form.firstName,
-          last_name: form.lastName,
+          full_name: form.fullName,
           from_email: form.email,
           phone: form.phone,
+          subject: form.subject,
           message: form.message,
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
       setSubmitted(true);
-      setForm({ firstName: "", lastName: "", email: "", phone: "", message: "", website: "" });
+      setForm({ fullName: "", email: "", phone: "", subject: "", message: "", website: "" });
+      setAgreed(false);
       recaptchaRef.current?.reset();
       setRecaptchaToken(null);
     } catch {
@@ -70,20 +77,20 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+      <div className="flex flex-col items-start py-16">
+        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-5">
           <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-display text-xl font-bold text-white mb-2">Message Sent!</h3>
+        <h3 className="font-display text-2xl font-black text-white mb-2">Message Sent!</h3>
         <p className="text-sm text-white/50">We&apos;ll get back to you within 1 business day.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       {/* Honeypot — hidden from humans, bots fill it */}
       <input
         type="text"
@@ -98,34 +105,34 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="cf-firstName" className={LABEL}>First Name</label>
-          <input id="cf-firstName" name="firstName" type="text" value={form.firstName}
-            onChange={handleChange} placeholder="Jane" required className={INPUT} />
+          <label className={LABEL}>Full Name</label>
+          <input name="fullName" type="text" value={form.fullName}
+            onChange={handleChange} placeholder="Full Name" required className={INPUT} />
         </div>
         <div>
-          <label htmlFor="cf-lastName" className={LABEL}>Last Name</label>
-          <input id="cf-lastName" name="lastName" type="text" value={form.lastName}
-            onChange={handleChange} placeholder="Doe" required className={INPUT} />
+          <label className={LABEL}>Email Address</label>
+          <input name="email" type="email" value={form.email}
+            onChange={handleChange} placeholder="Email Address" required className={INPUT} />
         </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="cf-email" className={LABEL}>Email</label>
-          <input id="cf-email" name="email" type="email" value={form.email}
-            onChange={handleChange} placeholder="jane.doe@email.com" required className={INPUT} />
+          <label className={LABEL}>Phone Number</label>
+          <input name="phone" type="tel" value={form.phone}
+            onChange={handleChange} placeholder="Phone Number" className={INPUT} />
         </div>
         <div>
-          <label htmlFor="cf-phone" className={LABEL}>Phone Number</label>
-          <input id="cf-phone" name="phone" type="tel" value={form.phone}
-            onChange={handleChange} placeholder="(309) 555-5555" className={INPUT} />
+          <label className={LABEL}>Subject</label>
+          <input name="subject" type="text" value={form.subject}
+            onChange={handleChange} placeholder="Subject" required className={INPUT} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="cf-message" className={LABEL}>Message</label>
-        <textarea id="cf-message" name="message" value={form.message} onChange={handleChange}
-          placeholder="Type Your Message..." rows={5} required
+        <label className={LABEL}>Message</label>
+        <textarea name="message" value={form.message} onChange={handleChange}
+          placeholder="Write your message here..." rows={4} required
           className={`${INPUT} resize-none`} />
       </div>
 
@@ -141,13 +148,24 @@ export default function ContactForm() {
         <p className="text-red-400 text-xs">{error}</p>
       )}
 
-      <HoverGlowButton
-        type="submit"
-        disabled={loading}
-        className="w-full py-4 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-60 disabled:cursor-not-allowed"
-      >
-        {loading ? "Sending…" : "Submit"}
-      </HoverGlowButton>
+      <div className="flex items-center justify-between flex-wrap gap-4 pt-2">
+        <HoverGlowButton
+          type="submit"
+          disabled={loading}
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {loading ? "SENDING…" : "SUBMIT NOW"}
+        </HoverGlowButton>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            className="w-4 h-4 accent-primary"
+          />
+          <span className="text-xs text-white/40">I agree to the terms and conditions.</span>
+        </label>
+      </div>
     </form>
   );
 }

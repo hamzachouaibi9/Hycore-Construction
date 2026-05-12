@@ -24,8 +24,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${BASE_URL}/services/${s.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: 0.8,
   }));
+
+  const subServicePages: MetadataRoute.Sitemap = services.flatMap((s) =>
+    (s.subServices ?? []).map((sub) => ({
+      url: `${BASE_URL}/services/${s.slug}/${sub.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
 
   const projectPages: MetadataRoute.Sitemap = projects.map((p) => ({
     url: `${BASE_URL}/projects/${p.slug}`,
@@ -41,5 +50,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...projectPages, ...articlePages];
+  return [...staticPages, ...servicePages, ...subServicePages, ...projectPages, ...articlePages];
 }

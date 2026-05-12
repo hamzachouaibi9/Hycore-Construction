@@ -3,6 +3,7 @@ import Image from "next/image";
 import CTABanner from "@/components/sections/CTABanner";
 import QuoteBar from "@/components/sections/QuoteBar";
 import ProjectCard from "@/components/ui/ProjectCard";
+import { Reveal } from "@/components/ui/Reveal";
 import { getProjects } from "@/lib/payload";
 
 export const metadata: Metadata = {
@@ -19,16 +20,22 @@ export default async function ProjectsPage() {
       {/* ── Header ── */}
       <section className="bg-brand-black py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <p className="flex items-center justify-center gap-2 text-xs font-bold tracking-widest text-primary mb-4">
-            <span className="w-2 h-2 rounded-full bg-primary" />
-            Projects
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-brand-white tracking-tight mb-5">
-            OUR WORK
-          </h1>
-          <p className="text-sm text-white/50 max-w-sm mx-auto leading-[1.8]">
-            We create contemporary construction rooted in precision, proportion, &amp; clarity.
-          </p>
+          <Reveal onLoad delay={0.05}>
+            <p className="flex items-center justify-center gap-2 text-xs font-bold tracking-widest text-primary mb-4">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              Projects
+            </p>
+          </Reveal>
+          <Reveal onLoad delay={0.15}>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-brand-white tracking-tight mb-5">
+              OUR WORK
+            </h1>
+          </Reveal>
+          <Reveal onLoad delay={0.3}>
+            <p className="text-sm text-white/50 max-w-sm mx-auto leading-[1.8]">
+              We create contemporary construction rooted in precision, proportion, &amp; clarity.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -41,8 +48,10 @@ export default async function ProjectsPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} dark />
+              {projects.map((project, i) => (
+                <Reveal key={project.id} delay={i * 0.1}>
+                  <ProjectCard project={project} dark />
+                </Reveal>
               ))}
             </div>
           )}
