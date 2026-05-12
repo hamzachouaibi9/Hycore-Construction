@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import CTABanner from "@/components/sections/CTABanner";
+import QuoteBar from "@/components/sections/QuoteBar";
+import ProjectCard from "@/components/ui/ProjectCard";
+import { getProjects } from "@/lib/payload";
+
+export const metadata: Metadata = {
+  title: "Our Work | Projects",
+  description:
+    "We create contemporary construction rooted in precision, proportion, and clarity. Browse our portfolio of commercial and residential projects.",
+};
+
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
+  return (
+    <>
+      {/* ── Header ── */}
+      <section className="bg-brand-black py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+          <p className="flex items-center justify-center gap-2 text-xs font-bold tracking-widest text-primary mb-4">
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            Projects
+          </p>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-black text-brand-white tracking-tight mb-5">
+            OUR WORK
+          </h1>
+          <p className="text-sm text-white/50 max-w-sm mx-auto leading-[1.8]">
+            We create contemporary construction rooted in precision, proportion, &amp; clarity.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Projects Grid ── */}
+      <section className="bg-brand-black py-10 pb-20 md:pb-28">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          {projects.length === 0 ? (
+            <div className="text-center py-24">
+              <p className="text-white/40 text-sm">No projects found.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} dark />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      <CTABanner />
+      <QuoteBar />
+    </>
+  );
+}
