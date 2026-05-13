@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -76,6 +77,20 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${dmSans.variable} h-full`}
     >
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D7C5407TB1"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D7C5407TB1');
+          `}
+        </Script>
+      </head>
       <body className="min-h-[100dvh] flex flex-col bg-brand-white antialiased">
         <SmoothScrollProvider>
           <Navbar />
