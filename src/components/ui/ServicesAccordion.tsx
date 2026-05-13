@@ -78,7 +78,7 @@ export default function ServicesAccordion({ services }: ServicesAccordionProps) 
                     >
                       <Link
                         href={`/services/${service.slug}`}
-                        className="text-xs font-bold text-primary hover:text-primary-dark transition-[color] duration-200 focus-visible:outline-none"
+                        className="text-sm font-bold text-primary hover:text-primary-dark transition-[color] duration-200 focus-visible:outline-none"
                       >
                         Learn More →
                       </Link>

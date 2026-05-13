@@ -97,7 +97,7 @@ export default async function ArticleDetailPage({ params }: Props) {
       <style>{`
         .article-h2 {
           font-family: var(--font-outfit, system-ui, sans-serif);
-          font-size: 0.9rem;
+          font-size: 1.1rem;
           font-weight: 900;
           color: #0b0b0b;
           text-transform: uppercase;
@@ -108,7 +108,7 @@ export default async function ArticleDetailPage({ params }: Props) {
         }
         .article-h3 {
           font-family: var(--font-outfit, system-ui, sans-serif);
-          font-size: 1rem;
+          font-size: 1.2rem;
           font-weight: 700;
           color: #0b0b0b;
           margin-top: 2rem;
@@ -116,7 +116,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           line-height: 1.4;
         }
         .article-p {
-          font-size: 0.875rem;
+          font-size: 1rem;
           line-height: 1.85;
           color: #4b5563;
           margin-bottom: 1.1rem;
@@ -127,7 +127,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           list-style: disc;
         }
         .article-ul li {
-          font-size: 0.875rem;
+          font-size: 1rem;
           line-height: 1.75;
           color: #4b5563;
           margin-bottom: 0.4rem;
@@ -170,7 +170,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           {/* Back link */}
           <Link
             href="/articles"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-brand-black transition-colors duration-200 mb-10 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-gray-400 hover:text-brand-black transition-colors duration-200 mb-10 focus-visible:outline-none"
           >
             <ArrowLeft size={13} />
             Back to Articles
@@ -190,10 +190,10 @@ export default async function ArticleDetailPage({ params }: Props) {
               <p className="text-sm font-bold text-brand-black leading-snug">
                 {article.author.name}
               </p>
-              <p className="text-xs text-gray-400 mt-1 leading-snug">
+              <p className="text-sm text-gray-400 mt-1 leading-snug">
                 {article.author.role}
               </p>
-              <p className="text-xs text-gray-300 mt-3">{mins} min read</p>
+              <p className="text-sm text-gray-300 mt-3">{mins} min read</p>
             </div>
 
             {/* Content */}

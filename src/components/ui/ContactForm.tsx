@@ -8,7 +8,7 @@ import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 const INPUT =
   "w-full border border-gray-200 rounded px-3.5 py-3 text-sm text-brand-black placeholder:text-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-[box-shadow] duration-200";
 
-const LABEL = "block text-xs font-medium text-gray-300 mb-1.5";
+const LABEL = "block text-sm font-medium text-gray-300 mb-1.5";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -138,7 +138,7 @@ export default function ContactForm() {
       />
 
       {error && (
-        <p className="text-red-400 text-xs">{error}</p>
+        <p className="text-red-400 text-sm">{error}</p>
       )}
 
       <HoverGlowButton

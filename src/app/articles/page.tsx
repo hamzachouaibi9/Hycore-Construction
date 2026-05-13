@@ -61,13 +61,13 @@ export default async function ArticlesPage() {
                   className="absolute bottom-4 right-4 p-6 md:p-8 max-w-sm md:max-w-md rounded-xl"
                   style={{ backdropFilter: "blur(14px)", background: "rgba(8,8,8,0.65)" }}
                 >
-                  <span className="inline-block text-[10px] font-bold tracking-widest bg-white/10 text-white px-2.5 py-1 rounded mb-3">
+                  <span className="inline-block text-xs font-bold tracking-widest bg-white/10 text-white px-2.5 py-1 rounded mb-3">
                     Featured
                   </span>
                   <h2 className="font-display text-lg md:text-2xl font-bold text-brand-white leading-snug mb-2">
                     {featured.title}
                   </h2>
-                  <div className="flex items-center gap-3 text-[10px] text-white/50">
+                  <div className="flex items-center gap-3 text-xs text-white/50">
                     <span className="font-medium">{featured.category}</span>
                     <span>|</span>
                     <span>{featured.publishedDate}</span>

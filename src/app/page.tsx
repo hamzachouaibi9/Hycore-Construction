@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckSquare, Star, ArrowRight, ChevronRight } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
-import QuoteBar from "@/components/sections/QuoteBar";
 import ServicesAccordion from "@/components/ui/ServicesAccordion";
 import ArticleCard from "@/components/ui/ArticleCard";
 import ProjectCarousel from "@/components/ui/ProjectCarousel";
@@ -97,13 +96,13 @@ export default async function HomePage() {
                     <Star key={i} size={12} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <span className="text-xs text-white/60">500+ Projects Delivered</span>
+                <span className="text-sm text-white/60">500+ Projects Delivered</span>
               </div>
             </Reveal>
             <Reveal onLoad delay={0.4}>
               <HoverGlowButton
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-base font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Let&apos;s Build
               </HoverGlowButton>
@@ -156,7 +155,7 @@ export default async function HomePage() {
               </p>
               <HoverGlowButton
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Learn More
               </HoverGlowButton>
@@ -188,10 +187,10 @@ export default async function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <h3 className="font-display text-sm font-bold text-brand-black mb-2">
+                <h3 className="font-display text-base font-bold text-brand-black mb-2">
                   {services[0]?.title.toUpperCase()}
                 </h3>
-                <p className="text-xs leading-[1.8] text-gray-500 line-clamp-3">
+                <p className="text-sm leading-[1.8] text-gray-500 line-clamp-3">
                   {services[0]?.description}
                 </p>
               </Link>
@@ -228,10 +227,10 @@ export default async function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                 </div>
-                <h3 className="font-display text-sm font-bold text-brand-black mb-2">
+                <h3 className="font-display text-base font-bold text-brand-black mb-2">
                   {services[4]?.title.toUpperCase() ?? "STEEL STRUCTURE ERECTION"}
                 </h3>
-                <p className="text-xs leading-[1.8] text-gray-500 line-clamp-3">
+                <p className="text-sm leading-[1.8] text-gray-500 line-clamp-3">
                   {services[4]?.description ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
                 </p>
               </Link>
@@ -248,10 +247,10 @@ export default async function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                   </svg>
                 </div>
-                <h3 className="font-display text-sm font-bold text-brand-black mb-2">
+                <h3 className="font-display text-base font-bold text-brand-black mb-2">
                   {services[1]?.title.toUpperCase()}
                 </h3>
-                <p className="text-xs leading-[1.8] text-gray-500 line-clamp-3">
+                <p className="text-sm leading-[1.8] text-gray-500 line-clamp-3">
                   {services[1]?.description}
                 </p>
               </Link>
@@ -271,7 +270,7 @@ export default async function HomePage() {
           <Reveal delay={0.1} className="text-center mt-12">
             <HoverGlowButton
               href="/services"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               Build With Us
             </HoverGlowButton>
@@ -320,7 +319,7 @@ export default async function HomePage() {
               </p>
               <HoverGlowButton
                 href="/projects"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Explore All <ArrowRight size={14} />
               </HoverGlowButton>
@@ -380,7 +379,7 @@ export default async function HomePage() {
             <Reveal delay={0.1} className="text-center mt-10">
               <Link
                 href="/articles"
-                className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 focus-visible:outline-none"
+                className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 focus-visible:outline-none"
               >
                 View all articles <ChevronRight size={14} />
               </Link>
@@ -390,7 +389,6 @@ export default async function HomePage() {
       )}
 
       <CTABanner />
-      <QuoteBar />
     </>
   );
 }

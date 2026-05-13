@@ -65,7 +65,7 @@ export default async function ContactPage() {
               className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
             >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                <span className="text-sm font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
                   Address
                 </span>
                 <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
@@ -83,7 +83,7 @@ export default async function ContactPage() {
               className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
             >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                <span className="text-sm font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
                   Reach Us
                 </span>
                 <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
@@ -104,7 +104,7 @@ export default async function ContactPage() {
               className="group bg-white border border-primary rounded p-8 hover:bg-primary transition-[background-color] duration-300 cursor-default"
             >
               <div className="flex items-center justify-between mb-5">
-                <span className="text-xs font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
+                <span className="text-sm font-bold tracking-widest text-gray-500 group-hover:text-white/80 uppercase transition-[color] duration-300">
                   Hours
                 </span>
                 <div className="w-8 h-8 border border-primary group-hover:border-white/30 rounded flex items-center justify-center transition-[border-color] duration-300">
@@ -112,13 +112,13 @@ export default async function ContactPage() {
                 </div>
               </div>
               <div className="space-y-1.5">
-                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                <p className="text-sm font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
                   WEEK DAYS : 11:00–8:00pm
                 </p>
-                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                <p className="text-sm font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
                   SATURDAY : 11:00–4:00pm
                 </p>
-                <p className="text-xs font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
+                <p className="text-sm font-medium text-brand-black group-hover:text-white transition-[color] duration-300">
                   SUNDAY : 11:00–2:00pm
                 </p>
               </div>

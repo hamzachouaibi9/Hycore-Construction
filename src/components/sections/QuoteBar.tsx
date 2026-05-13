@@ -56,7 +56,7 @@ export default function QuoteBar() {
               </div>
               <HoverGlowButton
                 type="submit"
-                className="px-6 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded-r hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary whitespace-nowrap"
+                className="px-6 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded-r hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary whitespace-nowrap"
               >
                 {submitted ? "Sent!" : "Contact Us"}
               </HoverGlowButton>

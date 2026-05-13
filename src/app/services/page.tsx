@@ -63,7 +63,7 @@ export default async function ServicesPage() {
               <Reveal onLoad delay={0.4}>
                 <HoverGlowButton
                   href="/contact"
-                  className="mt-8 inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="mt-8 inline-flex items-center px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   LET&apos;S BUILD
                 </HoverGlowButton>
@@ -113,13 +113,13 @@ export default async function ServicesPage() {
                   <div className="w-9 h-9 border border-gray-200 rounded flex items-center justify-center text-gray-500 group-hover:border-white/30 group-hover:text-white transition-[border-color,color] duration-300 ease-out">
                     {serviceIcons[i % serviceIcons.length]}
                   </div>
-                  <h3 className="font-display text-xs font-bold text-brand-black tracking-wide group-hover:text-white transition-[color] duration-300 ease-out">
+                  <h3 className="font-display text-sm font-bold text-brand-black tracking-wide group-hover:text-white transition-[color] duration-300 ease-out">
                     {service.title}
                   </h3>
-                  <p className="text-xs leading-[1.8] text-gray-500 line-clamp-4 group-hover:text-white/80 transition-[color] duration-300 ease-out">
+                  <p className="text-sm leading-[1.8] text-gray-500 line-clamp-4 group-hover:text-white/80 transition-[color] duration-300 ease-out">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-primary mt-auto group-hover:text-white transition-[color] duration-300 ease-out">
+                  <div className="flex items-center gap-1.5 text-sm font-bold text-primary mt-auto group-hover:text-white transition-[color] duration-300 ease-out">
                     Learn More <ArrowRight size={12} />
                   </div>
                 </Link>
@@ -149,13 +149,13 @@ export default async function ServicesPage() {
                   <div className="w-10 h-10 border border-white/20 rounded flex items-center justify-center mb-6 text-white/50 group-hover:border-white/40 group-hover:text-white transition-[border-color,color] duration-300 ease-out">
                     {serviceIcons[i % serviceIcons.length]}
                   </div>
-                  <h3 className="font-display text-sm font-bold mb-2 text-brand-white group-hover:text-white transition-[color] duration-300 ease-out">
+                  <h3 className="font-display text-base font-bold mb-2 text-brand-white group-hover:text-white transition-[color] duration-300 ease-out">
                     {service.title}
                   </h3>
-                  <p className="text-xs leading-[1.8] mb-6 text-white/40 line-clamp-3 group-hover:text-white/80 transition-[color] duration-300 ease-out">
+                  <p className="text-sm leading-[1.8] mb-6 text-white/40 line-clamp-3 group-hover:text-white/80 transition-[color] duration-300 ease-out">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-white/50 group-hover:text-white transition-[color] duration-300 ease-out">
+                  <div className="flex items-center gap-1.5 text-sm font-bold text-white/50 group-hover:text-white transition-[color] duration-300 ease-out">
                     See What&apos;s Included
                     <ArrowRight size={12} />
                   </div>

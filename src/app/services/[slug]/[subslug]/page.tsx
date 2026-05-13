@@ -89,7 +89,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
           <Reveal onLoad delay={0.05}>
             <Link
               href={`/services/${service.slug}`}
-              className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 mb-6 focus-visible:outline-none"
+              className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 mb-6 focus-visible:outline-none"
             >
               <ArrowLeft size={14} />
               Back to {service.title}
@@ -110,7 +110,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
             <div className="mt-8">
               <HoverGlowButton
                 href="/contact"
-                className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 GET A FREE QUOTE
               </HoverGlowButton>
@@ -180,7 +180,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
                   </span>
                   <div>
                     <p className="text-sm font-bold text-brand-black mb-1">{item.title}</p>
-                    <p className="text-xs leading-[1.8] text-gray-500">{item.description}</p>
+                    <p className="text-sm leading-[1.8] text-gray-500">{item.description}</p>
                   </div>
                 </div>
               </Reveal>
@@ -214,7 +214,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
                   <h3 className="font-display text-sm font-bold text-brand-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs leading-[1.8] text-white/45">{item.description}</p>
+                  <p className="text-sm leading-[1.8] text-white/45">{item.description}</p>
                 </div>
               </Reveal>
             ))}
@@ -257,7 +257,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
               <div className="mt-8">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-primary hover:text-primary-dark transition-[color] duration-200"
+                  className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-primary hover:text-primary-dark transition-[color] duration-200"
                 >
                   VIEW ALL {service.title.toUpperCase()} SERVICES <ArrowRight size={12} />
                 </Link>

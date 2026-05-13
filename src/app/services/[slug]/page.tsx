@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <Reveal onLoad delay={0.05}>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 mb-6 focus-visible:outline-none"
+              className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-white/50 hover:text-white transition-[color] duration-200 mb-6 focus-visible:outline-none"
             >
               <ArrowLeft size={14} />
               Back to Services
@@ -115,13 +115,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <div className="w-9 h-9 border border-gray-200 rounded flex items-center justify-center text-gray-500 group-hover:border-white/30 group-hover:text-white transition-[border-color,color] duration-300 ease-out">
                       {subServiceIcons[i % subServiceIcons.length]}
                     </div>
-                    <h3 className="font-display text-xs font-bold text-brand-black tracking-wide group-hover:text-white transition-[color] duration-300 ease-out">
+                    <h3 className="font-display text-sm font-bold text-brand-black tracking-wide group-hover:text-white transition-[color] duration-300 ease-out">
                       {sub.title}
                     </h3>
-                    <p className="text-xs leading-[1.8] text-gray-500 line-clamp-3 group-hover:text-white/80 transition-[color] duration-300 ease-out">
+                    <p className="text-sm leading-[1.8] text-gray-500 line-clamp-3 group-hover:text-white/80 transition-[color] duration-300 ease-out">
                       {sub.description}
                     </p>
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-primary mt-auto group-hover:text-white transition-[color] duration-300 ease-out">
+                    <div className="flex items-center gap-1.5 text-sm font-bold text-primary mt-auto group-hover:text-white transition-[color] duration-300 ease-out">
                       Learn More <ArrowRight size={12} />
                     </div>
                   </Link>
@@ -188,7 +188,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <p className={`text-sm font-bold mb-1 ${hasSubServices ? "text-brand-white" : "text-brand-black"}`}>
                       {item.title}
                     </p>
-                    <p className={`text-xs leading-[1.8] ${hasSubServices ? "text-white/50" : "text-gray-500"}`}>
+                    <p className={`text-sm leading-[1.8] ${hasSubServices ? "text-white/50" : "text-gray-500"}`}>
                       {item.description}
                     </p>
                   </div>
@@ -201,7 +201,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <div className="mt-10 flex flex-wrap gap-4">
                 <HoverGlowButton
                   href="/contact"
-                  className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                  className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   GET A FREE QUOTE
                 </HoverGlowButton>

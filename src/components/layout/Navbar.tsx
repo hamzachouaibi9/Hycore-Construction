@@ -157,7 +157,7 @@ export default function Navbar() {
           <li className="flex items-center group/navitem">
             <Link
               href="/"
-              className={`px-3 text-xs font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
+              className={`px-3 text-sm font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
                 pathname === "/" ? "text-primary" : "text-white/70 hover:text-brand-white"
               }`}
             >
@@ -179,7 +179,7 @@ export default function Navbar() {
               />
             </div>
             <button
-              className={`flex items-center gap-1 px-3 text-xs font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
+              className={`flex items-center gap-1 px-3 text-sm font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
                 isServicesActive || servicesOpen ? "text-primary" : "text-white/70 hover:text-brand-white"
               }`}
               aria-expanded={servicesOpen}
@@ -207,7 +207,7 @@ export default function Navbar() {
                 </div>
                 <Link
                   href={link.href}
-                  className={`px-3 text-xs font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
+                  className={`px-3 text-sm font-medium tracking-widest transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
                     isActive ? "text-primary" : "text-white/70 hover:text-brand-white"
                   }`}
                 >
@@ -222,7 +222,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <HoverGlowButton
             href="/contact"
-            className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
+            className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
           >
             FREE QUOTE
           </HoverGlowButton>
@@ -256,7 +256,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-6 flex gap-0">
           {/* Left: category list */}
           <div className="flex-shrink-0 w-64 border-r border-white/10 pr-6">
-            <p className="text-[10px] font-bold tracking-widest text-white/30 mb-4 uppercase">
+            <p className="text-xs font-bold tracking-widest text-white/30 mb-4 uppercase">
               Service Categories
             </p>
             {serviceCategories.map((cat) => (
@@ -264,7 +264,7 @@ export default function Navbar() {
                 key={cat.slug}
                 href={`/services/${cat.slug}`}
                 onMouseEnter={() => setHoveredCategory(cat.slug)}
-                className={`group flex items-center justify-between w-full text-left px-3 py-2.5 rounded text-xs font-medium tracking-wide transition-[background-color,color] duration-150 ${
+                className={`group flex items-center justify-between w-full text-left px-3 py-2.5 rounded text-sm font-medium tracking-wide transition-[background-color,color] duration-150 ${
                   hoveredCategory === cat.slug
                     ? "bg-primary/15 text-primary"
                     : "text-white/60 hover:text-white hover:bg-white/5"
@@ -279,7 +279,7 @@ export default function Navbar() {
             <div className="mt-4 pt-4 border-t border-white/10">
               <Link
                 href="/services"
-                className="text-xs font-bold tracking-widest text-primary hover:text-white transition-[color] duration-150"
+                className="text-sm font-bold tracking-widest text-primary hover:text-white transition-[color] duration-150"
               >
                 VIEW ALL SERVICES →
               </Link>
@@ -290,7 +290,7 @@ export default function Navbar() {
           <div className="flex-1 pl-8">
             {activeCategory && activeCategory.subServices.length > 0 ? (
               <>
-                <p className="text-[10px] font-bold tracking-widest text-white/30 mb-4 uppercase">
+                <p className="text-xs font-bold tracking-widest text-white/30 mb-4 uppercase">
                   {activeCategory.label}
                 </p>
                 <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-1">
@@ -298,7 +298,7 @@ export default function Navbar() {
                     <Link
                       key={sub.slug}
                       href={`/services/${activeCategory.slug}/${sub.slug}`}
-                      className="flex items-center gap-2 py-2 text-xs text-white/55 hover:text-white transition-[color] duration-150 group"
+                      className="flex items-center gap-2 py-2 text-sm text-white/55 hover:text-white transition-[color] duration-150 group"
                     >
                       <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 opacity-60 group-hover:opacity-100 transition-opacity duration-150" />
                       {sub.label}
@@ -309,7 +309,7 @@ export default function Navbar() {
             ) : activeCategory ? (
               <div className="flex items-center h-full">
                 <div>
-                  <p className="text-[10px] font-bold tracking-widest text-white/30 mb-3 uppercase">
+                  <p className="text-xs font-bold tracking-widest text-white/30 mb-3 uppercase">
                     {activeCategory.label}
                   </p>
                   <p className="text-sm text-white/50 max-w-xs">
@@ -317,7 +317,7 @@ export default function Navbar() {
                   </p>
                   <Link
                     href={`/services/${activeCategory.slug}`}
-                    className="inline-flex items-center gap-1.5 mt-4 text-xs font-bold tracking-widest text-primary hover:text-white transition-[color] duration-150"
+                    className="inline-flex items-center gap-1.5 mt-4 text-sm font-bold tracking-widest text-primary hover:text-white transition-[color] duration-150"
                   >
                     LEARN MORE <ChevronRight size={12} />
                   </Link>
@@ -375,7 +375,7 @@ export default function Navbar() {
                     <div className="flex items-center justify-between">
                       <Link
                         href={`/services/${cat.slug}`}
-                        className="flex-1 py-2.5 text-xs font-bold tracking-wide text-white/60 hover:text-white transition-[color] duration-200"
+                        className="flex-1 py-2.5 text-sm font-bold tracking-wide text-white/60 hover:text-white transition-[color] duration-200"
                       >
                         {cat.label}
                       </Link>
@@ -404,7 +404,7 @@ export default function Navbar() {
                           <li key={sub.slug}>
                             <Link
                               href={`/services/${cat.slug}/${sub.slug}`}
-                              className="flex items-center gap-2 py-2 text-xs text-white/45 hover:text-white transition-[color] duration-200"
+                              className="flex items-center gap-2 py-2 text-sm text-white/45 hover:text-white transition-[color] duration-200"
                             >
                               <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0" />
                               {sub.label}

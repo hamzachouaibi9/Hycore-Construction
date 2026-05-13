@@ -46,10 +46,10 @@ export function StaggeredSteps({ steps }: { steps: Step[] }) {
           <div className="w-10 h-10 border border-gray-200 group-hover:border-white/30 rounded flex items-center justify-center text-gray-500 group-hover:text-white mb-5 transition-[border-color,color] duration-300">
             {step.icon}
           </div>
-          <h3 className="font-display text-xs font-bold text-brand-black group-hover:text-white mb-3 tracking-wide transition-[color] duration-300">
+          <h3 className="font-display text-sm font-bold text-brand-black group-hover:text-white mb-3 tracking-wide transition-[color] duration-300">
             {step.title}
           </h3>
-          <p className="text-xs leading-[1.8] text-gray-500 group-hover:text-white/75 transition-[color] duration-300">
+          <p className="text-sm leading-[1.8] text-gray-500 group-hover:text-white/75 transition-[color] duration-300">
             {step.description}
           </p>
         </motion.div>

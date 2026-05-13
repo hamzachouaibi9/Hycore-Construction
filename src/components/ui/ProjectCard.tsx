@@ -39,14 +39,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Content */}
         <div className="relative z-10 flex items-center justify-between px-4 py-3.5">
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase mb-1.5 text-brand-white transition-[color] duration-300 ease-out group-hover:text-brand-black">
+            <p className="text-sm font-bold tracking-widest uppercase mb-1.5 text-brand-white transition-[color] duration-300 ease-out group-hover:text-brand-black">
               {project.title}
             </p>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[10px] border rounded-full px-2.5 py-0.5 border-white/25 text-white/55 transition-[border-color,color] duration-300 ease-out group-hover:border-gray-300 group-hover:text-gray-500">
+              <span className="text-xs border rounded-full px-2.5 py-0.5 border-white/25 text-white/55 transition-[border-color,color] duration-300 ease-out group-hover:border-gray-300 group-hover:text-gray-500">
                 {project.category}
               </span>
-              <span className="text-[10px] border rounded-full px-2.5 py-0.5 border-white/25 text-white/55 transition-[border-color,color] duration-300 ease-out group-hover:border-gray-300 group-hover:text-gray-500">
+              <span className="text-xs border rounded-full px-2.5 py-0.5 border-white/25 text-white/55 transition-[border-color,color] duration-300 ease-out group-hover:border-gray-300 group-hover:text-gray-500">
                 {project.location}
               </span>
             </div>

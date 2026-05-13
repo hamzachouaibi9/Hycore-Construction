@@ -55,12 +55,12 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="absolute bottom-0 left-0 right-0 px-8 md:px-16 pb-14 md:pb-20">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-white/70 hover:text-white transition-[color] duration-200 mb-8 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-white/70 hover:text-white transition-[color] duration-200 mb-8 focus-visible:outline-none"
           >
             <ArrowLeft size={14} />
             Return to Projects
           </Link>
-          <div className="flex items-center gap-4 text-xs text-white/60 mb-3">
+          <div className="flex items-center gap-4 text-sm text-white/60 mb-3">
             <span>{project.deadline}</span>
             <span>|</span>
             <span>{project.category}</span>
@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Details */}
             <div>
-              <h2 className="font-display text-xs font-black text-brand-black tracking-widest uppercase mb-5">
+              <h2 className="font-display text-sm font-black text-brand-black tracking-widest uppercase mb-5">
                 Details
               </h2>
               <dl className="space-y-3">
@@ -88,7 +88,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                   ["Deadline", project.deadline],
                 ].map(([label, value]) => (
                   <div key={label}>
-                    <dt className="text-xs font-bold text-gray-400 uppercase tracking-wide">{label}</dt>
+                    <dt className="text-sm font-bold text-gray-400 uppercase tracking-wide">{label}</dt>
                     <dd className="text-sm text-brand-black mt-0.5">{value}</dd>
                   </div>
                 ))}
@@ -97,7 +97,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
             {/* Overview */}
             <div className="md:col-span-2">
-              <h2 className="font-display text-xs font-black text-brand-black tracking-widest uppercase mb-5">
+              <h2 className="font-display text-sm font-black text-brand-black tracking-widest uppercase mb-5">
                 Overview
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500">{project.description}</p>

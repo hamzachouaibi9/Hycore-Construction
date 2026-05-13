@@ -30,8 +30,8 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
           className="absolute bottom-3 left-3 right-3 rounded-xl px-4 py-4"
           style={{ backdropFilter: "blur(14px)", background: "rgba(8,8,8,0.6)" }}
         >
-          <p className="text-[10px] text-white/50 mb-2">{article.publishedDate}</p>
-          <h3 className="font-display text-sm font-bold text-brand-white tracking-tight leading-snug mb-4 line-clamp-2">
+          <p className="text-xs text-white/50 mb-2">{article.publishedDate}</p>
+          <h3 className="font-display text-base font-bold text-brand-white tracking-tight leading-snug mb-4 line-clamp-2">
             {article.title.toUpperCase()}
           </h3>
           <div className="flex items-center justify-between">
@@ -43,7 +43,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
                 height={22}
                 className="rounded-full object-cover"
               />
-              <span className="text-[10px] text-white/50 font-medium uppercase tracking-wide">
+              <span className="text-xs text-white/50 font-medium uppercase tracking-wide">
                 {article.author.name}
               </span>
             </div>
@@ -77,8 +77,8 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
           className="absolute bottom-0 left-0 right-0 p-4"
           style={{ backdropFilter: "blur(8px)", background: "rgba(10,10,10,0.45)" }}
         >
-          <p className="text-[10px] text-white/50 mb-1.5">{article.publishedDate}</p>
-          <p className="text-xs font-bold text-brand-white leading-snug line-clamp-3">
+          <p className="text-xs text-white/50 mb-1.5">{article.publishedDate}</p>
+          <p className="text-sm font-bold text-brand-white leading-snug line-clamp-3">
             {article.title.toUpperCase()}
           </p>
           <div className="flex items-center gap-2 mt-3">
@@ -89,7 +89,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
               height={20}
               className="rounded-full object-cover"
             />
-            <span className="text-[10px] text-white/50 font-medium">{article.author.name.toUpperCase()}</span>
+            <span className="text-xs text-white/50 font-medium">{article.author.name.toUpperCase()}</span>
           </div>
         </div>
       </Link>
@@ -114,10 +114,10 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
 
       {/* Content — turns blue on hover */}
       <div className="p-5 md:p-6 transition-[background-color] duration-300 ease-out group-hover:bg-primary">
-        <p className="text-xs text-gray-400 group-hover:text-white/70 mb-2 transition-[color] duration-300 ease-out">
+        <p className="text-sm text-gray-400 group-hover:text-white/70 mb-2 transition-[color] duration-300 ease-out">
           {article.publishedDate}
         </p>
-        <h3 className="font-display text-base font-black text-brand-black group-hover:text-white tracking-tight leading-snug mb-4 transition-[color] duration-300 ease-out">
+        <h3 className="font-display text-lg font-black text-brand-black group-hover:text-white tracking-tight leading-snug mb-4 transition-[color] duration-300 ease-out">
           {article.title.toUpperCase()}
         </h3>
         <div className="flex items-center justify-between">
@@ -129,7 +129,7 @@ export default function ArticleCard({ article, variant = "default" }: ArticleCar
               height={32}
               className="rounded-full object-cover"
             />
-            <span className="text-xs font-semibold text-gray-500 group-hover:text-white/80 uppercase tracking-wide transition-[color] duration-300 ease-out">
+            <span className="text-sm font-semibold text-gray-500 group-hover:text-white/80 uppercase tracking-wide transition-[color] duration-300 ease-out">
               {article.author.name}
             </span>
           </div>

@@ -25,7 +25,7 @@ export default function CTABanner() {
                 </h2>
                 <HoverGlowButton
                   href="/contact"
-                  className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
+                  className="inline-flex items-center px-7 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
                 >
                   START YOUR PROJECT
                 </HoverGlowButton>
@@ -47,7 +47,7 @@ export default function CTABanner() {
                   </a>
                   <a
                     href="mailto:info@hycoreconstruction.com"
-                    className="flex items-center gap-2 text-white/60 hover:text-white text-xs transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+                    className="flex items-center gap-2 text-white/60 hover:text-white text-sm transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
                   >
                     <Mail size={14} />
                     info@hycoreconstruction.com

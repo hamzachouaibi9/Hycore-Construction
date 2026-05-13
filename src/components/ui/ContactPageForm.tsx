@@ -8,7 +8,7 @@ import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 const INPUT =
   "w-full bg-transparent border-b border-white/20 pb-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-primary transition-[border-color] duration-200";
 
-const LABEL = "block text-xs font-medium text-white/50 mb-2";
+const LABEL = "block text-sm font-medium text-white/50 mb-2";
 
 export default function ContactPageForm() {
   const [form, setForm] = useState({
@@ -145,14 +145,14 @@ export default function ContactPageForm() {
       />
 
       {error && (
-        <p className="text-red-400 text-xs">{error}</p>
+        <p className="text-red-400 text-sm">{error}</p>
       )}
 
       <div className="flex items-center justify-between flex-wrap gap-4 pt-2">
         <HoverGlowButton
           type="submit"
           disabled={loading}
-          className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-xs font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? "SENDING…" : "SUBMIT NOW"}
         </HoverGlowButton>
@@ -163,7 +163,7 @@ export default function ContactPageForm() {
             onChange={(e) => setAgreed(e.target.checked)}
             className="w-4 h-4 accent-primary"
           />
-          <span className="text-xs text-white/40">I agree to the terms and conditions.</span>
+          <span className="text-sm text-white/40">I agree to the terms and conditions.</span>
         </label>
       </div>
     </form>
