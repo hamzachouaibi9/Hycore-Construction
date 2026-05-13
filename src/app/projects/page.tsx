@@ -51,7 +51,7 @@ export default async function ProjectsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project, i) => (
                 <Reveal key={project.id} delay={i * 0.1}>
-                  <ProjectCard project={project} dark />
+                  <ProjectCard project={project} />
                 </Reveal>
               ))}
             </div>

@@ -5,7 +5,6 @@ import type { Project } from "@/lib/types";
 
 interface ProjectCardProps {
   project: Project;
-  dark?: boolean;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {

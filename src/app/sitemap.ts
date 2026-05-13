@@ -1,14 +1,15 @@
 import type { MetadataRoute } from "next";
-import { getServices, getProjects, getArticles } from "@/lib/payload";
+import { getServices, getProjects, getArticles, getLocations } from "@/lib/payload";
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://hycoreconstruction.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [services, projects, articles] = await Promise.all([
+  const [services, projects, articles, locations] = await Promise.all([
     getServices(),
     getProjects(),
     getArticles(),
+    getLocations(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -18,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/projects`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/articles`, lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/locations`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
@@ -50,5 +52,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...servicePages, ...subServicePages, ...projectPages, ...articlePages];
+  const locationPages: MetadataRoute.Sitemap = locations.map((l) => ({
+    url: `${BASE_URL}/locations/${l.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticPages, ...servicePages, ...subServicePages, ...projectPages, ...articlePages, ...locationPages];
 }

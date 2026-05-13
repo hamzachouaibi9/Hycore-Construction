@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const subService = await getSubServiceBySlug(slug, subslug);
   if (!subService) return { title: "Service Not Found" };
   return {
-    title: `${subService.title} | Hycore Construction`,
-    description: subService.description,
+    title: `${subService.title} in Tampa, FL | Hycore Construction`,
+    description: `${subService.description.slice(0, 140)}… Expert ${subService.title.toLowerCase()} contractor serving Tampa, Brandon, Riverview, South Tampa, and the greater Tampa Bay area.`,
   };
 }
 

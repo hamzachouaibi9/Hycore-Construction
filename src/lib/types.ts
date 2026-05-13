@@ -62,14 +62,16 @@ export interface FAQ {
   order: number;
 }
 
-export interface SiteSettings {
-  address: string;
-  phone: string;
-  email: string;
-  instagram: string;
-  facebook: string;
-  linkedin: string;
-  hoursWeekdays: string;
-  hoursSaturday: string;
-  hoursSunday: string;
+export interface Location {
+  id: string;
+  slug: string;
+  name: string;
+  shortName: string;
+  county: string;
+  description: string;
+  heroImage: string;
+  seoTitle: string;
+  seoDescription: string;
+  highlights: string[];
+  nearbyAreas: { name: string; slug: string }[];
 }

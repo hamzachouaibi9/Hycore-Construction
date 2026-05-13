@@ -1,4 +1,4 @@
-import type { Service, SubService, Project, Article, Author, FAQ, SiteSettings } from "./types";
+import type { Service, SubService, Project, Article, Author, FAQ, Location } from "./types";
 
 export const mockAuthor: Author = {
   id: "1",
@@ -721,6 +721,169 @@ The best construction teams share a culture of accountability and clear communic
   },
 ];
 
+export const mockLocations: Location[] = [
+  {
+    id: "1",
+    slug: "south-tampa",
+    name: "South Tampa, FL",
+    shortName: "South Tampa",
+    county: "Hillsborough County",
+    description:
+      "Serving South Tampa homeowners with premium construction, renovation, and remodeling services — from Hyde Park and Palma Ceia to Bayshore and Davis Islands. Hycore brings the same standard of craft to every project in one of Tampa's most architecturally diverse neighborhoods.",
+    heroImage: "https://picsum.photos/1400/700?random=200",
+    seoTitle: "Construction Company in South Tampa, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction is your trusted construction company in South Tampa, FL. We specialize in home remodeling, new construction, kitchen renovations, and custom home builds throughout Hyde Park, Palma Ceia, Davis Islands, and Bayshore Boulevard.",
+    highlights: ["Hyde Park", "Palma Ceia", "Davis Islands", "Bayshore Boulevard", "Harbour Island"],
+    nearbyAreas: [
+      { name: "Westshore", slug: "westshore" },
+      { name: "Carrollwood", slug: "carrollwood" },
+      { name: "New Tampa", slug: "new-tampa" },
+      { name: "Temple Terrace", slug: "temple-terrace" },
+    ],
+  },
+  {
+    id: "2",
+    slug: "brandon-fl",
+    name: "Brandon, FL",
+    shortName: "Brandon",
+    county: "Hillsborough County",
+    description:
+      "Hycore Construction delivers residential and commercial construction services throughout Brandon, FL — one of Hillsborough County's fastest-growing communities. From new construction builds to full home remodels and room additions, our crews work across Brandon and the surrounding suburbs with the same accountability and craftsmanship we bring to every project.",
+    heroImage: "https://picsum.photos/1400/700?random=201",
+    seoTitle: "Construction Company in Brandon, FL | Hycore Construction",
+    seoDescription:
+      "Looking for a reliable construction company in Brandon, FL? Hycore Construction provides home remodeling, new construction, kitchen remodels, and home additions throughout Brandon and Hillsborough County.",
+    highlights: ["Bloomingdale", "Valrico", "Lithia", "Riverview", "FishHawk"],
+    nearbyAreas: [
+      { name: "Riverview", slug: "riverview-fl" },
+      { name: "Valrico", slug: "valrico" },
+      { name: "South Tampa", slug: "south-tampa" },
+      { name: "Wesley Chapel", slug: "wesley-chapel-fl" },
+    ],
+  },
+  {
+    id: "3",
+    slug: "westshore",
+    name: "Westshore, Tampa, FL",
+    shortName: "Westshore",
+    county: "Hillsborough County",
+    description:
+      "Hycore Construction serves the Westshore district and surrounding Tampa Bay neighborhoods with expert construction and renovation services. Whether you're upgrading a commercial space or remodeling a home near the bay, our team brings precision, accountability, and a proven process to every job.",
+    heroImage: "https://picsum.photos/1400/700?random=202",
+    seoTitle: "Construction Company in Westshore Tampa, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction serves Westshore, Tampa, FL with expert home remodeling, commercial construction, and renovation services. Licensed, insured, and trusted across the Tampa Bay area.",
+    highlights: ["Westshore Marina District", "Beach Park", "Ben T. Davis Beach", "Cypress Point"],
+    nearbyAreas: [
+      { name: "South Tampa", slug: "south-tampa" },
+      { name: "Carrollwood", slug: "carrollwood" },
+      { name: "New Tampa", slug: "new-tampa" },
+      { name: "Brandon", slug: "brandon-fl" },
+    ],
+  },
+  {
+    id: "4",
+    slug: "riverview-fl",
+    name: "Riverview, FL",
+    shortName: "Riverview",
+    county: "Hillsborough County",
+    description:
+      "One of Hillsborough County's fastest-expanding communities, Riverview is home to a growing base of homeowners investing in new construction and whole-home renovations. Hycore Construction brings full-service build and remodel capabilities to Riverview — from ground-up custom homes to complete interior transformations.",
+    heroImage: "https://picsum.photos/1400/700?random=203",
+    seoTitle: "Construction Company in Riverview, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction is a top-rated construction company serving Riverview, FL. We build custom homes, deliver home renovations, and handle room additions throughout Riverview and the greater Hillsborough County area.",
+    highlights: ["Boyette Farms", "Panther Trace", "Summerfield", "FishHawk Ranch", "Triple Creek"],
+    nearbyAreas: [
+      { name: "Brandon", slug: "brandon-fl" },
+      { name: "South Tampa", slug: "south-tampa" },
+      { name: "Wesley Chapel", slug: "wesley-chapel-fl" },
+      { name: "Carrollwood", slug: "carrollwood" },
+    ],
+  },
+  {
+    id: "5",
+    slug: "carrollwood",
+    name: "Carrollwood, Tampa, FL",
+    shortName: "Carrollwood",
+    county: "Hillsborough County",
+    description:
+      "Carrollwood is one of Tampa's most established suburban communities — and a neighborhood where Hycore Construction has delivered remodels, additions, and new construction builds for years. Our teams understand the character and building stock of Carrollwood's mature neighborhoods and bring the right approach to every project.",
+    heroImage: "https://picsum.photos/1400/700?random=204",
+    seoTitle: "Construction Company in Carrollwood, Tampa, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction serves Carrollwood, Tampa, FL with premium home remodeling, kitchen renovations, bathroom remodels, and room addition services. Trusted by Carrollwood homeowners for quality construction.",
+    highlights: ["Carrollwood Village", "Lake Carroll", "Northdale", "RSF Communities"],
+    nearbyAreas: [
+      { name: "Westshore", slug: "westshore" },
+      { name: "New Tampa", slug: "new-tampa" },
+      { name: "South Tampa", slug: "south-tampa" },
+      { name: "Wesley Chapel", slug: "wesley-chapel-fl" },
+    ],
+  },
+  {
+    id: "6",
+    slug: "wesley-chapel-fl",
+    name: "Wesley Chapel, FL",
+    shortName: "Wesley Chapel",
+    county: "Pasco County",
+    description:
+      "Wesley Chapel is one of the Tampa Bay area's fastest-growing markets — with new communities, custom builds, and rapid home improvement investment defining the landscape. Hycore Construction brings new construction expertise and full renovation capabilities to Wesley Chapel and the surrounding Pasco County area.",
+    heroImage: "https://picsum.photos/1400/700?random=205",
+    seoTitle: "Construction Company in Wesley Chapel, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction is a leading construction company serving Wesley Chapel, FL. We specialize in new home construction, custom home builds, and home remodeling throughout Wesley Chapel and Pasco County.",
+    highlights: ["Wiregrass Ranch", "Watergrass", "Meadow Pointe", "Seven Oaks", "Epperson Ranch"],
+    nearbyAreas: [
+      { name: "New Tampa", slug: "new-tampa" },
+      { name: "Carrollwood", slug: "carrollwood" },
+      { name: "Brandon", slug: "brandon-fl" },
+      { name: "Temple Terrace", slug: "temple-terrace" },
+    ],
+  },
+  {
+    id: "7",
+    slug: "new-tampa",
+    name: "New Tampa, FL",
+    shortName: "New Tampa",
+    county: "Hillsborough County",
+    description:
+      "New Tampa is a master-planned community with a strong mix of established homes ready for renovation and newly platted lots ideal for custom construction. Hycore serves New Tampa homeowners with the full scope of our services — from kitchen and bathroom remodels to second-story additions and ground-up custom builds.",
+    heroImage: "https://picsum.photos/1400/700?random=206",
+    seoTitle: "Construction Company in New Tampa, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction serves New Tampa, FL with expert home remodeling, custom home building, and renovation services. Trusted by New Tampa homeowners across Heritage Isles, Cory Lake Isles, and Tampa Palms.",
+    highlights: ["Heritage Isles", "Cory Lake Isles", "Tampa Palms", "K-Bar Ranch", "Live Oak Preserve"],
+    nearbyAreas: [
+      { name: "Wesley Chapel", slug: "wesley-chapel-fl" },
+      { name: "Carrollwood", slug: "carrollwood" },
+      { name: "Temple Terrace", slug: "temple-terrace" },
+      { name: "Westshore", slug: "westshore" },
+    ],
+  },
+  {
+    id: "8",
+    slug: "temple-terrace",
+    name: "Temple Terrace, FL",
+    shortName: "Temple Terrace",
+    county: "Hillsborough County",
+    description:
+      "Temple Terrace is one of Tampa Bay's most distinctive communities — a city within a city with a rich housing stock that rewards thoughtful renovation and careful craftsmanship. Hycore Construction brings the expertise to match Temple Terrace's character: precise work, quality materials, and results that honor the neighborhood.",
+    heroImage: "https://picsum.photos/1400/700?random=207",
+    seoTitle: "Construction Company in Temple Terrace, FL | Hycore Construction",
+    seoDescription:
+      "Hycore Construction serves Temple Terrace, FL with premium home remodeling, structural renovations, and custom construction services. Trusted by Temple Terrace homeowners for quality, transparency, and lasting results.",
+    highlights: ["Temple Terrace Estates", "Riverhills", "Hunter's Green", "University Area"],
+    nearbyAreas: [
+      { name: "New Tampa", slug: "new-tampa" },
+      { name: "Carrollwood", slug: "carrollwood" },
+      { name: "Wesley Chapel", slug: "wesley-chapel-fl" },
+      { name: "South Tampa", slug: "south-tampa" },
+    ],
+  },
+];
+
 export const mockFAQs: FAQ[] = [
   {
     id: "1",
@@ -752,14 +915,3 @@ export const mockFAQs: FAQ[] = [
   },
 ];
 
-export const mockSiteSettings: SiteSettings = {
-  address: "410 Sandtown, California 94001, USA",
-  phone: "(555) 555-5555",
-  email: "info@hycoreconstruction.com",
-  instagram: "https://instagram.com",
-  facebook: "https://facebook.com",
-  linkedin: "https://linkedin.com",
-  hoursWeekdays: "11:00–8:00pm",
-  hoursSaturday: "11:00–4:00pm",
-  hoursSunday: "11:00–2:00pm",
-};

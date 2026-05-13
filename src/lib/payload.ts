@@ -1,10 +1,10 @@
-import type { Service, SubService, Project, Article, FAQ, SiteSettings } from "./types";
+import type { Service, SubService, Project, Article, FAQ, Location } from "./types";
 import {
   mockServices,
   mockProjects,
   mockArticles,
   mockFAQs,
-  mockSiteSettings,
+  mockLocations,
 } from "./data";
 
 export async function getServices(): Promise<Service[]> {
@@ -43,6 +43,10 @@ export async function getFAQs(): Promise<FAQ[]> {
   return mockFAQs;
 }
 
-export async function getSiteSettings(): Promise<SiteSettings> {
-  return mockSiteSettings;
+export async function getLocations(): Promise<Location[]> {
+  return mockLocations;
+}
+
+export async function getLocationBySlug(slug: string): Promise<Location | null> {
+  return mockLocations.find((l) => l.slug === slug) ?? null;
 }

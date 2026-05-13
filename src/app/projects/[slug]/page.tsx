@@ -138,7 +138,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {moreProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} dark />
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>
