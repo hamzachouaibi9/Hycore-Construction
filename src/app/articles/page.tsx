@@ -8,9 +8,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getArticles } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "News & Articles",
+  title: "Construction Insights | Hycore Construction",
   description:
-    "Exploring the future of construction, innovation, and sustainable building. Insights from the Hycore Construction team.",
+    "Expert perspectives on construction management, technology, and industry trends — written by the professionals who build it every day.",
 };
 
 export default async function ArticlesPage() {

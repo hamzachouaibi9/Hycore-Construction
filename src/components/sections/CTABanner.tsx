@@ -19,9 +19,9 @@ export default function CTABanner() {
               {/* Left */}
               <Reveal>
                 <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-brand-white tracking-tight leading-tight mb-8">
-                  WANT TO DISCUSS ABOUT
+                  READY TO BUILD
                   <br />
-                  YOUR NEXT PROJECT?
+                  SOMETHING THAT LASTS?
                 </h2>
                 <HoverGlowButton
                   href="/contact"
@@ -34,13 +34,9 @@ export default function CTABanner() {
               {/* Right */}
               <Reveal delay={0.15}>
                 <p className="text-white/60 text-sm leading-[1.8] mb-8">
-                  LOREM IPSUM DOLOR SIT AMET CONSECTETUR.
-                  <br />
-                  nUNC AUGUE IN SIT NIBH COMMODO RHONCUS
-                  <br />
-                  AMET. dICTUMST QUAM UT PULVINAR ARCU
-                  <br />
-                  CONSECTETUR NISI.
+                  Every great build starts with a single conversation. Share your vision
+                  and we&apos;ll handle the rest — from planning and permits to final delivery.
+                  Hycore keeps every project on schedule and on budget.
                 </p>
                 <div className="flex items-center gap-5">
                   <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-[color] duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded" aria-label="Facebook">

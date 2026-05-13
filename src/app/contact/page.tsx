@@ -8,9 +8,9 @@ import ContactPageForm from "@/components/ui/ContactPageForm";
 import { getFAQs } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Hycore Construction | Get a Free Quote",
   description:
-    "Get in touch with Hycore Construction. We're here to help you bring your next construction project to life.",
+    "Ready to start your project? Contact Hycore Construction today. We respond to every inquiry within one business day and offer free project consultations.",
 };
 
 export default async function ContactPage() {
@@ -34,7 +34,8 @@ export default async function ContactPage() {
                 GET IN TOUCH
               </h1>
               <p className="text-sm text-white/50 mb-10">
-                Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                Tell us about your project. Our team responds to every inquiry within
+                one business day.
               </p>
 
               <ContactPageForm />

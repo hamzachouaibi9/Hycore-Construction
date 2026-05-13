@@ -100,8 +100,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {service.title.toUpperCase()} SERVICES
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500 max-w-xl mb-12">
-                Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-                nullam parturient viverra id. Select a service below to learn more.
+                Each service below is delivered with Hycore&apos;s full commitment — dedicated crews,
+                transparent timelines, and a single point of contact from start to finish.
+                Select a service to see exactly what&apos;s included.
               </p>
             </Reveal>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
@@ -137,22 +138,22 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             <Reveal>
               <p className={`text-xs font-bold tracking-widest mb-3 uppercase ${hasSubServices ? "text-primary" : "text-primary"}`}>
-                About This Service
+                Our Approach
               </p>
               <h2 className={`font-display text-2xl md:text-3xl font-black tracking-tight mb-5 leading-tight ${hasSubServices ? "text-brand-white" : "text-brand-black"}`}>
-                QUALITY YOU CAN
+                WHAT SETS OUR
                 <br />
-                COUNT ON
+                APPROACH APART
               </h2>
               <p className={`text-sm leading-[1.8] mb-5 ${hasSubServices ? "text-white/55" : "text-gray-500"}`}>
-                At Hycore Construction, we believe every project — regardless of scope — deserves
-                the same level of craftsmanship, transparency, and care. Our approach balances
-                innovation, functionality, and design integrity to deliver results that stand the
-                test of time.
+                At Hycore Construction, every project — regardless of scope — receives the same
+                level of craftsmanship, transparency, and care. We balance innovation, functionality,
+                and design integrity to deliver results that stand the test of time.
               </p>
               <p className={`text-sm leading-[1.8] ${hasSubServices ? "text-white/55" : "text-gray-500"}`}>
-                Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-                nullam parturient viverra id. Feugiat at pellentesque nec leo sed et lorem amet.
+                From the materials we source to the crews we assign, every decision is made with
+                your project&apos;s success in mind. We maintain clear, proactive communication at
+                every phase — so you always know where your project stands and what&apos;s coming next.
               </p>
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded-xl overflow-hidden">
@@ -225,11 +226,12 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
             <div className="p-10 md:p-14">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-brand-white tracking-tight mb-2">
-                Let&apos;s Work Together.
+                Ready to Move Forward?
               </h2>
               <p className="text-sm text-white/50 mb-8">
-                We&apos;re here to help you bring your construction project to life. Whether you
-                have questions or want to discuss your ideas, reach out today.
+                Share your project details and our team will respond within one business day
+                to discuss scope, timeline, and next steps. No pressure — just a real conversation
+                about what you want to build.
               </p>
               <ContactForm />
             </div>
@@ -243,9 +245,9 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <Reveal>
               <h2 className="font-display text-3xl md:text-4xl font-black text-brand-black tracking-tight text-center mb-14">
-                STRENGTH AND STYLE IN
+                BUILT ON KNOWLEDGE,
                 <br />
-                EVERY PROJECT
+                DRIVEN BY CRAFT
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

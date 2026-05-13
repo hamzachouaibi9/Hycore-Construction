@@ -8,9 +8,9 @@ import { StaircaseSection } from "@/components/ui/StaircaseSection";
 import { StaggeredSteps } from "@/components/ui/StaggeredSteps";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Hycore Construction | Built on Trust",
   description:
-    "Building trust, one project at a time. General contracting rooted in craftsmanship, clarity, and commitment. Serving commercial clients across the Northeast for over 20 years.",
+    "Built on accountability. Powered by craftsmanship. Hycore Construction has delivered precision construction for over 20 years — every project, every scope, held to the same standard.",
 };
 
 const processSteps = [
@@ -65,13 +65,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             <Reveal>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-black text-brand-white tracking-tight leading-tight mb-6">
-                Building trust, one
+                Built on accountability.
                 <br />
-                project at a time
+                Trusted to deliver.
               </h1>
               <p className="text-sm leading-[1.8] text-white/50 max-w-sm">
-                General contracting rooted in craftsmanship, clarity, and commitment.
-                Serving commercial clients across the Northeast for over 20 years.
+                General contracting rooted in craftsmanship, transparency, and accountability.
+                Serving residential and commercial clients with the same standard of care
+                for over 20 years.
               </p>
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded overflow-hidden">
@@ -112,8 +113,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Reveal>
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-black text-brand-white tracking-tight mb-14">
-              Our approach spans the full journey —<br />
-              insightful planning, and thoughtful design
+              From first conversation to final handover —<br />
+              every decision made with purpose.
             </h2>
           </Reveal>
           <StaggeredSteps steps={processSteps} />

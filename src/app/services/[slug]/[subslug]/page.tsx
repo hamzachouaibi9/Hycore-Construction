@@ -133,9 +133,10 @@ export default async function SubServiceDetailPage({ params }: Props) {
                 YOU CAN TRUST
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500 mb-4">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Viverra scelerisque dolor
-                nec blandit nullam parturient viverra id. Feugiat at pellentesque nec leo sed et
-                lorem amet porttitor cursus.
+                Every project starts with a clear plan and ends with a result you can stand behind.
+                Hycore brings disciplined project management, skilled crews, and a single point of
+                accountability to every engagement — so the work moves forward without gaps,
+                surprises, or delays.
               </p>
               <p className="text-sm leading-[1.8] text-gray-500">
                 At Hycore Construction, we approach every {subService.title.toLowerCase()} project
@@ -165,8 +166,9 @@ export default async function SubServiceDetailPage({ params }: Props) {
               What&apos;s Included
             </h2>
             <p className="text-sm leading-[1.8] text-gray-500 max-w-xl mb-10">
-              Lorem ipsum dolor sit amet consectetur. Every {subService.title.toLowerCase()} engagement
-              includes a comprehensive set of services to ensure a seamless, high-quality outcome.
+              Every {subService.title.toLowerCase()} engagement includes a structured,
+              end-to-end scope managed by our team — so nothing is left to assumption
+              and every phase is accounted for before work begins.
             </p>
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -197,8 +199,9 @@ export default async function SubServiceDetailPage({ params }: Props) {
               FOR {subService.title.toUpperCase()}?
             </h2>
             <p className="text-sm leading-[1.8] text-white/50 text-center max-w-xl mx-auto mb-14">
-              Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-              nullam parturient viverra id.
+              Five hundred projects have taught us what matters most: the crew, the plan,
+              and the discipline to follow through on both. Here&apos;s what you get with
+              every Hycore engagement.
             </p>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
@@ -297,9 +300,9 @@ export default async function SubServiceDetailPage({ params }: Props) {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <Reveal>
               <h2 className="font-display text-3xl md:text-4xl font-black text-brand-black tracking-tight text-center mb-14">
-                STRENGTH AND STYLE IN
+                BUILT ON KNOWLEDGE,
                 <br />
-                EVERY PROJECT
+                DRIVEN BY CRAFT
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

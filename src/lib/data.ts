@@ -11,32 +11,32 @@ const baseIncluded = [
   {
     title: "Initial Consultation & Assessment",
     description:
-      "We begin with a thorough consultation to understand your goals, timeline, and budget, laying the groundwork for a successful project.",
+      "We begin every project with a deep-dive consultation to understand your goals, site conditions, timeline, and budget — establishing a shared foundation and clear scope before a single decision is made.",
   },
   {
     title: "Design & Planning",
     description:
-      "Our team develops detailed plans tailored to your specific requirements, ensuring every aspect is accounted for before work begins.",
+      "Our team develops detailed project plans tailored to your specific requirements — scope, sequencing, trade coordination, and milestone targets — ensuring every aspect is locked in and accounted for before work begins.",
   },
   {
     title: "Material Selection & Procurement",
     description:
-      "We source high-quality materials that balance durability, aesthetics, and cost-effectiveness for your project.",
+      "We source and procure high-quality materials from trusted suppliers, balancing durability, aesthetics, and cost-effectiveness — and managing procurement timelines so material delays never stall your project.",
   },
   {
     title: "Skilled Construction & Execution",
     description:
-      "Our experienced crews execute every phase of the project with precision, adhering to the highest industry standards.",
+      "Our experienced crews execute every phase with precision — managing subcontractors, maintaining strict adherence to the approved plans, and upholding the quality standard that defines every Hycore project.",
   },
   {
     title: "Quality Control & Inspection",
     description:
-      "Rigorous quality checks at every milestone ensure the work meets and exceeds your expectations and local code requirements.",
+      "Rigorous quality checks at every project milestone ensure the work meets and exceeds your expectations, the approved drawings, and all applicable local code requirements — with no shortcuts taken.",
   },
   {
     title: "Final Walkthrough & Handover",
     description:
-      "We conduct a comprehensive final walkthrough with you, addressing any punch-list items before delivering your completed space.",
+      "We conduct a thorough final walkthrough with you, identifying and resolving every punch-list item before formally delivering your completed project — so you move forward with confidence, not a list of open items.",
   },
 ];
 
@@ -48,7 +48,7 @@ const personalizedDesignSubs: SubService[] = [
     slug: "custom-home-design-build",
     title: "Custom Home Design & Build",
     description:
-      "A seamless design-build experience where our architects and construction teams collaborate from day one to bring your vision to life with uncompromising quality.",
+      "A seamless design-build experience where our architects and construction crews work as one unified team — eliminating the costly miscommunication that happens when design and construction are handled separately. From your first concept to the final walkthrough, every decision is made collaboratively, your vision is protected at every phase, and the result is a home built exactly as you imagined — on time, on budget, and without compromise.",
     heroImage: "https://picsum.photos/1400/700?random=100",
     categorySlug: "personalized-design",
     whatIsIncluded: baseIncluded,
@@ -58,7 +58,7 @@ const personalizedDesignSubs: SubService[] = [
     slug: "residential-construction-services",
     title: "Residential Construction Services",
     description:
-      "Comprehensive construction services for residential projects of all scales, managed by experienced professionals who prioritize quality, safety, and client satisfaction.",
+      "Comprehensive residential construction services for projects of all scales — from targeted upgrades to complete custom builds — managed by experienced professionals who bring the same standard of care to every job site. Our crews are skilled, our processes are proven, and our commitment to quality is non-negotiable. You get a team that communicates clearly, stays accountable, and delivers a finished home that reflects every dollar of your investment.",
     heroImage: "https://picsum.photos/1400/700?random=101",
     categorySlug: "personalized-design",
     whatIsIncluded: baseIncluded,
@@ -71,7 +71,7 @@ const newConstructionSubs: SubService[] = [
     slug: "new-home-construction",
     title: "New Home Construction",
     description:
-      "Build your dream home from the ground up with a team that manages every detail — from permits and site preparation through final finishing touches.",
+      "Build your dream home from the ground up with a team that manages every detail — permits, site preparation, structural systems, trade coordination, and final finishes — so nothing falls through the cracks and no decision gets made without your input. From the first shovel in the ground to your final walkthrough, Hycore handles the complexity so you can focus on what matters: watching your vision take shape.",
     heroImage: "https://picsum.photos/1400/700?random=102",
     categorySlug: "new-construction",
     whatIsIncluded: baseIncluded,
@@ -81,7 +81,7 @@ const newConstructionSubs: SubService[] = [
     slug: "ground-up-home-construction",
     title: "Ground-Up Home Construction",
     description:
-      "Starting with raw land, we handle site clearing, grading, foundation work, and full vertical construction to deliver a finished home that exceeds your expectations.",
+      "Starting with raw land, we handle every step of the transformation — site clearing, grading, utility coordination, engineered foundation systems, and full vertical construction through final finish. Raw land to completed home, managed by one accountable team with the experience to navigate permitting, site challenges, and trade coordination. The result is a structurally sound, expertly finished home built to outlast the vision behind it.",
     heroImage: "https://picsum.photos/1400/700?random=103",
     categorySlug: "new-construction",
     whatIsIncluded: baseIncluded,
@@ -94,7 +94,7 @@ const renovationSubs: SubService[] = [
     slug: "home-remodeling",
     title: "Home Remodeling",
     description:
-      "Transform your existing home with comprehensive remodeling services that modernize spaces, improve functionality, and increase property value.",
+      "Transform your existing home with remodeling services that go beyond refreshed aesthetics — modernizing how you live, improving daily functionality, and adding measurable property value. Hycore's renovation teams approach every remodel with the same discipline as a ground-up build: a clear scope, transparent pricing, skilled tradespeople, and a commitment to finishing right. You'll have a dedicated team managing every detail from demo day through final walkthrough.",
     heroImage: "https://picsum.photos/1400/700?random=104",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -104,7 +104,7 @@ const renovationSubs: SubService[] = [
     slug: "custom-home-remodeling",
     title: "Custom Home Remodeling",
     description:
-      "Bespoke remodeling solutions crafted around your lifestyle, preferences, and long-term vision — no two projects are ever the same.",
+      "Bespoke remodeling solutions crafted entirely around your lifestyle, preferences, and long-term vision — because no two homes, and no two homeowners, are exactly alike. We begin by listening: understanding how you actually live, what frustrates you about your current space, and what your ideal version looks like. Then we build it — with the craftsmanship and attention to detail that makes the result feel uniquely yours, not like a template from a showroom.",
     heroImage: "https://picsum.photos/1400/700?random=105",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -114,7 +114,7 @@ const renovationSubs: SubService[] = [
     slug: "whole-home-renovations",
     title: "Whole-Home Renovations",
     description:
-      "A complete top-to-bottom renovation that reimagines every room in your home — coordinated by a single team for a seamless, stress-free experience.",
+      "A complete top-to-bottom renovation that reimagines every room — from structural changes and systems upgrades to finishes and fixtures — coordinated by a single team so nothing gets lost between trades. Whole-home renovations are complex by nature, but with Hycore managing sequencing, subcontractors, and the schedule, the process is organized, predictable, and far less disruptive than most homeowners expect. The finished result is a cohesive, fully updated home that feels new from the inside out.",
     heroImage: "https://picsum.photos/1400/700?random=106",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -124,7 +124,7 @@ const renovationSubs: SubService[] = [
     slug: "kitchen-remodeling",
     title: "Kitchen Remodeling",
     description:
-      "We transform kitchens into functional, beautiful spaces that enhance the heart of your home through expert craftsmanship and thoughtful design.",
+      "The kitchen is the most-used room in your home — and one of the highest-return renovations you can make for both daily living and resale value. Hycore handles every element: layout optimization, cabinetry, countertops, appliances, tile, lighting, and plumbing — all coordinated to minimize downtime and deliver a space that works harder and looks better. Expect a kitchen that genuinely improves your daily life and adds real value to your property.",
     heroImage: "https://picsum.photos/1400/700?random=107",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -134,7 +134,7 @@ const renovationSubs: SubService[] = [
     slug: "bathroom-remodeling",
     title: "Bathroom Remodeling",
     description:
-      "Elevate your daily routine with a beautifully remodeled bathroom — from spa-like master baths to efficient guest bath updates.",
+      "A well-executed bathroom remodel transforms one of the most personal spaces in your home into something you actually enjoy using every day. Whether you're creating a spa-like master retreat or updating a guest bath with modern tile and fixtures, Hycore handles every detail — waterproofing, plumbing, tile work, vanities, and lighting — with the precision that wet areas demand. The result is a bathroom that looks custom, functions perfectly, and holds up beautifully for years.",
     heroImage: "https://picsum.photos/1400/700?random=108",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -144,7 +144,7 @@ const renovationSubs: SubService[] = [
     slug: "interior-remodeling",
     title: "Interior Remodeling",
     description:
-      "Breathe new life into your home's interior with targeted remodeling that improves flow, comfort, and aesthetic appeal throughout.",
+      "Interior remodeling is about more than new paint and fixtures — it's about reimagining how your spaces flow, how they feel, and how well they serve the way you actually live. Hycore's interior remodeling work ranges from opening floor plans and adding architectural detail to complete finish overhauls that transform the character of a home. Every change is designed with intention and executed with the craftsmanship that makes the difference between a remodel that looks done and one that looks right.",
     heroImage: "https://picsum.photos/1400/700?random=109",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -154,7 +154,7 @@ const renovationSubs: SubService[] = [
     slug: "bedroom-remodeling",
     title: "Bedroom Remodeling",
     description:
-      "Create a personal sanctuary with a bedroom remodel tailored to your style — from master suite expansions to cozy guest room upgrades.",
+      "Your bedroom should be the most restorative room in your home — designed around rest, comfort, and the way you start and end every day. Hycore's bedroom remodeling services range from master suite expansions with custom built-ins and walk-in closet systems to thoughtful guest room upgrades that make visitors feel genuinely welcome. We handle flooring, lighting, trim, ceiling detail, and millwork to create a room that feels intentional, not just updated.",
     heroImage: "https://picsum.photos/1400/700?random=110",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -164,7 +164,7 @@ const renovationSubs: SubService[] = [
     slug: "exterior-home-remodeling",
     title: "Exterior Home Remodeling",
     description:
-      "Boost curb appeal and protect your investment with exterior remodeling services that refresh siding, rooflines, windows, and more.",
+      "Your home's exterior is the first thing anyone sees — and the last line of defense against the elements. Hycore's exterior remodeling services improve both, refreshing siding, rooflines, windows, doors, and trim with materials that enhance curb appeal and provide lasting weatherproofing. Whether you're preparing to sell, recovering from years of wear, or simply ready for an upgrade, our crews deliver results that look sharp and add measurable value to your property.",
     heroImage: "https://picsum.photos/1400/700?random=111",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -174,7 +174,7 @@ const renovationSubs: SubService[] = [
     slug: "lanai-design-construction",
     title: "Lanai Design & Construction",
     description:
-      "Extend your living space outdoors with a custom-designed lanai that blends seamlessly with your home's architecture and Florida's natural beauty.",
+      "A well-designed lanai extends your living space into the outdoors — creating a year-round gathering area that blends seamlessly with your home's architecture and the natural environment around it. Hycore designs and builds custom lanai structures with proper drainage, engineered structural framing, screened or glass enclosures, and finishing details that make the space feel like a natural extension of your interior. The result is an outdoor room you'll use every day, in every season.",
     heroImage: "https://picsum.photos/1400/700?random=112",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -184,7 +184,7 @@ const renovationSubs: SubService[] = [
     slug: "living-room-remodeling",
     title: "Living Room Remodeling",
     description:
-      "Reimagine your living room as the ultimate gathering space — open-concept conversions, fireplace additions, built-ins, and premium finishes.",
+      "The living room sets the tone for your entire home — where guests form first impressions and where your family spends the most time together. Hycore reimagines living spaces with structural vision and finish-level precision: open-concept conversions, custom built-in shelving, fireplace additions and surrounds, crown molding, and premium flooring. Every change is made with the whole room in mind, creating a cohesive space that feels designed — not just remodeled.",
     heroImage: "https://picsum.photos/1400/700?random=113",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -194,7 +194,7 @@ const renovationSubs: SubService[] = [
     slug: "luxury-home-remodeling",
     title: "Luxury Home Remodeling",
     description:
-      "Elevate your home to a new level of refinement with luxury remodeling that incorporates the finest materials, finishes, and craftsmanship available.",
+      "Luxury remodeling is not just about high-end materials — it's about the level of craft and project management discipline that makes those materials perform as intended. Hycore's luxury remodeling work incorporates the finest stone, hardwood, millwork, and custom cabinetry, installed by craftspeople who get every mitered corner, grout joint, and paint line exactly right. The result is a home that reflects the investment made — in every detail, in every room.",
     heroImage: "https://picsum.photos/1400/700?random=114",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -204,7 +204,7 @@ const renovationSubs: SubService[] = [
     slug: "structural-remodeling",
     title: "Structural Remodeling",
     description:
-      "Safely modify the structural bones of your home — from load-bearing wall removal and beam installation to floor plan transformations.",
+      "Structural remodeling requires engineering knowledge, careful planning, and the experience to execute safely without compromising your home's integrity. Hycore's structural work includes load-bearing wall removal, steel and engineered lumber beam installation, floor plan reconfiguration, and foundation modifications — all performed from engineered drawings, within permitted scopes, by crews who understand what's at stake. The result is the open, reimagined floor plan you want, built safely and to code.",
     heroImage: "https://picsum.photos/1400/700?random=115",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -214,7 +214,7 @@ const renovationSubs: SubService[] = [
     slug: "attic-conversions",
     title: "Attic Conversions",
     description:
-      "Convert unused attic space into a functional bedroom, home office, or bonus room — maximizing your home's square footage without expanding its footprint.",
+      "Most attics are wasted space — converting one is one of the most cost-effective ways to add livable square footage without expanding your home's footprint. Hycore manages the entire process: structural assessment, insulation and ventilation upgrades, dormer additions where needed, stair access, electrical and HVAC integration, and interior finish — all permitted and delivered as a fully functional room. Whether you need a bedroom, home office, or bonus space, we build it to feel like it was always meant to be there.",
     heroImage: "https://picsum.photos/1400/700?random=116",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -224,7 +224,7 @@ const renovationSubs: SubService[] = [
     slug: "aging-in-place-remodeling",
     title: "Aging in Place Remodeling",
     description:
-      "Make your home safe, accessible, and comfortable for every stage of life with thoughtful modifications designed to support independent living.",
+      "Aging-in-place remodeling is about designing your home to support the life you want to live at every stage — with safety, comfort, and independence built in, not bolted on. Hycore's modifications include no-threshold shower entries, grab bars integrated into the design, widened doorways, non-slip flooring, improved lighting, and layout changes that reduce fall risk without sacrificing the aesthetic quality of your home. These are upgrades that serve you now and protect you for the long term.",
     heroImage: "https://picsum.photos/1400/700?random=117",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -234,7 +234,7 @@ const renovationSubs: SubService[] = [
     slug: "garage-conversions",
     title: "Garage Conversions",
     description:
-      "Transform your underutilized garage into a livable space — guest suite, home gym, studio, or ADU — fully permitted and professionally finished.",
+      "An underutilized garage is one of the highest-potential spaces in your home — and Hycore transforms them into fully livable, permitted spaces: guest suites with private bathrooms, home gyms, creative studios, or ADUs that generate rental income. The conversion includes insulation, drywall, electrical, HVAC, plumbing where needed, and finished flooring and trim — everything required to make the space feel like a real room, not a converted garage.",
     heroImage: "https://picsum.photos/1400/700?random=118",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
@@ -247,7 +247,7 @@ const homeAdditionsSubs: SubService[] = [
     slug: "room-additions",
     title: "Room Additions",
     description:
-      "Expand your living space with a professionally designed and built room addition that integrates seamlessly with your home's existing structure and style.",
+      "A room addition is one of the most impactful investments you can make — adding permanent square footage that improves daily living, accommodates a growing family, and increases resale value. Hycore engineers additions to integrate seamlessly with your existing structure and style: matched rooflines, tied-in mechanical and electrical systems, and interior finishes that make the new space feel like it was always part of the original design. We manage permits, foundation work, framing, and finishes — delivering a finished room, not just four walls.",
     heroImage: "https://picsum.photos/1400/700?random=119",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
@@ -257,7 +257,7 @@ const homeAdditionsSubs: SubService[] = [
     slug: "remodel-additions-renovations",
     title: "Remodel Additions & Renovations",
     description:
-      "Combine the best of both worlds — add new square footage while simultaneously renovating existing spaces for a cohesive, updated home.",
+      "The most transformative home projects combine new construction with strategic renovation — adding square footage where you need it while upgrading the spaces you already have, all under one project and one accountable team. Hycore manages the full complexity: sequencing trades, minimizing disruption to daily life, and ensuring that new and renovated spaces come together as a cohesive, fully updated home. You get the scope of a major transformation with the clarity of a single-team project.",
     heroImage: "https://picsum.photos/1400/700?random=120",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
@@ -267,7 +267,7 @@ const homeAdditionsSubs: SubService[] = [
     slug: "second-story-additions",
     title: "Second-Story Additions",
     description:
-      "Double your home's footprint by building up — a second-story addition is one of the most impactful ways to add space without sacrificing your yard.",
+      "A second-story addition effectively doubles your home's square footage without consuming a single foot of your yard — one of the most efficient ways to grow your home's capacity and long-term value. Hycore manages the full scope: structural engineering, temporary weatherproofing during construction, foundation reinforcement where required, framing, roofing, MEP systems, and interior finish — coordinated to minimize disruption and deliver a second floor that looks and feels like it was always there.",
     heroImage: "https://picsum.photos/1400/700?random=121",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
@@ -282,7 +282,7 @@ export const mockServices: Service[] = [
     slug: "personalized-design",
     title: "Personalized Design & Construction Process",
     description:
-      "A tailored design-to-build experience that places your vision at the center of every decision — delivered by architects and builders working as one unified team.",
+      "A tailored design-to-build experience that keeps your vision at the center of every decision — eliminating the gap between what you imagined and what gets built by having our architects and construction teams work together from day one. No handoffs, no lost details, no surprises.",
     icon: "drafting",
     heroImage: "https://picsum.photos/1400/700?random=70",
     featured: true,
@@ -320,7 +320,7 @@ export const mockServices: Service[] = [
     slug: "new-construction",
     title: "New Construction",
     description:
-      "From raw land to a finished home, our new construction services encompass every phase of the build process with experienced teams, transparent communication, and exacting quality standards.",
+      "From raw land to a finished home, our new construction services encompass every phase of the build — permits, site prep, structural systems, trade coordination, and final finish — managed by experienced teams with transparent communication and a quality standard that does not compromise.",
     icon: "home",
     heroImage: "https://picsum.photos/1400/700?random=71",
     featured: true,
@@ -358,7 +358,7 @@ export const mockServices: Service[] = [
     slug: "home-renovation-remodeling",
     title: "Home Renovation & Remodeling",
     description:
-      "Whether you're refreshing a single room or transforming your entire home, our renovation experts deliver results that are beautiful, functional, and built to last.",
+      "Whether you're refreshing a single room or transforming your entire home, our renovation teams deliver results that are beautiful, functional, and built to last — managed with the same discipline and accountability as a ground-up build, regardless of scope.",
     icon: "hammer",
     heroImage: "https://picsum.photos/1400/700?random=72",
     featured: true,
@@ -396,7 +396,7 @@ export const mockServices: Service[] = [
     slug: "home-additions",
     title: "Home Additions",
     description:
-      "Expand your home's footprint without losing what you love about it. Our addition specialists integrate new space seamlessly with your existing structure, style, and systems.",
+      "Expand your home's footprint without disrupting what you already love about it. Our addition specialists engineer new space to integrate seamlessly with your existing structure, style, and systems — matched rooflines, tied-in mechanicals, and finishes that make the addition feel like it was always part of the plan.",
     icon: "expand",
     heroImage: "https://picsum.photos/1400/700?random=73",
     featured: false,
@@ -434,7 +434,7 @@ export const mockServices: Service[] = [
     slug: "storm-damage-repair",
     title: "Storm Damage Repair",
     description:
-      "Rapid, expert response to storm, wind, and water damage — restoring your home's safety, integrity, and appearance with professional precision.",
+      "Rapid, expert response to storm, wind, and water damage — stabilizing your property fast, coordinating directly with your insurer, and restoring your home's safety, structural integrity, and appearance to pre-storm condition or better.",
     icon: "shield",
     heroImage: "https://picsum.photos/1400/700?random=74",
     featured: false,
@@ -476,7 +476,7 @@ export const mockServices: Service[] = [
     slug: "grading-excavation",
     title: "Grading & Excavation",
     description:
-      "Professional land grading and excavation services that prepare your site for construction, improve drainage, and establish the solid foundation every project depends on.",
+      "Professional land grading and excavation that prepares your site correctly from the start — establishing the elevations, drainage patterns, and soil compaction that every structure built on it depends on. Done right once, never revisited.",
     icon: "terrain",
     heroImage: "https://picsum.photos/1400/700?random=75",
     featured: false,
@@ -526,7 +526,7 @@ export const mockProjects: Project[] = [
     budget: "$150,000",
     deadline: "December 2024",
     description:
-      "A contemporary pavilion designed as a multifunctional public venue for exhibitions, community gatherings, and seasonal events. Its sculptural form is expressed through layered volumes and filtered daylight, creating a calm and adaptable interior. The structure is engineered for flexibility, enabling seamless transitions between uses while maintaining strong visual identity and a sense of civic presence within the surrounding landscape.",
+      "The Future Edge Office was conceived as a multifunctional civic pavilion — a structure capable of hosting exhibitions, community gatherings, seasonal markets, and private events without feeling purpose-built for any single one of them. The architectural language centers on layered volumes and carefully positioned apertures that filter natural daylight into the interior, creating an atmosphere that is simultaneously energizing and calm depending on how the space is configured.\n\nStructurally, the building was designed for flexibility: open floor plates with demountable partitioning, integrated acoustic treatment, and a services grid that accommodates a wide range of programming without visible modification. The result is a structure with a strong, singular identity that adapts invisibly to whatever is asked of it.\n\nDelivered on schedule for Ridgeway Council within the $150,000 project budget, Future Edge Office is now one of the most actively programmed public venues in the Bradford civic landscape — a benchmark for what disciplined construction management produces when brief, design, and delivery are fully aligned.",
     heroImage: "https://picsum.photos/1400/700?random=20",
     gallery: [
       "https://picsum.photos/700/500?random=21",
@@ -548,7 +548,7 @@ export const mockProjects: Project[] = [
     budget: "$85,000",
     deadline: "March 2025",
     description:
-      "A precision-crafted interior staircase feature for a high-end commercial property. The design prioritizes both structural integrity and architectural elegance, using exposed concrete and tempered glass to create a flowing vertical journey through the building.",
+      "The Riverside Staircase is a bespoke interior architectural feature commissioned for a high-end commercial property in Bradford — designed to function as both primary circulation and the building's centrepiece. The brief called for a structure that commanded attention without overwhelming the surrounding interior, and the solution — exposed in-situ concrete balustrades paired with cantilevered treads and frameless tempered glass panels — achieves exactly that.\n\nEvery dimension was engineered for structural precision first, then refined for visual elegance. Rise, going, and landing proportions were calculated to BSEN standards and independently verified before construction commenced. The result is a staircase that reads as light and effortless despite the engineering complexity required to make it so.\n\nCompleted for Meridian Properties within the $85,000 allocated budget, the Riverside Staircase has become one of the defining features of the building's interior — referenced repeatedly in the property's tenant communications and marketing materials as a demonstration of what intentional construction looks like.",
     heroImage: "https://picsum.photos/1400/700?random=30",
     gallery: [
       "https://picsum.photos/700/500?random=31",
@@ -570,7 +570,7 @@ export const mockProjects: Project[] = [
     budget: "$240,000",
     deadline: "June 2025",
     description:
-      "A premium custom home built to the exacting specifications of a discerning family. The project encompasses a four-bedroom home with open-plan living, a chef's kitchen, and a landscaped garden—all delivered within a tight urban footprint.",
+      "The Northgate Residential project is a full custom home delivered for the Harlow Family Trust in Manchester — a four-bedroom, three-bathroom property designed around the specific way a busy family actually lives, not around a standard builder's template.\n\nThe brief prioritized open-plan social spaces that transition naturally to private zones, a kitchen specified for serious cooking with island seating and professional-grade appliances, and a landscaped rear garden that maximizes a compact urban plot. Every material selection — from the engineered timber flooring to the hand-set stone splashback and custom joinery throughout — was approved collaboratively with the client before a single item was procured.\n\nManaging the project within a tight urban footprint required careful site logistics, phased deliveries, and close coordination with the local authority on access and working hours. Completed for the Harlow Family Trust within the $240,000 project budget, Northgate Residential demonstrates what premium custom construction looks like when it is built around the people who will actually live in it.",
     heroImage: "https://picsum.photos/1400/700?random=40",
     gallery: [
       "https://picsum.photos/700/500?random=41",
@@ -592,7 +592,7 @@ export const mockProjects: Project[] = [
     budget: "$320,000",
     deadline: "September 2025",
     description:
-      "A large-scale adaptive reuse project converting a Victorian warehouse into a mixed-use commercial and co-working space. Structural steel reinforcement and a full mechanical overhaul were required to meet modern occupancy standards.",
+      "The Central Warehouse Conversion is a large-scale adaptive reuse project that transformed a redundant Victorian brick warehouse in Leeds into a mixed-use commercial and co-working destination for Nova Group. The building presented the full range of challenges associated with industrial heritage stock: load-bearing brick walls with limited lateral stability, outdated electrical infrastructure, no existing mechanical ventilation, and occupancy loads far in excess of the original design.\n\nThe structural intervention involved a new internal steel frame — engineered to work with the existing masonry, not against it — providing the lateral stiffness and floor load capacity required by the new occupancy without compromising the character of the original building envelope. All existing mechanical and electrical systems were stripped and replaced with modern HVAC, fire suppression, building management systems, and high-capacity electrical distribution.\n\nDelivered on schedule for Nova Group at a $320,000 project value, the Central Warehouse Conversion now operates at full commercial occupancy — a benchmark for Hycore's capability in complex adaptive reuse, and proof that heritage buildings can be transformed into high-performance modern spaces without losing the character that made them worth saving.",
     heroImage: "https://picsum.photos/1400/700?random=50",
     gallery: [
       "https://picsum.photos/700/500?random=51",
@@ -616,19 +616,44 @@ export const mockArticles: Article[] = [
     author: mockAuthor,
     heroImage: "https://picsum.photos/1400/700?random=60",
     excerpt:
-      "Understanding and adhering to building codes is not optional — it is the foundation of every safe, successful construction project.",
+      "Skipping permits seems like a shortcut until a lender flags the work, an inspector orders it demolished, or an insurance claim gets denied. Here is what unpermitted construction actually costs — and how Hycore handles it on every project.",
     content: `
-## Maximizing Efficiency With The Right Tools
+## Why Building Codes Exist — And Why Skipping Them Is Expensive
 
-Lorem ipsum pellentesque elementum fringilla ullamcorper. Ut tellus massa magnis nibh tristique. Dui sem quam convallis tellus fames Nisl eget dui commodo vestibulum pellentesque ac et tincidunt. Venenatis sed vulputate turpis fermentum tempor. Non eget nisl risus felis aliquam odio dolor pretium. Quam viverra leo cras ipsum Volutpat egestas sit vel quis. Sollicitudin phasellus nisl aenean suspendisse.
+Building codes are not bureaucratic red tape. They are a codified record of every structural failure, electrical fire, and construction-related injury that came before. Each requirement exists because someone, somewhere, experienced the consequence of its absence.
 
-Feugiat volutpat at felis amet enim locus at nullam. Quisque praesent elit et ac pellentesque commodo augue sed.
+For homeowners and developers alike, neglecting permits and code compliance is one of the most expensive mistakes a construction project can make — not just financially, but in terms of safety, insurability, and resale value. We see the fallout regularly. A homeowner sells a property, the buyer's lender orders an inspection, and unpermitted work surfaces. The transaction collapses, or the seller is forced to demolish and redo the work at full cost before closing.
 
-Consectetur adipiscing elit. Veit dictum vulputate risus ornare nisl mauris phasellus. Donec nibh risus maledie dolor condimentum morbi quis. Viverra phasellus ipsum vitae vulputate purus vitae molestie penanthus viverra imperdet. Morbi ultrices varius posuere tincidunt gravida consectetur at amet.
+## What Actually Happens When You Skip a Permit
 
-## Building Blocks: Exploring the Essence of Construction Innovation
+Unpermitted work creates a chain of problems that rarely surface until the worst possible moment.
 
-Lorem ipsum pellentesque elementum fringilla ullamcorper. Ut tellus massa magnis nibh tristique. Dui sem quam convallis tellus fames Nisl eget dui commodo vestibulum pellentesque ac et tincidunt. Venenatis sed vulputate turpis fermentum tempor. Non eget nisl risus felis aliquam odio dolor pretium. Quam viverra leo cras ipsum Volutpat egestas sit vel quis. Sollicitudin phasellus nisl aenean suspendisse.
+**Lenders and insurers investigate.** Mortgage lenders and home insurance carriers increasingly require documentation of permitted work. Unpermitted construction discovered during a home sale can kill the transaction — or require you to open walls and prove compliance before it can proceed.
+
+**You carry the legal liability.** If a structure built without permits fails and causes injury or property damage, the homeowner — not the contractor — carries the legal exposure. This includes structural failures, electrical fires, and plumbing failures that occur years after the work was done.
+
+**Remediation costs more than doing it right.** Municipalities that discover unpermitted work may require the owner to expose framing, demonstrate code compliance after the fact, and pay reinspection fees on top of the original cost. In many cases, the correction costs more than a properly permitted project would have.
+
+## The Permits Most Commonly Skipped — and Most Commonly Flagged
+
+Based on what we encounter on job sites and during property transfers, the most frequently skipped permits include:
+
+- Electrical panel upgrades and new circuit installations
+- HVAC system replacements and ductwork modifications
+- Structural changes including load-bearing wall removal
+- Deck, patio, pergola, and outdoor structure construction
+- Garage conversions and ADU buildouts
+- Any addition to the home's livable square footage
+
+Each of these affects the structural integrity or life-safety systems of the property. The permit process exists specifically to verify that the work was done correctly by qualified tradespeople and inspected by an authority having jurisdiction.
+
+## How Hycore Handles Permitting
+
+At Hycore Construction, every project that requires a permit gets one — without exception. Our project managers maintain established relationships with local permitting offices and understand the documentation, inspection sequences, and approval timelines involved in each jurisdiction we work in.
+
+We handle the entire permitting process on your behalf, from initial application through final sign-off, and provide you with a complete documentation package at project close. When your project is finished, you have a paper trail that protects your investment, satisfies lenders and insurers, and gives future buyers confidence in the work.
+
+Building right means building legal. There are no shortcuts worth taking — and the ones that seem cost-effective today consistently prove otherwise.
     `,
     featured: false,
   },
@@ -641,7 +666,7 @@ Lorem ipsum pellentesque elementum fringilla ullamcorper. Ut tellus massa magnis
     author: mockAuthor,
     heroImage: "https://picsum.photos/1400/700?random=61",
     excerpt:
-      "From BIM to drone surveying, technology is reshaping how construction projects are planned, executed, and delivered.",
+      "BIM, drone surveying, and AI-driven scheduling are no longer innovations — they are the baseline for how competitive construction firms operate. Here is what the technology shift actually changes on the job site.",
     content: `
 ## How Digital Tools Are Transforming the Industry
 
@@ -674,7 +699,7 @@ As artificial intelligence and machine learning mature, their applications in co
     author: mockAuthor,
     heroImage: "https://picsum.photos/1400/700?random=62",
     excerpt:
-      "Managing a construction project requires balancing competing priorities, stakeholder expectations, and ever-changing site conditions.",
+      "Scope creep, supply chain delays, labor shortages, and miscommunication — construction project management fails the same ways every time. Here is how experienced teams prevent the problems that derail most builds.",
     content: `
 ## The Complexity of Modern Construction Management
 
@@ -701,7 +726,7 @@ export const mockFAQs: FAQ[] = [
     id: "1",
     question: "What materials are best for my project?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur. Venenatis velit eget aliquam convallis volutpat nulla tellus elementum viverra. Lorem ipsum dolor sit amet consectetur. Venenatis velit eget aliquam convallis volutpat nulla tellus elementum viverra.",
+      "Material selection depends on your project type, local climate, budget, and aesthetic priorities. During our planning phase, we provide expert guidance on materials that balance durability, cost-effectiveness, and long-term performance for your specific build.",
     order: 1,
   },
   {

@@ -10,9 +10,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getServices, getArticles } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "Services | Construction Solutions",
+  title: "Construction Services | Hycore Construction",
   description:
-    "From kitchen remodeling to commercial steel structures, Hycore Construction delivers comprehensive solutions tailored to every project's unique needs.",
+    "From custom home design to commercial builds, renovations, and storm damage repair — Hycore Construction delivers expert results across every scope and scale.",
 };
 
 export default async function ServicesPage() {
@@ -46,19 +46,18 @@ export default async function ServicesPage() {
             <div>
               <Reveal onLoad delay={0.1}>
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-brand-white tracking-tight leading-[1.0]">
-                  BUILDING
+                  BUILT RIGHT.
                   <br />
-                  COMMUNITIES,
+                  FROM START
                   <br />
-                  ONE PROJECT
-                  <br />
-                  AT A TIME
+                  TO FINISH.
                 </h1>
               </Reveal>
               <Reveal onLoad delay={0.25}>
                 <p className="mt-6 text-sm leading-[1.8] text-white/50 max-w-lg">
-                  Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-                  nullam parturient viverra id.
+                  From single-room remodels to ground-up commercial builds — every project gets
+                  the same commitment: expert crews, clear communication, and a finished result
+                  that exceeds expectations. No surprises. No shortcuts.
                 </p>
               </Reveal>
               <Reveal onLoad delay={0.4}>
@@ -80,15 +79,16 @@ export default async function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 items-start mb-12">
             <Reveal className="md:col-span-2">
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight leading-tight mb-5">
-                EMPOWERING INDUSTRIES
+                ONE TEAM.
                 <br />
-                WITH COMPREHENSIVE
+                EVERY TRADE.
                 <br />
-                SOLUTIONS
+                EVERY SCOPE.
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500 max-w-xl">
-                Lorem ipsum dolor sit amet consectetur. Viverra scelerisque dolor nec nec blandit
-                nullam parturient viverra id.
+                Hycore manages every phase of your build — from permits and planning through
+                final inspection. One accountable team, transparent communication, and a
+                commitment to delivering on time and on budget.
               </p>
             </Reveal>
             <Reveal delay={0.15} className="hidden md:block relative aspect-video rounded overflow-hidden">
@@ -134,9 +134,9 @@ export default async function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Reveal>
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-black text-brand-white tracking-tight text-center mb-14">
-              Innovative Solutions Tailored
+              THE RIGHT SOLUTION
               <br />
-              To Your Project&apos;s Needs
+              FOR EVERY PROJECT TYPE
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
@@ -152,11 +152,11 @@ export default async function ServicesPage() {
                   <h3 className="font-display text-sm font-bold mb-2 text-brand-white group-hover:text-white transition-[color] duration-300 ease-out">
                     {service.title}
                   </h3>
-                  <p className="text-xs leading-[1.8] mb-6 text-white/40 group-hover:text-white/80 transition-[color] duration-300 ease-out">
-                    We Ensure Efficient Planning and execution for every project
+                  <p className="text-xs leading-[1.8] mb-6 text-white/40 line-clamp-3 group-hover:text-white/80 transition-[color] duration-300 ease-out">
+                    {service.description}
                   </p>
                   <div className="flex items-center gap-1.5 text-xs font-bold text-white/50 group-hover:text-white transition-[color] duration-300 ease-out">
-                    Explore More
+                    See What&apos;s Included
                     <ArrowRight size={12} />
                   </div>
                 </Link>
@@ -174,9 +174,9 @@ export default async function ServicesPage() {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <Reveal>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight text-center mb-14">
-                STRENGTH AND STYLE IN
+                BUILT ON KNOWLEDGE,
                 <br />
-                EVERY PROJECT
+                DRIVEN BY CRAFT
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

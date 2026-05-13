@@ -24,12 +24,12 @@ export default function QuoteBar() {
           {/* Left */}
           <Reveal>
             <span className="inline-block mb-3 text-xs font-medium text-white/50 border border-white/20 px-3 py-1 rounded-full">
-              Get Your Quote
+              Free Consultation
             </span>
             <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-brand-white tracking-tight leading-tight">
-              START YOUR PROJECT
+              YOUR PROJECT STARTS
               <br />
-              TODAY
+              WITH ONE EMAIL
             </h2>
           </Reveal>
 

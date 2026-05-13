@@ -12,9 +12,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getServices, getProjects, getArticles } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "Hycore Construction | Turning Your Vision Into Reality",
+  title: "Hycore Construction | Built Right, From Start to Finish",
   description:
-    "Hycore Construction delivers high-quality commercial and residential construction projects, combining experienced craftsmanship with disciplined project management.",
+    "Hycore Construction delivers precision residential and commercial construction — on time, on budget, and built to last. 500+ projects completed. Trusted by homeowners and developers alike.",
 };
 
 const jsonLd = {
@@ -97,7 +97,7 @@ export default async function HomePage() {
                     <Star key={i} size={12} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <span className="text-xs text-white/60">Trusted by 500+ Customers</span>
+                <span className="text-xs text-white/60">500+ Projects Delivered</span>
               </div>
             </Reveal>
             <Reveal onLoad delay={0.4}>
@@ -113,8 +113,9 @@ export default async function HomePage() {
           {/* Right — positioned lower */}
           <Reveal onLoad delay={0.35} direction="left" className="hidden md:block pb-3">
             <p className="text-white/50 text-sm leading-[1.8] max-w-sm">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit. Viverra scelerisque dolor
-              nec blandit nullam parturient viverra id.
+              Whether you&apos;re breaking ground on a new build or transforming an existing space
+              — Hycore brings the experience, crew, and accountability to see it through.
+              On time. On budget. Built right.
             </p>
           </Reveal>
         </div>
@@ -143,14 +144,15 @@ export default async function HomePage() {
                 About Us
               </p>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-black tracking-tight leading-tight mb-6">
-                INNOVATION IN
+                PRECISION IN
                 <br />
                 EVERY STRUCTURE
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500 mb-8">
-                We are a construction company built on precision, accountability, and long-term
-                partnerships. Our team delivers high-quality commercial and residential projects
-                by combining experienced craftsmanship with disciplined project management.
+                Built on precision, accountability, and long-term client partnerships — Hycore
+                delivers high-quality residential and commercial projects by combining skilled
+                craftsmanship with disciplined project management. Every job site, every phase,
+                every handover — held to the same standard of care.
               </p>
               <HoverGlowButton
                 href="/about"
@@ -312,8 +314,9 @@ export default async function HomePage() {
                 Work Showcase
               </h2>
               <p className="text-sm leading-[1.8] text-white/50 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
+                From precision-crafted interiors to large-scale commercial builds — every project
+                in our portfolio reflects meticulous execution, disciplined project management,
+                and a result built to stand the test of time.
               </p>
               <HoverGlowButton
                 href="/projects"
@@ -359,12 +362,12 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <Reveal>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black text-brand-white tracking-tight text-center mb-4">
-                STRENGTH AND STYLE IN
+                BUILT ON KNOWLEDGE,
                 <br />
-                EVERY PROJECT
+                DRIVEN BY CRAFT
               </h2>
               <p className="text-center text-sm text-white/40 mb-14">
-                Insights from our team of construction professionals.
+                Real insights from the professionals who build it every day.
               </p>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

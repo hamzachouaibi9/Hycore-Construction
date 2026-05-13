@@ -7,9 +7,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getProjects } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "Our Work | Projects",
+  title: "Our Projects | Hycore Construction Portfolio",
   description:
-    "We create contemporary construction rooted in precision, proportion, and clarity. Browse our portfolio of commercial and residential projects.",
+    "Browse Hycore Construction's portfolio of commercial and residential projects — each one delivered on time, on budget, and built to stand the test of time.",
 };
 
 export default async function ProjectsPage() {
@@ -33,7 +33,8 @@ export default async function ProjectsPage() {
           </Reveal>
           <Reveal onLoad delay={0.3}>
             <p className="text-sm text-white/50 max-w-sm mx-auto leading-[1.8]">
-              We create contemporary construction rooted in precision, proportion, &amp; clarity.
+              Every project is a commitment — to the client, to the craft, and to a standard
+              that doesn&apos;t compromise. Commercial and residential builds, delivered right.
             </p>
           </Reveal>
         </div>
