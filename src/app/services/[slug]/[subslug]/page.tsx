@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 import { getServiceBySlug, getSubServiceBySlug, getServices, getArticles } from "@/lib/payload";
 import { notFound } from "next/navigation";
+import { metaDescription, breadcrumbsJsonLd, serviceJsonLd } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string; subslug: string }>;
@@ -31,9 +32,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, subslug } = await params;
   const subService = await getSubServiceBySlug(slug, subslug);
   if (!subService) return { title: "Service Not Found" };
+  const description = metaDescription(
+    `Expert ${subService.title.toLowerCase()} contractor serving Tampa, Brandon, Riverview, South Tampa, and the greater Tampa Bay area. ${subService.description}`
+  );
   return {
     title: `${subService.title} in Tampa, FL | Hycore Construction`,
-    description: `${subService.description.slice(0, 140)}… Expert ${subService.title.toLowerCase()} contractor serving Tampa, Brandon, Riverview, South Tampa, and the greater Tampa Bay area.`,
+    description,
+    alternates: { canonical: `/services/${slug}/${subslug}` },
+    openGraph: {
+      title: `${subService.title} in Tampa, FL | Hycore Construction`,
+      description,
+    },
   };
 }
 
@@ -72,8 +81,27 @@ export default async function SubServiceDetailPage({ params }: Props) {
 
   const recentArticles = articles.slice(0, 3);
 
+  const jsonLd = [
+    serviceJsonLd({
+      name: subService.title,
+      description: subService.description,
+      path: `/services/${service.slug}/${subService.slug}`,
+    }),
+    breadcrumbsJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services" },
+      { name: service.title, path: `/services/${service.slug}` },
+      { name: subService.title, path: `/services/${service.slug}/${subService.slug}` },
+    ]),
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ── Hero ── */}
       <section className="relative min-h-[60dvh] flex items-end bg-brand-black overflow-hidden">
         <Image

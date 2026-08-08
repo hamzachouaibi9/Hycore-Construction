@@ -7,6 +7,12 @@ import QuoteBar from "@/components/sections/QuoteBar";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { getProjectBySlug, getProjects } from "@/lib/payload";
 import { notFound } from "next/navigation";
+import {
+  metaDescription,
+  breadcrumbsJsonLd,
+  projectGalleryJsonLd,
+  categoryToServicePath,
+} from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,9 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
+  const description = metaDescription(
+    `${project.title} — ${project.category} project by Hycore Construction in the Tampa Bay area. ${project.description}`
+  );
   return {
-    title: project.title,
-    description: project.description,
+    title: `${project.title} | ${project.category} in Tampa, FL`,
+    description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: `${project.title} | Hycore Construction`,
+      description,
+      images: [{ url: project.heroImage, width: 1200, height: 630, alt: project.title }],
+    },
   };
 }
 
@@ -37,9 +52,24 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) notFound();
 
   const moreProjects = allProjects.filter((p) => p.slug !== slug).slice(0, 2);
+  const servicePath = categoryToServicePath[project.category];
+
+  const jsonLd = [
+    projectGalleryJsonLd(project),
+    breadcrumbsJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Projects", path: "/projects" },
+      { name: project.title, path: `/projects/${project.slug}` },
+    ]),
+  ];
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ── Hero ── */}
       <section className="relative h-screen bg-brand-black overflow-hidden">
         <Image
@@ -101,6 +131,15 @@ export default async function ProjectDetailPage({ params }: Props) {
                 Overview
               </h2>
               <p className="text-sm leading-[1.8] text-gray-500">{project.description}</p>
+              {servicePath && (
+                <Link
+                  href={servicePath}
+                  className="inline-flex items-center gap-2 mt-6 text-sm font-bold tracking-widest text-primary hover:text-brand-black transition-[color] duration-200"
+                >
+                  EXPLORE OUR {project.category.toUpperCase()} SERVICES
+                  <ArrowLeft size={14} className="rotate-180" />
+                </Link>
+              )}
             </div>
           </div>
         </div>

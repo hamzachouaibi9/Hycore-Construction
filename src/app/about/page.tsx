@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "About Hycore Construction | Built on Trust",
   description:
     "Built on accountability. Powered by craftsmanship. Hycore Construction has delivered precision construction for over 20 years — every project, every scope, held to the same standard.",
+  alternates: { canonical: "/about" },
 };
 
 const processSteps = [

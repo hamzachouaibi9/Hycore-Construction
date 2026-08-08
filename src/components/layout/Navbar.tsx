@@ -86,11 +86,13 @@ export default function Navbar() {
   const pathname = usePathname();
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileOpen(false);
     setMobileServicesOpen(false);
     setMobileCategoryOpen(null);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -152,7 +154,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center">
+        <ul className="hidden lg:flex items-center">
           {/* HOME */}
           <li className="flex items-center group/navitem">
             <Link
@@ -222,14 +224,14 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <HoverGlowButton
             href="/contact"
-            className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
+            className="hidden lg:inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-bold tracking-widest rounded hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black"
           >
             FREE QUOTE
           </HoverGlowButton>
 
           <button
             onClick={() => setMobileOpen((o) => !o)}
-            className="md:hidden text-brand-white p-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="lg:hidden text-brand-white p-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -241,7 +243,7 @@ export default function Navbar() {
       <div
         onMouseEnter={openServices}
         onMouseLeave={scheduleClose}
-        className={`hidden md:block absolute left-0 right-0 z-40 transition-[opacity,transform] duration-200 ${
+        className={`hidden lg:block absolute left-0 right-0 z-40 transition-[opacity,transform] duration-200 ${
           servicesOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-2 pointer-events-none"
@@ -330,7 +332,7 @@ export default function Navbar() {
 
       {/* ── Mobile drawer ── */}
       <div
-        className={`md:hidden fixed inset-0 top-16 z-40 transition-[opacity,transform] duration-300 overflow-y-auto ${
+        className={`lg:hidden fixed inset-0 top-16 md:top-20 z-40 transition-[opacity,transform] duration-300 overflow-y-auto ${
           mobileOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"

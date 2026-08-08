@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Construction Insights | Hycore Construction",
   description:
     "Expert perspectives on construction management, technology, and industry trends — written by the professionals who build it every day.",
+  alternates: { canonical: "/articles" },
 };
 
 export default async function ArticlesPage() {

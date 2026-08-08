@@ -6,11 +6,13 @@ import Accordion from "@/components/ui/Accordion";
 import { Reveal } from "@/components/ui/Reveal";
 import ContactPageForm from "@/components/ui/ContactPageForm";
 import { getFAQs } from "@/lib/payload";
+import { faqJsonLd, breadcrumbsJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact Hycore Construction | Get a Free Quote",
   description:
     "Ready to start your project? Contact Hycore Construction today. We respond to every inquiry within one business day and offer free project consultations.",
+  alternates: { canonical: "/contact" },
 };
 
 export default async function ContactPage() {
@@ -22,8 +24,20 @@ export default async function ContactPage() {
     answer: f.answer,
   }));
 
+  const jsonLd = [
+    faqJsonLd(faqItems),
+    breadcrumbsJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Contact", path: "/contact" },
+    ]),
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Get In Touch — 90vh ── */}
       <section className="bg-brand-black min-h-[90dvh] flex items-center py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">

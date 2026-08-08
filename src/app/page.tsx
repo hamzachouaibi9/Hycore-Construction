@@ -11,27 +11,10 @@ import { Reveal } from "@/components/ui/Reveal";
 import { getServices, getProjects, getArticles } from "@/lib/payload";
 
 export const metadata: Metadata = {
-  title: "Hycore Construction | Built Right, From Start to Finish",
+  title: "Hycore Construction | Tampa General Contractor & Home Builder",
   description:
-    "Hycore Construction delivers precision residential and commercial construction — on time, on budget, and built to last. 500+ projects completed. Trusted by homeowners and developers alike.",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Hycore Construction",
-  description: "A forward-thinking construction company dedicated to transforming ideas into reality.",
-  url: "https://hycoreconstruction.com",
-  telephone: "(555) 555-5555",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "410 Sandtown",
-    addressLocality: "California",
-    postalCode: "94001",
-    addressCountry: "US",
-  },
-  priceRange: "$$",
-  sameAs: ["https://instagram.com", "https://facebook.com", "https://linkedin.com"],
+    "Hycore Construction delivers precision residential and commercial construction across Tampa Bay — new builds, remodels, and additions on time and on budget. 500+ projects completed.",
+  alternates: { canonical: "/" },
 };
 
 export default async function HomePage() {
@@ -45,11 +28,6 @@ export default async function HomePage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* ── Hero ── */}
       <section className="relative min-h-[100dvh] flex items-end overflow-hidden bg-brand-black">
         <Image

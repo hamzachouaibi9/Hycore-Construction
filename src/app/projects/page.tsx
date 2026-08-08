@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Our Projects | Hycore Construction Portfolio",
   description:
     "Browse Hycore Construction's portfolio of commercial and residential projects — each one delivered on time, on budget, and built to stand the test of time.",
+  alternates: { canonical: "/projects" },
 };
 
 export default async function ProjectsPage() {

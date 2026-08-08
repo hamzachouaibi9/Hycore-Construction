@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Construction Services | Hycore Construction",
   description:
     "From custom home design to commercial builds, renovations, and storm damage repair — Hycore Construction delivers expert results across every scope and scale.",
+  alternates: { canonical: "/services" },
 };
 
 export default async function ServicesPage() {

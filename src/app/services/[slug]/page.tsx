@@ -7,8 +7,15 @@ import ArticleCard from "@/components/ui/ArticleCard";
 import ContactForm from "@/components/ui/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
-import { getServiceBySlug, getServices, getArticles } from "@/lib/payload";
+import ProjectCard from "@/components/ui/ProjectCard";
+import { getServiceBySlug, getServices, getArticles, getProjects } from "@/lib/payload";
 import { notFound } from "next/navigation";
+import {
+  metaDescription,
+  breadcrumbsJsonLd,
+  serviceJsonLd,
+  serviceSlugToCategories,
+} from "@/lib/seo";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -23,9 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = await getServiceBySlug(slug);
   if (!service) return { title: "Service Not Found" };
+  const description = metaDescription(
+    `${service.description} Serving Tampa, South Tampa, Brandon, Riverview, Carrollwood, Wesley Chapel, and the greater Tampa Bay area.`
+  );
   return {
     title: `${service.title} in Tampa, FL | Hycore Construction`,
-    description: `${service.description} Serving Tampa, South Tampa, Brandon, Riverview, Carrollwood, Wesley Chapel, and the greater Tampa Bay area.`,
+    description,
+    alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      title: `${service.title} in Tampa, FL | Hycore Construction`,
+      description,
+    },
   };
 }
 
@@ -40,9 +55,10 @@ const subServiceIcons = [
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
-  const [service, articles] = await Promise.all([
+  const [service, articles, allProjects] = await Promise.all([
     getServiceBySlug(slug),
     getArticles(),
+    getProjects(),
   ]);
 
   if (!service) notFound();
@@ -50,8 +66,30 @@ export default async function ServiceDetailPage({ params }: Props) {
   const recentArticles = articles.slice(0, 3);
   const hasSubServices = service.subServices && service.subServices.length > 0;
 
+  const relatedCategories = serviceSlugToCategories[service.slug] ?? [];
+  const relatedProjects = allProjects
+    .filter((p) => relatedCategories.includes(p.category))
+    .slice(0, 4);
+
+  const jsonLd = [
+    serviceJsonLd({
+      name: service.title,
+      description: service.description,
+      path: `/services/${service.slug}`,
+    }),
+    breadcrumbsJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services" },
+      { name: service.title, path: `/services/${service.slug}` },
+    ]),
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Hero ── */}
       <section className="relative min-h-[55dvh] flex items-end bg-brand-black overflow-hidden">
         <Image
@@ -210,6 +248,31 @@ export default async function ServiceDetailPage({ params }: Props) {
           )}
         </div>
       </section>
+
+      {/* ── Related projects ── */}
+      {relatedProjects.length > 0 && (
+        <section className="bg-brand-white py-16 md:py-24 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <Reveal>
+              <p className="text-xs font-bold tracking-widest text-primary mb-3 uppercase">
+                Proof Of Work
+              </p>
+              <h2 className="font-display text-2xl md:text-3xl font-black text-brand-black tracking-tight mb-10">
+                {service.title.toUpperCase()} PROJECTS
+                <br />
+                WE&apos;VE DELIVERED
+              </h2>
+            </Reveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedProjects.map((project, i) => (
+                <Reveal key={project.id} delay={i * 0.08}>
+                  <ProjectCard project={project} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Contact form ── */}
       <section className="bg-brand-black">

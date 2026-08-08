@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SmoothScrollProvider } from "@/components/ui/SmoothScrollProvider";
+import { generalContractorJsonLd } from "@/lib/seo";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -92,6 +93,10 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-[100dvh] flex flex-col bg-brand-white antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generalContractorJsonLd()) }}
+        />
         <SmoothScrollProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

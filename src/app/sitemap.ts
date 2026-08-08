@@ -43,6 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.7,
+    images: [p.heroImage, ...p.gallery].map((img) =>
+      img.startsWith("http") ? img : `${BASE_URL}${img}`
+    ),
   }));
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
