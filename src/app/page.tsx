@@ -184,9 +184,11 @@ export default async function HomePage() {
               </div>
             </Reveal>
 
-            {/* Col 2: image on top, service card on bottom — inverse of cols 1 & 3 */}
+            {/* Col 2: image on top, service card on bottom — inverse of cols 1 & 3.
+                On mobile the columns stack, so card comes first here too, keeping
+                a strict card/image alternation down the page. */}
             <Reveal className="flex flex-col gap-6" delay={0.12}>
-              <div className="relative aspect-video rounded overflow-hidden flex-1">
+              <div className="relative aspect-video rounded overflow-hidden flex-1 order-2 md:order-1">
                 <Image
                   src="/projects/led-bath-and-tub/04.jpg"
                   alt="Construction project"
@@ -198,7 +200,7 @@ export default async function HomePage() {
               </div>
               <Link
                 href={`/services/${services[4]?.slug ?? ""}`}
-                className="group block p-6 border border-gray-100 rounded hover:border-primary/20 hover:shadow-[0_8px_24px_-8px_rgba(44,159,255,0.15)] transition-[border-color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="group block p-6 border border-gray-100 rounded hover:border-primary/20 hover:shadow-[0_8px_24px_-8px_rgba(44,159,255,0.15)] transition-[border-color,box-shadow] duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary order-1 md:order-2"
               >
                 <div className="w-10 h-10 border border-gray-200 rounded flex items-center justify-center mb-4 group-hover:border-primary/40 transition-[border-color] duration-200">
                   <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
