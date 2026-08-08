@@ -142,7 +142,17 @@ export default function Footer() {
           <p className="text-xs text-white/30">
             &copy; {new Date().getFullYear()} HYCORE CONSTRUCTION. ALL RIGHTS RESERVED.
           </p>
-          <p className="text-xs text-white/20">BUILT BY CALLISTO DESIGNS</p>
+          <p className="text-xs text-white/20">
+            BUILT BY{" "}
+            <a
+              href="https://callistodesigns.com"
+              target="_blank"
+              rel="noopener"
+              className="hover:text-white/60 transition-[color] duration-200"
+            >
+              CALLISTO DESIGNS
+            </a>
+          </p>
         </div>
       </div>
     </footer>
