@@ -2,6 +2,10 @@
 
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+
+// Optional: when the site key env var is missing (e.g. not configured on the
+// host), the form still works — protected by the honeypot field only.
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 import emailjs from "@emailjs/browser";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 
@@ -44,7 +48,7 @@ export default function ContactPageForm() {
       return;
     }
 
-    if (!recaptchaToken) {
+    if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
       setError("Please complete the reCAPTCHA verification.");
       return;
     }
@@ -136,13 +140,15 @@ export default function ContactPageForm() {
           className={`${INPUT} resize-none`} />
       </div>
 
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-        onChange={setRecaptchaToken}
-        onExpired={() => setRecaptchaToken(null)}
-        theme="dark"
-      />
+      {RECAPTCHA_SITE_KEY && (
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={RECAPTCHA_SITE_KEY}
+          onChange={setRecaptchaToken}
+          onExpired={() => setRecaptchaToken(null)}
+          theme="dark"
+        />
+      )}
 
       {error && (
         <p className="text-red-400 text-sm">{error}</p>
