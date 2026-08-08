@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="relative min-h-[100dvh] flex flex-col items-center justify-center bg-brand-black overflow-hidden">
       {/* Background */}
       <Image
-        src="https://picsum.photos/1400/900?random=404"
+        src="/projects/pond-rehab/04.jpg"
         alt=""
         fill
         className="object-cover opacity-10"

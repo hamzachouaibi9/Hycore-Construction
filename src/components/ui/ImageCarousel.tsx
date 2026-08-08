@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const IMAGES = [
-  { src: "https://picsum.photos/600/380?random=91", alt: "Construction project" },
-  { src: "https://picsum.photos/600/380?random=92", alt: "Construction site" },
-  { src: "https://picsum.photos/600/380?random=93", alt: "Building work" },
-  { src: "https://picsum.photos/600/380?random=94", alt: "Construction team" },
-  { src: "https://picsum.photos/600/380?random=95", alt: "Project site" },
-  { src: "https://picsum.photos/600/380?random=96", alt: "Construction detail" },
+  { src: "/projects/2413-47th-new-build/20.jpg", alt: "Construction project" },
+  { src: "/projects/juan-kitchen-remodel/04.jpg", alt: "Construction site" },
+  { src: "/projects/led-bath-and-tub/03.jpg", alt: "Building work" },
+  { src: "/projects/juan-living-room-remodel/07.jpg", alt: "Construction team" },
+  { src: "/projects/pond-rehab/05.jpg", alt: "Project site" },
+  { src: "/projects/2413-47th-new-build/21.jpg", alt: "Construction detail" },
 ];
 
 // Duplicated for seamless loop — each item is 496px (480 + 16 padding-right)

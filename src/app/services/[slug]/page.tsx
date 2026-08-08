@@ -196,7 +196,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src={`https://picsum.photos/700/530?random=${service.id}50`}
+                src={"/projects/2413-47th-new-build/26.jpg"}
                 alt={service.title}
                 fill
                 className="object-cover"
@@ -280,7 +280,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[400px]">
               <Image
-                src="https://picsum.photos/700/600?random=91"
+                src="/projects/juan-living-room-remodel/09.jpg"
                 alt="Construction"
                 fill
                 className="object-cover"

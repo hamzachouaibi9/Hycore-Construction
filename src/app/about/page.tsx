@@ -78,7 +78,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded overflow-hidden">
               <Image
-                src="https://picsum.photos/700/500?random=80"
+                src="/projects/2413-47th-new-build/02.jpg"
                 alt="Construction worker"
                 fill
                 className="object-cover"

@@ -60,7 +60,7 @@ export function StaircaseSection() {
     >
       {/* Background image — full opacity so the staircase cover is dramatic */}
       <Image
-        src="https://picsum.photos/1400/900?random=85"
+        src="/projects/2413-47th-new-build/27.jpg"
         alt="Construction workers"
         fill
         className="object-cover"

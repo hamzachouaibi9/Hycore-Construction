@@ -10,7 +10,7 @@ export default function CTABanner() {
         <div className="relative overflow-hidden rounded-2xl">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('https://picsum.photos/1400/600?random=70')" }}
+            style={{ backgroundImage: "url('/projects/pond-rehab/01.jpg')" }}
           />
           <div className="absolute inset-0 bg-brand-black/80" />
 

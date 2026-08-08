@@ -239,7 +239,7 @@ export default async function ArticleDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[400px]">
               <Image
-                src="https://picsum.photos/700/600?random=93"
+                src="/projects/2413-47th-new-build/19.jpg"
                 alt="Construction project"
                 fill
                 className="object-cover"

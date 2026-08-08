@@ -3,7 +3,7 @@ import type { Service, SubService, Project, Article, Author, FAQ, Location } fro
 export const mockAuthor: Author = {
   id: "1",
   name: "Kim Daniel",
-  image: "https://picsum.photos/40/40?random=99",
+  image: "/logo.png",
   role: "Senior Construction Specialist",
 };
 
@@ -49,7 +49,7 @@ const personalizedDesignSubs: SubService[] = [
     title: "Custom Home Design & Build",
     description:
       "A seamless design-build experience where our architects and construction crews work as one unified team — eliminating the costly miscommunication that happens when design and construction are handled separately. From your first concept to the final walkthrough, every decision is made collaboratively, your vision is protected at every phase, and the result is a home built exactly as you imagined — on time, on budget, and without compromise.",
-    heroImage: "https://picsum.photos/1400/700?random=100",
+    heroImage: "/projects/2413-47th-new-build/01.jpg",
     categorySlug: "personalized-design",
     whatIsIncluded: baseIncluded,
   },
@@ -59,7 +59,7 @@ const personalizedDesignSubs: SubService[] = [
     title: "Residential Construction Services",
     description:
       "Comprehensive residential construction services for projects of all scales — from targeted upgrades to complete custom builds — managed by experienced professionals who bring the same standard of care to every job site. Our crews are skilled, our processes are proven, and our commitment to quality is non-negotiable. You get a team that communicates clearly, stays accountable, and delivers a finished home that reflects every dollar of your investment.",
-    heroImage: "https://picsum.photos/1400/700?random=101",
+    heroImage: "/projects/haya-new-build/02.jpg",
     categorySlug: "personalized-design",
     whatIsIncluded: baseIncluded,
   },
@@ -72,7 +72,7 @@ const newConstructionSubs: SubService[] = [
     title: "New Home Construction",
     description:
       "Build your dream home from the ground up with a team that manages every detail — permits, site preparation, structural systems, trade coordination, and final finishes — so nothing falls through the cracks and no decision gets made without your input. From the first shovel in the ground to your final walkthrough, Hycore handles the complexity so you can focus on what matters: watching your vision take shape.",
-    heroImage: "https://picsum.photos/1400/700?random=102",
+    heroImage: "/projects/2413-47th-new-build/05.jpg",
     categorySlug: "new-construction",
     whatIsIncluded: baseIncluded,
   },
@@ -82,7 +82,7 @@ const newConstructionSubs: SubService[] = [
     title: "Ground-Up Home Construction",
     description:
       "Starting with raw land, we handle every step of the transformation — site clearing, grading, utility coordination, engineered foundation systems, and full vertical construction through final finish. Raw land to completed home, managed by one accountable team with the experience to navigate permitting, site challenges, and trade coordination. The result is a structurally sound, expertly finished home built to outlast the vision behind it.",
-    heroImage: "https://picsum.photos/1400/700?random=103",
+    heroImage: "/projects/2413-47th-new-build/03.jpg",
     categorySlug: "new-construction",
     whatIsIncluded: baseIncluded,
   },
@@ -95,7 +95,7 @@ const renovationSubs: SubService[] = [
     title: "Home Remodeling",
     description:
       "Transform your existing home with remodeling services that go beyond refreshed aesthetics — modernizing how you live, improving daily functionality, and adding measurable property value. Hycore's renovation teams approach every remodel with the same discipline as a ground-up build: a clear scope, transparent pricing, skilled tradespeople, and a commitment to finishing right. You'll have a dedicated team managing every detail from demo day through final walkthrough.",
-    heroImage: "https://picsum.photos/1400/700?random=104",
+    heroImage: "/projects/juan-living-room-remodel/02.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -105,7 +105,7 @@ const renovationSubs: SubService[] = [
     title: "Custom Home Remodeling",
     description:
       "Bespoke remodeling solutions crafted entirely around your lifestyle, preferences, and long-term vision — because no two homes, and no two homeowners, are exactly alike. We begin by listening: understanding how you actually live, what frustrates you about your current space, and what your ideal version looks like. Then we build it — with the craftsmanship and attention to detail that makes the result feel uniquely yours, not like a template from a showroom.",
-    heroImage: "https://picsum.photos/1400/700?random=105",
+    heroImage: "/projects/cypress-kitchen-remodel/02.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -115,7 +115,7 @@ const renovationSubs: SubService[] = [
     title: "Whole-Home Renovations",
     description:
       "A complete top-to-bottom renovation that reimagines every room — from structural changes and systems upgrades to finishes and fixtures — coordinated by a single team so nothing gets lost between trades. Whole-home renovations are complex by nature, but with Hycore managing sequencing, subcontractors, and the schedule, the process is organized, predictable, and far less disruptive than most homeowners expect. The finished result is a cohesive, fully updated home that feels new from the inside out.",
-    heroImage: "https://picsum.photos/1400/700?random=106",
+    heroImage: "/projects/juan-living-room-remodel/03.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -125,7 +125,7 @@ const renovationSubs: SubService[] = [
     title: "Kitchen Remodeling",
     description:
       "The kitchen is the most-used room in your home — and one of the highest-return renovations you can make for both daily living and resale value. Hycore handles every element: layout optimization, cabinetry, countertops, appliances, tile, lighting, and plumbing — all coordinated to minimize downtime and deliver a space that works harder and looks better. Expect a kitchen that genuinely improves your daily life and adds real value to your property.",
-    heroImage: "https://picsum.photos/1400/700?random=107",
+    heroImage: "/projects/juan-kitchen-remodel/01.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -135,7 +135,7 @@ const renovationSubs: SubService[] = [
     title: "Bathroom Remodeling",
     description:
       "A well-executed bathroom remodel transforms one of the most personal spaces in your home into something you actually enjoy using every day. Whether you're creating a spa-like master retreat or updating a guest bath with modern tile and fixtures, Hycore handles every detail — waterproofing, plumbing, tile work, vanities, and lighting — with the precision that wet areas demand. The result is a bathroom that looks custom, functions perfectly, and holds up beautifully for years.",
-    heroImage: "https://picsum.photos/1400/700?random=108",
+    heroImage: "/projects/led-bath-and-tub/02.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -145,7 +145,7 @@ const renovationSubs: SubService[] = [
     title: "Interior Remodeling",
     description:
       "Interior remodeling is about more than new paint and fixtures — it's about reimagining how your spaces flow, how they feel, and how well they serve the way you actually live. Hycore's interior remodeling work ranges from opening floor plans and adding architectural detail to complete finish overhauls that transform the character of a home. Every change is designed with intention and executed with the craftsmanship that makes the difference between a remodel that looks done and one that looks right.",
-    heroImage: "https://picsum.photos/1400/700?random=109",
+    heroImage: "/projects/juan-living-room-remodel/04.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -155,7 +155,7 @@ const renovationSubs: SubService[] = [
     title: "Bedroom Remodeling",
     description:
       "Your bedroom should be the most restorative room in your home — designed around rest, comfort, and the way you start and end every day. Hycore's bedroom remodeling services range from master suite expansions with custom built-ins and walk-in closet systems to thoughtful guest room upgrades that make visitors feel genuinely welcome. We handle flooring, lighting, trim, ceiling detail, and millwork to create a room that feels intentional, not just updated.",
-    heroImage: "https://picsum.photos/1400/700?random=110",
+    heroImage: "/projects/juan-living-room-remodel/05.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -165,7 +165,7 @@ const renovationSubs: SubService[] = [
     title: "Exterior Home Remodeling",
     description:
       "Your home's exterior is the first thing anyone sees — and the last line of defense against the elements. Hycore's exterior remodeling services improve both, refreshing siding, rooflines, windows, doors, and trim with materials that enhance curb appeal and provide lasting weatherproofing. Whether you're preparing to sell, recovering from years of wear, or simply ready for an upgrade, our crews deliver results that look sharp and add measurable value to your property.",
-    heroImage: "https://picsum.photos/1400/700?random=111",
+    heroImage: "/projects/shed-install/01.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -175,7 +175,7 @@ const renovationSubs: SubService[] = [
     title: "Lanai Design & Construction",
     description:
       "A well-designed lanai extends your living space into the outdoors — creating a year-round gathering area that blends seamlessly with your home's architecture and the natural environment around it. Hycore designs and builds custom lanai structures with proper drainage, engineered structural framing, screened or glass enclosures, and finishing details that make the space feel like a natural extension of your interior. The result is an outdoor room you'll use every day, in every season.",
-    heroImage: "https://picsum.photos/1400/700?random=112",
+    heroImage: "/projects/haya-new-build/03.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -185,7 +185,7 @@ const renovationSubs: SubService[] = [
     title: "Living Room Remodeling",
     description:
       "The living room sets the tone for your entire home — where guests form first impressions and where your family spends the most time together. Hycore reimagines living spaces with structural vision and finish-level precision: open-concept conversions, custom built-in shelving, fireplace additions and surrounds, crown molding, and premium flooring. Every change is made with the whole room in mind, creating a cohesive space that feels designed — not just remodeled.",
-    heroImage: "https://picsum.photos/1400/700?random=113",
+    heroImage: "/projects/juan-living-room-remodel/01.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -195,7 +195,7 @@ const renovationSubs: SubService[] = [
     title: "Luxury Home Remodeling",
     description:
       "Luxury remodeling is not just about high-end materials — it's about the level of craft and project management discipline that makes those materials perform as intended. Hycore's luxury remodeling work incorporates the finest stone, hardwood, millwork, and custom cabinetry, installed by craftspeople who get every mitered corner, grout joint, and paint line exactly right. The result is a home that reflects the investment made — in every detail, in every room.",
-    heroImage: "https://picsum.photos/1400/700?random=114",
+    heroImage: "/projects/cypress-bath-remodel/02.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -205,7 +205,7 @@ const renovationSubs: SubService[] = [
     title: "Structural Remodeling",
     description:
       "Structural remodeling requires engineering knowledge, careful planning, and the experience to execute safely without compromising your home's integrity. Hycore's structural work includes load-bearing wall removal, steel and engineered lumber beam installation, floor plan reconfiguration, and foundation modifications — all performed from engineered drawings, within permitted scopes, by crews who understand what's at stake. The result is the open, reimagined floor plan you want, built safely and to code.",
-    heroImage: "https://picsum.photos/1400/700?random=115",
+    heroImage: "/projects/2413-47th-new-build/06.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -215,7 +215,7 @@ const renovationSubs: SubService[] = [
     title: "Attic Conversions",
     description:
       "Most attics are wasted space — converting one is one of the most cost-effective ways to add livable square footage without expanding your home's footprint. Hycore manages the entire process: structural assessment, insulation and ventilation upgrades, dormer additions where needed, stair access, electrical and HVAC integration, and interior finish — all permitted and delivered as a fully functional room. Whether you need a bedroom, home office, or bonus space, we build it to feel like it was always meant to be there.",
-    heroImage: "https://picsum.photos/1400/700?random=116",
+    heroImage: "/projects/juan-living-room-remodel/06.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -225,7 +225,7 @@ const renovationSubs: SubService[] = [
     title: "Aging in Place Remodeling",
     description:
       "Aging-in-place remodeling is about designing your home to support the life you want to live at every stage — with safety, comfort, and independence built in, not bolted on. Hycore's modifications include no-threshold shower entries, grab bars integrated into the design, widened doorways, non-slip flooring, improved lighting, and layout changes that reduce fall risk without sacrificing the aesthetic quality of your home. These are upgrades that serve you now and protect you for the long term.",
-    heroImage: "https://picsum.photos/1400/700?random=117",
+    heroImage: "/projects/farm-bathroom/01.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -235,7 +235,7 @@ const renovationSubs: SubService[] = [
     title: "Garage Conversions",
     description:
       "An underutilized garage is one of the highest-potential spaces in your home — and Hycore transforms them into fully livable, permitted spaces: guest suites with private bathrooms, home gyms, creative studios, or ADUs that generate rental income. The conversion includes insulation, drywall, electrical, HVAC, plumbing where needed, and finished flooring and trim — everything required to make the space feel like a real room, not a converted garage.",
-    heroImage: "https://picsum.photos/1400/700?random=118",
+    heroImage: "/projects/2413-47th-new-build/07.jpg",
     categorySlug: "home-renovation-remodeling",
     whatIsIncluded: baseIncluded,
   },
@@ -248,7 +248,7 @@ const homeAdditionsSubs: SubService[] = [
     title: "Room Additions",
     description:
       "A room addition is one of the most impactful investments you can make — adding permanent square footage that improves daily living, accommodates a growing family, and increases resale value. Hycore engineers additions to integrate seamlessly with your existing structure and style: matched rooflines, tied-in mechanical and electrical systems, and interior finishes that make the new space feel like it was always part of the original design. We manage permits, foundation work, framing, and finishes — delivering a finished room, not just four walls.",
-    heroImage: "https://picsum.photos/1400/700?random=119",
+    heroImage: "/projects/2413-47th-new-build/08.jpg",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
   },
@@ -258,7 +258,7 @@ const homeAdditionsSubs: SubService[] = [
     title: "Remodel Additions & Renovations",
     description:
       "The most transformative home projects combine new construction with strategic renovation — adding square footage where you need it while upgrading the spaces you already have, all under one project and one accountable team. Hycore manages the full complexity: sequencing trades, minimizing disruption to daily life, and ensuring that new and renovated spaces come together as a cohesive, fully updated home. You get the scope of a major transformation with the clarity of a single-team project.",
-    heroImage: "https://picsum.photos/1400/700?random=120",
+    heroImage: "/projects/2413-47th-new-build/09.jpg",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
   },
@@ -268,7 +268,7 @@ const homeAdditionsSubs: SubService[] = [
     title: "Second-Story Additions",
     description:
       "A second-story addition effectively doubles your home's square footage without consuming a single foot of your yard — one of the most efficient ways to grow your home's capacity and long-term value. Hycore manages the full scope: structural engineering, temporary weatherproofing during construction, foundation reinforcement where required, framing, roofing, MEP systems, and interior finish — coordinated to minimize disruption and deliver a second floor that looks and feels like it was always there.",
-    heroImage: "https://picsum.photos/1400/700?random=121",
+    heroImage: "/projects/2413-47th-new-build/10.jpg",
     categorySlug: "home-additions",
     whatIsIncluded: baseIncluded,
   },
@@ -284,7 +284,7 @@ export const mockServices: Service[] = [
     description:
       "A tailored design-to-build experience that keeps your vision at the center of every decision — eliminating the gap between what you imagined and what gets built by having our architects and construction teams work together from day one. No handoffs, no lost details, no surprises.",
     icon: "drafting",
-    heroImage: "https://picsum.photos/1400/700?random=70",
+    heroImage: "/projects/2413-47th-new-build/01.jpg",
     featured: true,
     whatIsIncluded: [
       {
@@ -322,7 +322,7 @@ export const mockServices: Service[] = [
     description:
       "From raw land to a finished home, our new construction services encompass every phase of the build — permits, site prep, structural systems, trade coordination, and final finish — managed by experienced teams with transparent communication and a quality standard that does not compromise.",
     icon: "home",
-    heroImage: "https://picsum.photos/1400/700?random=71",
+    heroImage: "/projects/2413-47th-new-build/04.jpg",
     featured: true,
     whatIsIncluded: [
       {
@@ -360,7 +360,7 @@ export const mockServices: Service[] = [
     description:
       "Whether you're refreshing a single room or transforming your entire home, our renovation teams deliver results that are beautiful, functional, and built to last — managed with the same discipline and accountability as a ground-up build, regardless of scope.",
     icon: "hammer",
-    heroImage: "https://picsum.photos/1400/700?random=72",
+    heroImage: "/projects/juan-kitchen-remodel/02.jpg",
     featured: true,
     whatIsIncluded: [
       {
@@ -398,7 +398,7 @@ export const mockServices: Service[] = [
     description:
       "Expand your home's footprint without disrupting what you already love about it. Our addition specialists engineer new space to integrate seamlessly with your existing structure, style, and systems — matched rooflines, tied-in mechanicals, and finishes that make the addition feel like it was always part of the plan.",
     icon: "expand",
-    heroImage: "https://picsum.photos/1400/700?random=73",
+    heroImage: "/projects/2413-47th-new-build/11.jpg",
     featured: false,
     whatIsIncluded: [
       {
@@ -436,7 +436,7 @@ export const mockServices: Service[] = [
     description:
       "Rapid, expert response to storm, wind, and water damage — stabilizing your property fast, coordinating directly with your insurer, and restoring your home's safety, structural integrity, and appearance to pre-storm condition or better.",
     icon: "shield",
-    heroImage: "https://picsum.photos/1400/700?random=74",
+    heroImage: "/projects/haya-new-build/04.jpg",
     featured: false,
     whatIsIncluded: [
       {
@@ -478,7 +478,7 @@ export const mockServices: Service[] = [
     description:
       "Professional land grading and excavation that prepares your site correctly from the start — establishing the elevations, drainage patterns, and soil compaction that every structure built on it depends on. Done right once, never revisited.",
     icon: "terrain",
-    heroImage: "https://picsum.photos/1400/700?random=75",
+    heroImage: "/projects/pond-rehab/01.jpg",
     featured: false,
     whatIsIncluded: [
       {
@@ -696,7 +696,7 @@ export const mockArticles: Article[] = [
     category: "Project Management",
     publishedDate: "March 8, 2026",
     author: mockAuthor,
-    heroImage: "https://picsum.photos/1400/700?random=60",
+    heroImage: "/projects/2413-47th-new-build/12.jpg",
     excerpt:
       "Skipping permits seems like a shortcut until a lender flags the work, an inspector orders it demolished, or an insurance claim gets denied. Here is what unpermitted construction actually costs — and how Hycore handles it on every project.",
     content: `
@@ -746,7 +746,7 @@ Building right means building legal. There are no shortcuts worth taking — and
     category: "Innovation",
     publishedDate: "March 8, 2026",
     author: mockAuthor,
-    heroImage: "https://picsum.photos/1400/700?random=61",
+    heroImage: "/projects/2413-47th-new-build/13.jpg",
     excerpt:
       "BIM, drone surveying, and AI-driven scheduling are no longer innovations — they are the baseline for how competitive construction firms operate. Here is what the technology shift actually changes on the job site.",
     content: `
@@ -779,7 +779,7 @@ As artificial intelligence and machine learning mature, their applications in co
     category: "Project Management",
     publishedDate: "Sep 29, 2025",
     author: mockAuthor,
-    heroImage: "https://picsum.photos/1400/700?random=62",
+    heroImage: "/projects/2413-47th-new-build/14.jpg",
     excerpt:
       "Scope creep, supply chain delays, labor shortages, and miscommunication — construction project management fails the same ways every time. Here is how experienced teams prevent the problems that derail most builds.",
     content: `
@@ -812,7 +812,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "Serving South Tampa homeowners with premium construction, renovation, and remodeling services — from Hyde Park and Palma Ceia to Bayshore and Davis Islands. Hycore brings the same standard of craft to every project in one of Tampa's most architecturally diverse neighborhoods.",
-    heroImage: "https://picsum.photos/1400/700?random=200",
+    heroImage: "/projects/pond-rehab/02.jpg",
     seoTitle: "Construction Company in South Tampa, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction is your trusted construction company in South Tampa, FL. We specialize in home remodeling, new construction, kitchen renovations, and custom home builds throughout Hyde Park, Palma Ceia, Davis Islands, and Bayshore Boulevard.",
@@ -832,7 +832,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "Hycore Construction delivers residential and commercial construction services throughout Brandon, FL — one of Hillsborough County's fastest-growing communities. From new construction builds to full home remodels and room additions, our crews work across Brandon and the surrounding suburbs with the same accountability and craftsmanship we bring to every project.",
-    heroImage: "https://picsum.photos/1400/700?random=201",
+    heroImage: "/projects/haya-new-build/05.jpg",
     seoTitle: "Construction Company in Brandon, FL | Hycore Construction",
     seoDescription:
       "Looking for a reliable construction company in Brandon, FL? Hycore Construction provides home remodeling, new construction, kitchen remodels, and home additions throughout Brandon and Hillsborough County.",
@@ -852,7 +852,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "Hycore Construction serves the Westshore district and surrounding Tampa Bay neighborhoods with expert construction and renovation services. Whether you're upgrading a commercial space or remodeling a home near the bay, our team brings precision, accountability, and a proven process to every job.",
-    heroImage: "https://picsum.photos/1400/700?random=202",
+    heroImage: "/projects/2413-47th-new-build/15.jpg",
     seoTitle: "Construction Company in Westshore Tampa, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction serves Westshore, Tampa, FL with expert home remodeling, commercial construction, and renovation services. Licensed, insured, and trusted across the Tampa Bay area.",
@@ -872,7 +872,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "One of Hillsborough County's fastest-expanding communities, Riverview is home to a growing base of homeowners investing in new construction and whole-home renovations. Hycore Construction brings full-service build and remodel capabilities to Riverview — from ground-up custom homes to complete interior transformations.",
-    heroImage: "https://picsum.photos/1400/700?random=203",
+    heroImage: "/projects/2413-47th-new-build/16.jpg",
     seoTitle: "Construction Company in Riverview, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction is a top-rated construction company serving Riverview, FL. We build custom homes, deliver home renovations, and handle room additions throughout Riverview and the greater Hillsborough County area.",
@@ -892,7 +892,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "Carrollwood is one of Tampa's most established suburban communities — and a neighborhood where Hycore Construction has delivered remodels, additions, and new construction builds for years. Our teams understand the character and building stock of Carrollwood's mature neighborhoods and bring the right approach to every project.",
-    heroImage: "https://picsum.photos/1400/700?random=204",
+    heroImage: "/projects/pond-rehab/03.jpg",
     seoTitle: "Construction Company in Carrollwood, Tampa, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction serves Carrollwood, Tampa, FL with premium home remodeling, kitchen renovations, bathroom remodels, and room addition services. Trusted by Carrollwood homeowners for quality construction.",
@@ -912,7 +912,7 @@ export const mockLocations: Location[] = [
     county: "Pasco County",
     description:
       "Wesley Chapel is one of the Tampa Bay area's fastest-growing markets — with new communities, custom builds, and rapid home improvement investment defining the landscape. Hycore Construction brings new construction expertise and full renovation capabilities to Wesley Chapel and the surrounding Pasco County area.",
-    heroImage: "https://picsum.photos/1400/700?random=205",
+    heroImage: "/projects/2413-47th-new-build/17.jpg",
     seoTitle: "Construction Company in Wesley Chapel, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction is a leading construction company serving Wesley Chapel, FL. We specialize in new home construction, custom home builds, and home remodeling throughout Wesley Chapel and Pasco County.",
@@ -932,7 +932,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "New Tampa is a master-planned community with a strong mix of established homes ready for renovation and newly platted lots ideal for custom construction. Hycore serves New Tampa homeowners with the full scope of our services — from kitchen and bathroom remodels to second-story additions and ground-up custom builds.",
-    heroImage: "https://picsum.photos/1400/700?random=206",
+    heroImage: "/projects/haya-new-build/01.jpg",
     seoTitle: "Construction Company in New Tampa, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction serves New Tampa, FL with expert home remodeling, custom home building, and renovation services. Trusted by New Tampa homeowners across Heritage Isles, Cory Lake Isles, and Tampa Palms.",
@@ -952,7 +952,7 @@ export const mockLocations: Location[] = [
     county: "Hillsborough County",
     description:
       "Temple Terrace is one of Tampa Bay's most distinctive communities — a city within a city with a rich housing stock that rewards thoughtful renovation and careful craftsmanship. Hycore Construction brings the expertise to match Temple Terrace's character: precise work, quality materials, and results that honor the neighborhood.",
-    heroImage: "https://picsum.photos/1400/700?random=207",
+    heroImage: "/projects/2413-47th-new-build/18.jpg",
     seoTitle: "Construction Company in Temple Terrace, FL | Hycore Construction",
     seoDescription:
       "Hycore Construction serves Temple Terrace, FL with premium home remodeling, structural renovations, and custom construction services. Trusted by Temple Terrace homeowners for quality, transparency, and lasting results.",

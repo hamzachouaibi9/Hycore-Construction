@@ -58,7 +58,7 @@ export default async function ContactPage() {
             {/* Image */}
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded overflow-hidden">
               <Image
-                src="https://picsum.photos/700/500?random=90"
+                src="/projects/juan-kitchen-remodel/03.jpg"
                 alt="Construction team reviewing plans"
                 fill
                 className="object-cover"

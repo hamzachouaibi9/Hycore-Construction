@@ -105,7 +105,7 @@ export default async function HomePage() {
             {/* Left image */}
             <Reveal className="relative aspect-[3/4] rounded overflow-hidden shadow-dark">
               <Image
-                src="https://picsum.photos/600/800?random=1"
+                src="/projects/2413-47th-new-build/23.jpg"
                 alt="Construction crane"
                 fill
                 className="object-cover"
@@ -174,7 +174,7 @@ export default async function HomePage() {
               </Link>
               <div className="relative aspect-video rounded overflow-hidden flex-1">
                 <Image
-                  src="https://picsum.photos/600/400?random=5"
+                  src="/projects/juan-kitchen-remodel/05.jpg"
                   alt="Construction project"
                   fill
                   className="object-cover"
@@ -188,7 +188,7 @@ export default async function HomePage() {
             <Reveal className="flex flex-col gap-6" delay={0.12}>
               <div className="relative aspect-video rounded overflow-hidden flex-1">
                 <Image
-                  src="https://picsum.photos/600/400?random=2"
+                  src="/projects/led-bath-and-tub/04.jpg"
                   alt="Construction project"
                   fill
                   className="object-cover"
@@ -234,7 +234,7 @@ export default async function HomePage() {
               </Link>
               <div className="relative aspect-video rounded overflow-hidden flex-1">
                 <Image
-                  src="https://picsum.photos/600/400?random=3"
+                  src="/projects/juan-living-room-remodel/08.jpg"
                   alt="Construction project"
                   fill
                   className="object-cover"
@@ -261,7 +261,7 @@ export default async function HomePage() {
         {/* Background image scoped to its own clipping layer so the section itself has no overflow-hidden */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Image
-            src="https://picsum.photos/1400/800?random=71"
+            src="/projects/pond-rehab/06.jpg"
             alt="Construction site"
             fill
             className="object-cover opacity-25"
@@ -322,7 +322,7 @@ export default async function HomePage() {
             </div>
             <Reveal delay={0.2} className="relative aspect-[3/4] rounded overflow-hidden shadow-dark hidden md:block">
               <Image
-                src="https://picsum.photos/600/800?random=4"
+                src="/projects/2413-47th-new-build/24.jpg"
                 alt="Construction crane at sunset"
                 fill
                 className="object-cover"

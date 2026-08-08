@@ -190,7 +190,7 @@ export default async function LocationPage({ params }: Props) {
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src={`https://picsum.photos/700/530?random=${location.id}90`}
+                src={"/projects/haya-new-build/02.jpg"}
                 alt={`Construction services in ${location.name}`}
                 fill
                 className="object-cover"
@@ -308,7 +308,7 @@ export default async function LocationPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[400px]">
               <Image
-                src="https://picsum.photos/700/600?random=93"
+                src="/projects/2413-47th-new-build/22.jpg"
                 alt={`Construction services in ${location.name}`}
                 fill
                 className="object-cover"

@@ -94,7 +94,7 @@ export default async function ServicesPage() {
             </Reveal>
             <Reveal delay={0.15} className="hidden md:block relative aspect-video rounded overflow-hidden">
               <Image
-                src="https://picsum.photos/600/400?random=5"
+                src="/projects/2413-47th-new-build/25.jpg"
                 alt="Construction interior"
                 fill
                 className="object-cover"

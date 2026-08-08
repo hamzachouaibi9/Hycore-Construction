@@ -175,7 +175,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
             </Reveal>
             <Reveal delay={0.15} className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
-                src={`https://picsum.photos/700/530?random=${subService.id}80`}
+                src={"/projects/juan-kitchen-remodel/06.jpg"}
                 alt={subService.title}
                 fill
                 className="object-cover"
@@ -301,7 +301,7 @@ export default async function SubServiceDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative aspect-[4/3] md:aspect-auto min-h-[400px]">
               <Image
-                src="https://picsum.photos/700/600?random=92"
+                src="/projects/cypress-bath-remodel/03.jpg"
                 alt="Construction"
                 fill
                 className="object-cover"
