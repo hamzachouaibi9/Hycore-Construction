@@ -105,7 +105,7 @@ export default async function ContactPage() {
                 </div>
               </div>
               <p className="text-sm font-medium text-brand-black group-hover:text-white mb-1 transition-[color] duration-300">
-                info@hycoreconstruction.com
+                hycoreconstruction@gmail.com
               </p>
               <p className="text-sm text-gray-500 group-hover:text-white/75 transition-[color] duration-300">
                 (555) 555-5555
