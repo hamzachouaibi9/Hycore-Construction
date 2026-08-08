@@ -34,7 +34,7 @@ export default async function ServicesPage() {
       {/* ── Hero ── */}
       <section className="relative min-h-[85dvh] flex items-end bg-brand-black overflow-hidden">
         <Image
-          src="/heroimage.jpg"
+          src="/projects/2413-47th-new-build/03.jpg"
           alt="Construction site"
           fill
           className="object-cover opacity-30"

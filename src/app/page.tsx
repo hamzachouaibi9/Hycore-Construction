@@ -31,7 +31,7 @@ export default async function HomePage() {
       {/* ── Hero ── */}
       <section className="relative min-h-[100dvh] flex items-end overflow-hidden bg-brand-black">
         <Image
-          src="/heroimage.jpg"
+          src="/projects/2413-47th-new-build/01.jpg"
           alt="Construction site"
           fill
           className="object-cover opacity-40"
