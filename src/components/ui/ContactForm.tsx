@@ -1,11 +1,14 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 // Optional: when the site key env var is missing (e.g. not configured on the
 // host), the form still works — protected by the honeypot field only.
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+// Bots submit forms near-instantly; humans need at least a few seconds.
+const MIN_FILL_TIME_MS = 4000;
 import emailjs from "@emailjs/browser";
 import { HoverGlowButton } from "@/components/ui/hover-glow-button";
 
@@ -28,6 +31,10 @@ export default function ContactForm() {
   const [error, setError] = useState("");
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const mountedAt = useRef(0);
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,8 +46,12 @@ export default function ContactForm() {
     e.preventDefault();
     setError("");
 
-    // Honeypot — silently drop bot submissions
-    if (form.website) return;
+    // Honeypot + fill-time check — drop bot submissions while showing the
+    // normal success screen so bots don't detect the trap and retry.
+    if (form.website || Date.now() - mountedAt.current < MIN_FILL_TIME_MS) {
+      setSubmitted(true);
+      return;
+    }
 
     if (RECAPTCHA_SITE_KEY && !recaptchaToken) {
       setError("Please complete the reCAPTCHA verification.");
