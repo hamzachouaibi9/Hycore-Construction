@@ -69,26 +69,3 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 0.15s;
 }
 
-/* Infinite vertical carousel (desktop) */
-@keyframes carouselVertical {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-.animate-carousel-vertical {
-  animation: carouselVertical 18s linear infinite;
-}
-.animate-carousel-vertical:hover {
-  animation-play-state: paused;
-}
-
-/* Infinite horizontal carousel (mobile) */
-@keyframes carouselHorizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-carousel-horizontal {
-  animation: carouselHorizontal 14s linear infinite;
-}
-.animate-carousel-horizontal:hover {
-  animation-play-state: paused;
-}
