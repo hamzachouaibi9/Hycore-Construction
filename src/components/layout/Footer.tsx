@@ -20,11 +20,8 @@ const serviceLinks = [
 ];
 
 const resourceLinks = [
-  { label: "Style Guide", href: "#" },
   { label: "Terms of Service", href: "#" },
   { label: "Privacy Policy", href: "#" },
-  { label: "Accessibility", href: "#" },
-  { label: "Help", href: "#" },
   { label: "FAQ", href: "/contact#faq" },
 ];
 
