@@ -11,11 +11,12 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { label: "Kitchen", href: "/services/kitchen-remodeling" },
-  { label: "Residential", href: "/services/residential-construction" },
-  { label: "Home Construction", href: "/services/home-construction" },
-  { label: "Remodeling", href: "/services/remodeling" },
-  { label: "Bedrooms", href: "/services/residential-construction" },
+  { label: "Kitchen", href: "/services/home-renovation-remodeling/kitchen-remodeling" },
+  { label: "Residential", href: "/services/personalized-design/residential-construction-services" },
+  { label: "Home Construction", href: "/services/new-construction" },
+  { label: "Remodeling", href: "/services/home-renovation-remodeling" },
+  { label: "Bedrooms", href: "/services/home-renovation-remodeling/bedroom-remodeling" },
+  { label: "Home Additions", href: "/services/home-additions" },
 ];
 
 const resourceLinks = [

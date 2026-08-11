@@ -644,7 +644,7 @@ export const mockProjects: Project[] = [
   {
     id: "9",
     slug: "pond-rehab",
-    title: "7335 Pond Rehabilitation",
+    title: "Loghouse Pond Rehabilitation",
     category: "Grading & Excavation",
     location: "Tampa Bay Area, FL",
     client: "Private Client",
@@ -659,14 +659,14 @@ export const mockProjects: Project[] = [
   {
     id: "10",
     slug: "loghouse-retention-ponds",
-    title: "7301 Loghouse Retention Ponds",
+    title: "Retention Ponds",
     category: "Grading & Excavation",
     location: "Tampa Bay Area, FL",
     client: "Private Client",
     budget: "Undisclosed",
     deadline: "Completed",
     description:
-      "Excavation and shaping of retention ponds at the 7301 Loghouse site — earthwork, drainage grading, and slope stabilization delivered with heavy equipment and an experienced site crew.",
+      "Excavation and shaping of retention ponds at the Loghouse site — earthwork, drainage grading, and slope stabilization delivered with heavy equipment and an experienced site crew.",
     heroImage: "/projects/loghouse-retention-ponds/01.jpg",
     gallery: gallery("loghouse-retention-ponds", 1),
     featured: false,

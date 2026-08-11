@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import CTABanner from "@/components/sections/CTABanner";
 import QuoteBar from "@/components/sections/QuoteBar";
 import ProjectCard from "@/components/ui/ProjectCard";
+import ProjectGallery from "@/components/ui/ProjectGallery";
 import { getProjectBySlug, getProjects } from "@/lib/payload";
 import { notFound } from "next/navigation";
 import {
@@ -149,19 +150,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       {project.gallery.length > 0 && (
         <section className="bg-brand-white pb-20 md:pb-28">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {project.gallery.map((img, i) => (
-                <div key={i} className="relative aspect-[4/3] rounded overflow-hidden">
-                  <Image
-                    src={img}
-                    alt={`${project.title} — photo ${i + 1}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-[transform] duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <ProjectGallery images={project.gallery} title={project.title} />
           </div>
         </section>
       )}
